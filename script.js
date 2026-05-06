@@ -1048,12 +1048,15 @@ function renderPartnerShowcase(items) {
 
   return `
     <div class="partner-showcase" data-partner-showcase>
-      <div class="partner-photo-grid" aria-label="${state.lang === "ar" ? "صور فئات الشركاء" : "Partner category imagery"}">
-        ${photoColumns}
+      <div class="partner-desktop-showcase">
+        <div class="partner-photo-grid" aria-label="${state.lang === "ar" ? "صور فئات الشركاء" : "Partner category imagery"}">
+          ${photoColumns}
+        </div>
+        <div class="partner-list" aria-label="${state.lang === "ar" ? "قائمة فئات الشركاء" : "Partner categories"}">
+          ${rows}
+        </div>
       </div>
-      <div class="partner-list" aria-label="${state.lang === "ar" ? "قائمة فئات الشركاء" : "Partner categories"}">
-        ${rows}
-      </div>
+      ${renderPartnerMobileGallery(items, roles)}
     </div>
   `;
 }
@@ -1067,9 +1070,45 @@ function partnerPhotoCard(item, index) {
       aria-label="${escapeHtml(item)}"
     >
       <img src="assets/images/partners/${ecosystemImageFiles[index]}.jpg" alt="${escapeHtml(item)}" loading="lazy" />
-      <span class="partner-photo-card__num en">${String(index + 1).padStart(2, "0")}</span>
       <span class="partner-photo-card__label ${textDirClass()}">${escapeHtml(item)}</span>
     </button>
+  `;
+}
+
+function renderPartnerMobileGallery(items, roles) {
+  const readLabel = state.lang === "ar" ? "استكشف الفئة" : "Explore category";
+  const slides = items.map((item, index) => `
+    <article class="partner-gallery-card" data-partner-slide="${index}">
+      <img src="assets/images/partners/${ecosystemImageFiles[index]}.jpg" alt="${escapeHtml(item)}" loading="lazy" />
+      <div class="partner-gallery-card__shade" aria-hidden="true"></div>
+      <div class="partner-gallery-card__content">
+        <h3 class="${textDirClass()}">${escapeHtml(item)}</h3>
+        <p class="${textDirClass()}">${escapeHtml(roles[index])}</p>
+        <span class="partner-gallery-card__link ${textDirClass()}">${readLabel}</span>
+      </div>
+    </article>
+  `).join("");
+  const dots = items.map((_, index) => `
+    <button class="partner-gallery-dot ${index === 0 ? "active" : ""}" type="button" data-gallery-dot="${index}" aria-label="Go to partner slide ${index + 1}"></button>
+  `).join("");
+
+  return `
+    <div class="partner-mobile-gallery" data-partner-gallery>
+      <div class="partner-gallery-head">
+        <div>
+          <span class="closing-label en">${state.lang === "ar" ? "Mobile Access View" : "Curated Access View"}</span>
+          <p class="${textDirClass()}">${state.lang === "ar" ? "استعرض فئات الوصول بصور واضحة وتفاصيل مختصرة." : "Swipe through partner categories with focused imagery and concise context."}</p>
+        </div>
+        <div class="partner-gallery-controls">
+          <button class="partner-gallery-btn" type="button" data-gallery-prev aria-label="Previous partner category">‹</button>
+          <button class="partner-gallery-btn" type="button" data-gallery-next aria-label="Next partner category">›</button>
+        </div>
+      </div>
+      <div class="partner-gallery-track" data-gallery-track>
+        ${slides}
+      </div>
+      <div class="partner-gallery-dots">${dots}</div>
+    </div>
   `;
 }
 
@@ -1316,6 +1355,7 @@ function bindDynamicEvents() {
     btn.onclick = () => closeServiceDetail(true);
   });
   bindPartnerShowcase();
+  bindPartnerGallery();
 }
 
 function bindPartnerShowcase() {
@@ -1343,6 +1383,42 @@ function bindPartnerShowcase() {
   root.onmouseleave = clearActive;
 }
 
+function bindPartnerGallery() {
+  document.querySelectorAll("[data-partner-gallery]").forEach((gallery) => {
+    const track = gallery.querySelector("[data-gallery-track]");
+    const cards = [...gallery.querySelectorAll("[data-partner-slide]")];
+    const dots = [...gallery.querySelectorAll("[data-gallery-dot]")];
+    if (!track || !cards.length) return;
+
+    const setActive = (index) => {
+      dots.forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === index));
+    };
+    const scrollToIndex = (index) => {
+      const target = cards[Math.max(0, Math.min(index, cards.length - 1))];
+      target?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      setActive(cards.indexOf(target));
+    };
+    const currentIndex = () => {
+      const trackRect = track.getBoundingClientRect();
+      const trackCenter = trackRect.left + trackRect.width / 2;
+      return cards.reduce((closest, card, index) => {
+        const rect = card.getBoundingClientRect();
+        const distance = Math.abs(rect.left + rect.width / 2 - trackCenter);
+        return distance < closest.distance ? { index, distance } : closest;
+      }, { index: 0, distance: Infinity }).index;
+    };
+
+    gallery.querySelector("[data-gallery-prev]")?.addEventListener("click", () => scrollToIndex(currentIndex() - 1));
+    gallery.querySelector("[data-gallery-next]")?.addEventListener("click", () => scrollToIndex(currentIndex() + 1));
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => scrollToIndex(index));
+    });
+    track.addEventListener("scroll", () => {
+      window.requestAnimationFrame(() => setActive(currentIndex()));
+    }, { passive: true });
+  });
+}
+
 function updateProgress() {
   const scrollable = document.documentElement.scrollHeight - window.innerHeight;
   const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
@@ -1356,6 +1432,18 @@ function updateProgress() {
   document.querySelectorAll(".rail-dot").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.jump === active);
   });
+}
+
+function initIntroLoader() {
+  const loader = document.getElementById("introLoader");
+  if (!loader) return;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const delay = reducedMotion ? 650 : 3000;
+  window.setTimeout(() => {
+    loader.classList.add("is-hidden");
+    document.body.classList.remove("intro-active");
+    window.setTimeout(() => loader.remove(), 700);
+  }, delay);
 }
 
 async function copyText(value) {
@@ -1401,4 +1489,4 @@ window.addEventListener("keydown", (event) => {
 setLanguage(state.lang);
 handleHash();
 updateProgress();
-
+initIntroLoader();
