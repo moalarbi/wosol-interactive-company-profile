@@ -280,6 +280,14 @@ html[lang="ar"] .page-title {
   box-shadow: var(--shadow);
 }
 
+.service-image-frame {
+  background-image:
+    linear-gradient(135deg, rgba(4, 16, 38, 0.42), rgba(22, 48, 78, 0.22)),
+    var(--service-image);
+  background-size: cover;
+  background-position: center;
+}
+
 .visual-frame::before {
   content: '';
   position: absolute;
@@ -676,6 +684,14 @@ html[dir="ltr"] .card-cta-arrow::after {
   border-bottom: 1px solid rgba(4, 16, 38, 0.08);
   position: relative;
   overflow: hidden;
+}
+
+.service-card-visual.image-loaded {
+  background-image:
+    linear-gradient(135deg, rgba(4, 16, 38, 0.48), rgba(31, 70, 109, 0.16)),
+    var(--service-image);
+  background-size: cover;
+  background-position: center;
 }
 
 .service-card-visual::before {

@@ -64,9 +64,9 @@ To add real images:
 3. Use the matching file names in `script.js`, for example:
 
 ```js
-assets/images/private-aviation.jpg
-assets/images/yacht-charters.jpg
-assets/images/luxury-accommodation.jpg
+assets/images/private-aviation.png
+assets/images/yacht-charters.png
+assets/images/luxury-accommodation.png
 ```
 
 4. Replace the `.visual-frame` placeholder rendering with `<img>` only after the files exist and usage rights are clear.

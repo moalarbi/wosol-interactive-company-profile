@@ -812,7 +812,7 @@ const imagePrompts = {
 };
 
 for (const blueprint of serviceBlueprints) {
-  blueprint.image = `assets/images/${blueprint.id}.jpg`;
+  blueprint.image = `assets/images/${blueprint.id}.png`;
   blueprint.imagePrompt = imagePrompts[blueprint.id];
 }
 
@@ -994,7 +994,7 @@ function serviceCard(service, index) {
   const s = content[state.lang].sections.services;
   return `
     <article class="strategy-card service-card" data-service="${service.id}">
-      <div class="service-card-visual"><span>${escapeHtml(service.imageLabel)}</span></div>
+      <div class="service-card-visual image-loaded" style="--service-image: url('${escapeHtml(service.image)}')"><span>${escapeHtml(service.imageLabel)}</span></div>
       <span class="card-num en">${String(index + 1).padStart(2, "0")} · ${escapeHtml(service.category)}</span>
       <div class="card-title ${textDirClass()}">${escapeHtml(service.title)}</div>
       <div class="card-desc ${textDirClass()}">${escapeHtml(service.tagline)}</div>
@@ -1050,7 +1050,7 @@ function renderServiceDetail(id) {
           <button class="action-btn subtle" type="button" data-close-service>${labels.back}</button>
         </div>
       </div>
-      <div class="visual-frame" role="img" aria-label="${escapeHtml(service.imagePrompt)}">
+      <div class="visual-frame service-image-frame" style="--service-image: url('${escapeHtml(service.image)}')" role="img" aria-label="${escapeHtml(service.imagePrompt)}">
         <div class="visual-caption"><span class="en">Image Direction</span><strong class="${textDirClass()}">${escapeHtml(service.imageLabel)}</strong></div>
       </div>
     </div>
