@@ -1,4 +1,4 @@
-const categories = {
+﻿const categories = {
   lifestyle: { en: "Lifestyle Management", ar: "إدارة نمط الحياة" },
   travel: { en: "Travel & Mobility", ar: "السفر والتنقل" },
   access: { en: "Luxury Access", ar: "الوصول الفاخر" },
@@ -812,7 +812,7 @@ const imagePrompts = {
 };
 
 for (const blueprint of serviceBlueprints) {
-  blueprint.image = `assets/images/${blueprint.id}.png`;
+  blueprint.image = `assets/images/${blueprint.id}.jpg`;
   blueprint.imagePrompt = imagePrompts[blueprint.id];
 }
 
@@ -1232,3 +1232,4 @@ window.addEventListener("keydown", (event) => {
 setLanguage(state.lang);
 handleHash();
 updateProgress();
+

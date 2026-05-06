@@ -1,4 +1,4 @@
-# WOSOL Partner Ecosystem Image Prompts
+﻿# WOSOL Partner Ecosystem Image Prompts
 
 Use these prompts to generate new images specifically for the `Partners & Access Ecosystem` cells.
 
@@ -29,16 +29,16 @@ Strict alcohol rule:
 ## File Map
 
 ```txt
-assets/images/partners/luxury-hotels.png
-assets/images/partners/private-aviation.png
-assets/images/partners/superyachts.png
-assets/images/partners/resorts.png
-assets/images/partners/fine-dining.png
-assets/images/partners/wellness-retreats.png
-assets/images/partners/real-estate.png
-assets/images/partners/luxury-fashion.png
-assets/images/partners/art-and-design.png
-assets/images/partners/private-events.png
+assets/images/partners/luxury-hotels.jpg
+assets/images/partners/private-aviation.jpg
+assets/images/partners/superyachts.jpg
+assets/images/partners/resorts.jpg
+assets/images/partners/fine-dining.jpg
+assets/images/partners/wellness-retreats.jpg
+assets/images/partners/real-estate.jpg
+assets/images/partners/luxury-fashion.jpg
+assets/images/partners/art-and-design.jpg
+assets/images/partners/private-events.jpg
 ```
 
 ## Prompts
@@ -82,3 +82,4 @@ Use case: photorealistic-natural. Asset type: WOSOL Partner Ecosystem cell backg
 ### Private Events
 
 Use case: photorealistic-natural. Asset type: WOSOL Partner Ecosystem cell background, landscape 8:5. Scene/backdrop: private event setup in a refined residence or executive venue. Subject: cream linen table, floral restraint, candles, water glasses, porcelain, navy place card with no readable text, elegant seating. Style/medium: realistic editorial luxury event photography. Composition/framing: wide 8:5 horizontal composition, centered setup with generous safe margins, no tight crop. Lighting/mood: warm, private, composed, memorable, understated. Color palette: cream linen, deep navy detail, muted champagne light. Constraints: absolutely no alcohol, no wine bottles, no champagne, no cocktails, no bar scene, no readable text, no people, no crowd, no watermark.
+

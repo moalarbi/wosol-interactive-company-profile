@@ -1,4 +1,4 @@
-# WOSOL Concierge Interactive Company Profile
+﻿# WOSOL Concierge Interactive Company Profile
 
 Static bilingual interactive company profile for WOSOL Concierge.
 
@@ -64,9 +64,9 @@ To add real images:
 3. Use the matching file names in `script.js`, for example:
 
 ```js
-assets/images/private-aviation.png
-assets/images/yacht-charters.png
-assets/images/luxury-accommodation.png
+assets/images/private-aviation.jpg
+assets/images/yacht-charters.jpg
+assets/images/luxury-accommodation.jpg
 ```
 
 4. Replace the `.visual-frame` placeholder rendering with `<img>` only after the files exist and usage rights are clear.
@@ -101,3 +101,4 @@ The `.nojekyll` file is included so GitHub Pages serves the static files directl
 - Services support search and category filtering.
 - Contact details can be copied.
 - The profile works without React, Tailwind, Bootstrap, or a build step.
+
