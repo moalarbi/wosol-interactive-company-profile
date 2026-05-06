@@ -1079,7 +1079,7 @@ function renderPartnerGallery(items, roles, variant) {
 
 function renderAccessLogos() {
   const isArabic = state.lang === "ar";
-  const logoSet = accessLogos.map((name) => `<span class="logo-wordmark en">${escapeHtml(name)}</span>`).join("");
+  const logoSet = accessLogos.map(accessLogoMarkup).join("");
   document.getElementById("accessLogos").innerHTML = `
     <div class="access-logo-cloud" aria-label="${isArabic ? "مشهد علامات الوصول الفاخر" : "Luxury access logo landscape"}">
       <div class="logo-marquee" aria-hidden="false">
@@ -1092,6 +1092,17 @@ function renderAccessLogos() {
       </div>
     </div>
   `;
+}
+
+function accessLogoMarkup(name) {
+  if (name === "Jumeirah") {
+    return `
+      <span class="logo-wordmark logo-wordmark--image en">
+        <img src="assets/logos/jumeirah.png" alt="Jumeirah" loading="lazy" />
+      </span>
+    `;
+  }
+  return `<span class="logo-wordmark en">${escapeHtml(name)}</span>`;
 }
 
 function renderServices() {
