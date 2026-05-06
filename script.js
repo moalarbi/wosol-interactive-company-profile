@@ -942,7 +942,7 @@ function renderBasicSections() {
   document.getElementById("ecosystem").innerHTML = sectionShell("ecosystem", `
     ${s.ecosystem.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
     <div class="ecosystem-map">${s.ecosystem.items.map((item, i) => `
-      <div class="ecosystem-item has-image" style="--partner-image: url('assets/images/partners/${ecosystemImageFiles[i]}.png')"><span class="card-num en">${String(i + 1).padStart(2, "0")}</span><div class="card-title ${textDirClass()}">${escapeHtml(item)}</div></div>
+      <div class="ecosystem-item has-image" style="--partner-image: url('assets/images/partners/${ecosystemImageFiles[i]}.jpg')"><span class="card-num en">${String(i + 1).padStart(2, "0")}</span><div class="card-title ${textDirClass()}">${escapeHtml(item)}</div></div>
     `).join("")}</div>
   `);
 
