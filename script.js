@@ -889,7 +889,7 @@ const socialLinks = [
 ];
 
 let state = {
-  lang: localStorage.getItem("wosol-lang") || "en",
+  lang: "en",
   filter: "all",
   query: ""
 };
@@ -1437,12 +1437,21 @@ function updateProgress() {
 function initIntroLoader() {
   const loader = document.getElementById("introLoader");
   if (!loader) return;
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const delay = reducedMotion ? 650 : 3000;
   window.setTimeout(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     loader.classList.add("is-hidden");
     document.body.classList.remove("intro-active");
-    window.setTimeout(() => loader.remove(), 700);
+    window.setTimeout(() => {
+      loader.remove();
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      updateProgress();
+    }, 700);
   }, delay);
 }
 
@@ -1487,6 +1496,5 @@ window.addEventListener("keydown", (event) => {
 });
 
 setLanguage(state.lang);
-handleHash();
 updateProgress();
 initIntroLoader();
