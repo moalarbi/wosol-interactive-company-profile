@@ -805,24 +805,26 @@ html[dir="ltr"] .card-cta-arrow::after {
 }
 
 .logo-cloud-section {
-  margin-top: -28px;
-  margin-bottom: 86px;
+  margin-top: -22px;
+  margin-bottom: 82px;
 }
 
 .access-logo-cloud {
   position: relative;
   overflow: hidden;
-  padding: 38px 0 34px;
-  text-align: center;
+  min-height: 104px;
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
 
 .access-logo-cloud::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: 6px 8%;
   z-index: -1;
-  background: radial-gradient(ellipse at center, rgba(4, 16, 38, 0.045), transparent 58%);
-  filter: blur(18px);
+  background: radial-gradient(ellipse at center, rgba(4, 16, 38, 0.055), transparent 60%);
+  filter: blur(24px);
 }
 
 .access-logo-cloud h2 {
@@ -851,27 +853,30 @@ html[dir="ltr"] .card-cta-arrow::after {
 }
 
 .logo-marquee {
+  position: relative;
+  width: 100%;
   overflow: hidden;
-  padding: 24px 0;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  padding: 30px 0;
+  direction: ltr;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 13%, #000 87%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 13%, #000 87%, transparent);
 }
 
 .logo-marquee__track {
   display: flex;
   width: max-content;
-  animation: logoMarquee 52s linear infinite;
+  animation: logoMarquee 44s linear infinite;
 }
 
 .logo-marquee:hover .logo-marquee__track {
-  animation-duration: 82s;
+  animation-duration: 76s;
 }
 
 .logo-marquee__group {
   display: flex;
   align-items: center;
-  gap: 44px;
-  padding-inline-end: 44px;
+  gap: 48px;
+  padding-inline-end: 48px;
 }
 
 .logo-wordmark {
@@ -879,22 +884,49 @@ html[dir="ltr"] .card-cta-arrow::after {
   align-items: center;
   justify-content: center;
   min-width: max-content;
-  color: rgba(4, 16, 38, 0.66);
-  font-size: clamp(18px, 2.2vw, 30px);
+  min-height: 36px;
+  color: rgba(4, 16, 38, 0.60);
+  font-size: clamp(17px, 2vw, 28px);
   font-weight: 500;
   letter-spacing: 0.08em;
   white-space: nowrap;
-  filter: saturate(0.75);
+  filter: saturate(0.72);
+  opacity: 0.92;
 }
 
 .logo-wordmark:nth-child(3n) {
-  color: rgba(176, 150, 90, 0.72);
+  color: rgba(176, 150, 90, 0.76);
   font-weight: 400;
 }
 
 .logo-wordmark:nth-child(4n) {
-  color: rgba(22, 48, 78, 0.58);
+  color: rgba(22, 48, 78, 0.56);
   font-weight: 600;
+}
+
+.logo-edge-blur {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: min(180px, 22vw);
+  pointer-events: none;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.logo-edge-blur--left {
+  left: 0;
+  background: linear-gradient(to right, var(--white-soft), rgba(246, 244, 241, 0));
+  -webkit-mask-image: linear-gradient(to right, #000 18%, transparent);
+  mask-image: linear-gradient(to right, #000 18%, transparent);
+}
+
+.logo-edge-blur--right {
+  right: 0;
+  background: linear-gradient(to left, var(--white-soft), rgba(246, 244, 241, 0));
+  -webkit-mask-image: linear-gradient(to left, #000 18%, transparent);
+  mask-image: linear-gradient(to left, #000 18%, transparent);
 }
 
 @keyframes logoMarquee {
@@ -992,6 +1024,160 @@ html[dir="ltr"] .card-cta-arrow::after {
   width: 100%;
   margin-top: 12px;
   text-align: inherit;
+}
+
+#inquiry {
+  margin-top: 96px;
+  margin-bottom: -96px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.contact-signature {
+  width: 100vw;
+  margin-inline-start: calc(50% - 50vw);
+  min-height: min(62vw, 540px);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.018), transparent 34%),
+    var(--navy-deep);
+  color: var(--beige-sand);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(72px, 9vw, 132px) 32px clamp(46px, 6vw, 78px);
+}
+
+.contact-signature::before,
+.contact-signature::after {
+  content: '';
+  position: absolute;
+  inset: -12% -8%;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160' viewBox='0 0 220 160'%3E%3Cg fill='none' stroke='%23D1C7BA' stroke-width='0.8'%3E%3Cpath d='M40 40h32v32H40zM72 40l16 16-16 16-16-16zM88 40h32v32H88zM120 40l16 16-16 16-16-16z'/%3E%3Cpath d='M72 40l16-24 16 24M72 72l16 24 16-24M88 16v80M80 28l8 28M96 28l-8 28M80 84l8-28M96 84l-8-28'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 260px 190px;
+}
+
+.contact-signature::after {
+  opacity: 0.07;
+  transform: rotate(180deg);
+}
+
+.contact-signature__inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 990px);
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) 1px minmax(360px, 1fr);
+  align-items: center;
+  gap: clamp(48px, 6vw, 82px);
+}
+
+.contact-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  direction: ltr;
+}
+
+.contact-brand__name {
+  font-family: 'Poppins', sans-serif;
+  color: var(--beige-sand);
+  font-size: clamp(72px, 9vw, 128px);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 0.9;
+}
+
+.contact-brand__sub {
+  font-family: 'Poppins', sans-serif;
+  color: var(--beige-sand);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  margin-top: 24px;
+}
+
+.contact-divider {
+  width: 3px;
+  height: clamp(220px, 25vw, 340px);
+  background: var(--beige-sand);
+  border-radius: 4px;
+  opacity: 0.94;
+}
+
+.contact-lines {
+  display: grid;
+  gap: 28px;
+}
+
+.contact-line {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 18px;
+  align-items: center;
+  color: var(--beige-sand);
+  text-decoration: none;
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-line:hover {
+  color: var(--beige-warm);
+  transform: translateX(3px);
+}
+
+.contact-icon {
+  width: 38px;
+  height: 38px;
+  color: currentColor;
+  display: inline-flex;
+}
+
+.contact-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.social-links {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: clamp(46px, 6vw, 68px);
+}
+
+.social-link {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid var(--beige-sand);
+  color: var(--beige-sand);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--beige-sand);
+  color: var(--navy-deep);
+  transform: translateY(-2px);
 }
 
 .closing-section {
@@ -1276,6 +1462,33 @@ html[dir="rtl"] .service-detail__panel {
   .detail-grid {
     grid-template-columns: 1fr;
   }
+
+  .contact-signature {
+    min-height: 720px;
+    padding: 72px 26px 54px;
+  }
+
+  .contact-signature__inner {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .contact-divider {
+    width: min(420px, 72vw);
+    height: 2px;
+  }
+
+  .contact-lines {
+    width: min(100%, 620px);
+  }
+
+  .contact-line {
+    grid-template-columns: 36px 1fr;
+    font-size: clamp(23px, 4.6vw, 34px);
+    text-align: start;
+  }
 }
 
 @media (max-width: 560px) {
@@ -1419,6 +1632,53 @@ html[dir="rtl"] .service-detail__panel {
 
   .contact-card {
     padding: 34px 22px;
+  }
+
+  #inquiry {
+    margin-top: 72px;
+    margin-bottom: -56px;
+  }
+
+  .contact-signature {
+    min-height: 680px;
+    padding: 62px 20px 44px;
+  }
+
+  .contact-brand__name {
+    font-size: clamp(54px, 17vw, 78px);
+  }
+
+  .contact-brand__sub {
+    margin-top: 16px;
+    font-size: clamp(22px, 8vw, 34px);
+  }
+
+  .contact-lines {
+    gap: 20px;
+  }
+
+  .contact-line {
+    grid-template-columns: 30px 1fr;
+    gap: 12px;
+    font-size: clamp(17px, 5.4vw, 24px);
+    letter-spacing: 0.01em;
+  }
+
+  .contact-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .social-links {
+    gap: 12px;
+    margin-top: 38px;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    border-width: 1.5px;
   }
 
   .service-detail__panel {

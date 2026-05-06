@@ -853,6 +853,14 @@ const accessLogos = [
   "Maison de L'Amie Flowers"
 ];
 
+const socialLinks = [
+  { label: "LinkedIn", short: "in", href: "https://www.linkedin.com/company/wosol-concierge" },
+  { label: "X", short: "X", href: "https://x.com/wosol_concierge" },
+  { label: "Instagram", short: "◎", href: "https://www.instagram.com/wosol_concierge" },
+  { label: "Snapchat", short: "♧", href: "https://www.snapchat.com/@wosolconcierge" },
+  { label: "TikTok", short: "♪", href: "https://www.tiktok.com/@wosol_concierge" }
+];
+
 let state = {
   lang: localStorage.getItem("wosol-lang") || "en",
   filter: "all",
@@ -957,9 +965,6 @@ function renderBasicSections() {
         <div class="visual-caption"><span class="en">Global Access Map</span><strong class="${textDirClass()}">${escapeHtml(s.global.body[0])}</strong></div>
       </div>
     </div>
-    <div class="summary-strip">${s.global.metrics.map(([num, label]) => `
-      <div class="strip-cell"><div class="strip-num en">${num}</div><div class="strip-label ${textDirClass()}">${label}</div></div>
-    `).join("")}</div>
   `);
 
   document.getElementById("ecosystem").innerHTML = sectionShell("ecosystem", `
@@ -998,25 +1003,17 @@ function renderBasicSections() {
 
 function renderAccessLogos() {
   const isArabic = state.lang === "ar";
-  const eyebrow = isArabic ? "Access Landscape" : "Access Landscape";
-  const title = isArabic ? "شبكة وصول عالمية حول نمط الحياة الفاخر" : "A global access landscape around luxury living.";
-  const note = isArabic
-    ? "إشارات مرجعية لفئات الوصول الفاخر، وليست ادعاءً لاستخدام شعارات أو شراكات رسمية غير موثقة."
-    : "Reference signals for luxury access categories, not an unsupported logo-use or formal partnership claim.";
   const logoSet = accessLogos.map((name) => `<span class="logo-wordmark en">${escapeHtml(name)}</span>`).join("");
   document.getElementById("accessLogos").innerHTML = `
-    <div class="access-logo-cloud">
-      <span class="closing-label en">${eyebrow}</span>
-      <h2 class="${textDirClass()}">${title}</h2>
-      <p class="${textDirClass()}">${note}</p>
-      <div class="logo-cloud-rule"></div>
-      <div class="logo-marquee" aria-label="Luxury access logo landscape">
+    <div class="access-logo-cloud" aria-label="${isArabic ? "مشهد علامات الوصول الفاخر" : "Luxury access logo landscape"}">
+      <div class="logo-marquee" aria-hidden="false">
         <div class="logo-marquee__track">
           <div class="logo-marquee__group">${logoSet}</div>
           <div class="logo-marquee__group" aria-hidden="true">${logoSet}</div>
         </div>
+        <span class="logo-edge-blur logo-edge-blur--left" aria-hidden="true"></span>
+        <span class="logo-edge-blur logo-edge-blur--right" aria-hidden="true"></span>
       </div>
-      <div class="logo-cloud-rule"></div>
     </div>
   `;
 }
@@ -1069,22 +1066,46 @@ function serviceCard(service, index) {
 }
 
 function renderInquiry() {
-  const s = content[state.lang].sections.inquiry;
+  const socialItems = socialLinks.map((item) => `
+    <a class="social-link en" href="${item.href}" target="_blank" rel="noopener noreferrer" aria-label="${item.label}">
+      <span>${item.short}</span>
+    </a>
+  `).join("");
   document.getElementById("inquiry").innerHTML = `
-    <span class="closing-label en">${s.label}</span>
-    <div class="contact-card">
-      <h2 class="${textDirClass()}">${s.title}</h2>
-      <p class="${textDirClass()}">${s.body}</p>
-      <div class="contact-grid">
-        ${contactItem(s.email, "info@wosolconcierge.com")}
-        ${contactItem(s.phone, "+966 50 000 9979")}
-        ${contactItem(s.website, "wosolconcierge.com")}
+    <div class="contact-signature">
+      <div class="contact-signature__inner">
+        <div class="contact-brand en" aria-label="WOSOL Concierge">
+          <span class="contact-brand__name">WOSOL</span>
+          <span class="contact-brand__sub">CONCIERGE</span>
+        </div>
+        <div class="contact-divider" aria-hidden="true"></div>
+        <div class="contact-lines">
+          <a class="contact-line en" href="tel:+966500009979">
+            <span class="contact-icon" aria-hidden="true">${contactIcon("phone")}</span>
+            <span>+966 50 000 9979</span>
+          </a>
+          <a class="contact-line en" href="https://wosolconcierge.com" target="_blank" rel="noopener noreferrer">
+            <span class="contact-icon" aria-hidden="true">${contactIcon("globe")}</span>
+            <span>wosolconcierge.com</span>
+          </a>
+          <a class="contact-line en" href="mailto:info@wosolconcierge.com">
+            <span class="contact-icon" aria-hidden="true">${contactIcon("mail")}</span>
+            <span>info@wosolconcierge.com</span>
+          </a>
+        </div>
       </div>
-      <div class="contact-actions">
-        <a class="action-btn primary" href="mailto:info@wosolconcierge.com?subject=WOSOL%20Private%20Inquiry">${s.request}</a>
-      </div>
+      <div class="social-links">${socialItems}</div>
     </div>
   `;
+}
+
+function contactIcon(type) {
+  const icons = {
+    phone: `<svg viewBox="0 0 24 24" fill="none"><path d="M6.6 3.8 9.2 3l2.1 4.7-1.6 1.1c.8 1.7 2.1 3 3.8 3.8l1.1-1.6 4.7 2.1-.8 2.6c-.3 1-1.2 1.6-2.2 1.5C10.5 16.8 6.2 12.5 5.1 6.7 4.9 5.7 5.6 4.1 6.6 3.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>`,
+    globe: `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M3.8 12h16.4M12 3.5c2.2 2.2 3.2 5 3.2 8.5s-1 6.3-3.2 8.5M12 3.5C9.8 5.7 8.8 8.5 8.8 12s1 6.3 3.2 8.5" stroke="currentColor" stroke-width="1.4"/></svg>`,
+    mail: `<svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4V7Z" stroke="currentColor" stroke-width="1.5"/><path d="m4.5 7.5 7.5 6 7.5-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>`
+  };
+  return icons[type] || "";
 }
 
 function contactItem(label, value) {
