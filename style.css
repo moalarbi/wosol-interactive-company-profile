@@ -1223,6 +1223,11 @@ body[dir="rtl"] .partner-gallery-card p {
   max-width: 230px;
 }
 
+.logo-wordmark--rocco-forte img {
+  height: clamp(24px, 2.4vw, 36px);
+  max-width: 190px;
+}
+
 .logo-wordmark:nth-child(3n) {
   color: rgba(176, 150, 90, 0.76);
   font-weight: 400;
@@ -2007,6 +2012,11 @@ html[dir="rtl"] .service-detail__panel {
   .logo-wordmark--alpha-star img {
     height: 30px;
     max-width: 170px;
+  }
+
+  .logo-wordmark--rocco-forte img {
+    height: 25px;
+    max-width: 150px;
   }
 
   .exec-summary {

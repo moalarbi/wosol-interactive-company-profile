@@ -1116,6 +1116,13 @@ function accessLogoMarkup(name) {
       </span>
     `;
   }
+  if (name === "Rocco Forte Hotels") {
+    return `
+      <span class="logo-wordmark logo-wordmark--image logo-wordmark--rocco-forte en">
+        <img src="assets/logos/rocco-forte-hotels.svg" alt="Rocco Forte Hotels" loading="lazy" />
+      </span>
+    `;
+  }
   return `<span class="logo-wordmark en">${escapeHtml(name)}</span>`;
 }
 
