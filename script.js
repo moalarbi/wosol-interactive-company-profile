@@ -829,6 +829,33 @@ const ecosystemImageFiles = [
   "private-events"
 ];
 
+const ecosystemRoles = {
+  en: [
+    "Hospitality access",
+    "Private mobility",
+    "Marine lifestyle",
+    "Resort stays",
+    "Dining curation",
+    "Wellness retreats",
+    "Property access",
+    "Personal style",
+    "Culture and interiors",
+    "Private hosting"
+  ],
+  ar: [
+    "وصول ضيافي",
+    "تنقل خاص",
+    "نمط حياة بحري",
+    "إقامات منتجعية",
+    "تنسيق المطاعم",
+    "رحلات استشفاء",
+    "وصول عقاري",
+    "أسلوب شخصي",
+    "ثقافة ومساحات",
+    "استضافة خاصة"
+  ]
+};
+
 const accessLogos = [
   "Four Seasons",
   "Mandarin Oriental",
@@ -969,9 +996,7 @@ function renderBasicSections() {
 
   document.getElementById("ecosystem").innerHTML = sectionShell("ecosystem", `
     ${s.ecosystem.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
-    <div class="ecosystem-map">${s.ecosystem.items.map((item, i) => `
-      <div class="ecosystem-item has-image" style="--partner-image: url('assets/images/partners/${ecosystemImageFiles[i]}.jpg')"><span class="card-num en">${String(i + 1).padStart(2, "0")}</span><div class="card-title ${textDirClass()}">${escapeHtml(item)}</div></div>
-    `).join("")}</div>
+    ${renderPartnerShowcase(s.ecosystem.items)}
   `);
 
   renderAccessLogos();
@@ -999,6 +1024,53 @@ function renderBasicSections() {
   document.getElementById("standard").innerHTML = sectionShell("standard", `
     <div class="cards-grid">${s.standard.cards.map((item, i) => card(item[0], item[1], i + 1, i === 0)).join("")}</div>
   `);
+}
+
+function renderPartnerShowcase(items) {
+  const roles = ecosystemRoles[state.lang];
+  const columns = [0, 1, 2].map((column) => items
+    .map((item, index) => ({ item, index }))
+    .filter(({ index }) => index % 3 === column));
+  const photoColumns = columns.map((columnItems, columnIndex) => `
+    <div class="partner-photo-col partner-photo-col--${columnIndex + 1}">
+      ${columnItems.map(({ item, index }) => partnerPhotoCard(item, index)).join("")}
+    </div>
+  `).join("");
+  const rows = items.map((item, index) => `
+    <button class="partner-row ${index === 0 ? "active" : ""}" type="button" data-partner-id="${index}">
+      <span class="partner-row__mark" aria-hidden="true"></span>
+      <span class="partner-row__text">
+        <strong class="${textDirClass()}">${escapeHtml(item)}</strong>
+        <small class="${textDirClass()}">${escapeHtml(roles[index])}</small>
+      </span>
+    </button>
+  `).join("");
+
+  return `
+    <div class="partner-showcase" data-partner-showcase>
+      <div class="partner-photo-grid" aria-label="${state.lang === "ar" ? "صور فئات الشركاء" : "Partner category imagery"}">
+        ${photoColumns}
+      </div>
+      <div class="partner-list" aria-label="${state.lang === "ar" ? "قائمة فئات الشركاء" : "Partner categories"}">
+        ${rows}
+      </div>
+    </div>
+  `;
+}
+
+function partnerPhotoCard(item, index) {
+  return `
+    <button
+      class="partner-photo-card ${index === 0 ? "active" : ""}"
+      type="button"
+      data-partner-id="${index}"
+      aria-label="${escapeHtml(item)}"
+    >
+      <img src="assets/images/partners/${ecosystemImageFiles[index]}.jpg" alt="${escapeHtml(item)}" loading="lazy" />
+      <span class="partner-photo-card__num en">${String(index + 1).padStart(2, "0")}</span>
+      <span class="partner-photo-card__label ${textDirClass()}">${escapeHtml(item)}</span>
+    </button>
+  `;
 }
 
 function renderAccessLogos() {
@@ -1243,6 +1315,32 @@ function bindDynamicEvents() {
   document.querySelectorAll("[data-close-service]").forEach((btn) => {
     btn.onclick = () => closeServiceDetail(true);
   });
+  bindPartnerShowcase();
+}
+
+function bindPartnerShowcase() {
+  const root = document.querySelector("[data-partner-showcase]");
+  if (!root) return;
+  const items = root.querySelectorAll("[data-partner-id]");
+  const setActive = (id) => {
+    items.forEach((item) => {
+      const active = item.dataset.partnerId === id;
+      item.classList.toggle("active", active);
+      item.classList.toggle("dimmed", !active);
+    });
+  };
+  const clearActive = () => {
+    items.forEach((item) => {
+      item.classList.toggle("active", item.dataset.partnerId === "0");
+      item.classList.remove("dimmed");
+    });
+  };
+  items.forEach((item) => {
+    item.onmouseenter = () => setActive(item.dataset.partnerId);
+    item.onfocus = () => setActive(item.dataset.partnerId);
+    item.onclick = () => setActive(item.dataset.partnerId);
+  });
+  root.onmouseleave = clearActive;
 }
 
 function updateProgress() {
