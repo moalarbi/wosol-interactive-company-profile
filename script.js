@@ -829,6 +829,30 @@ const ecosystemImageFiles = [
   "private-events"
 ];
 
+const accessLogos = [
+  "Four Seasons",
+  "Mandarin Oriental",
+  "Aman",
+  "Dorchester Collection",
+  "Waldorf Astoria",
+  "Bvlgari Hotels & Resorts",
+  "Rosewood Hotel Group",
+  "One&Only",
+  "The Ritz-Carlton",
+  "Raffles",
+  "The Leading Hotels of the World",
+  "JOALI",
+  "Rocco Forte Hotels",
+  "Anantara",
+  "Cheval Blanc",
+  "Jumeirah",
+  "The Luxury Collection",
+  "Alpha Star Aviation Services",
+  "Edmiston",
+  "Cabrio",
+  "Maison de L'Amie Flowers"
+];
+
 let state = {
   lang: localStorage.getItem("wosol-lang") || "en",
   filter: "all",
@@ -945,6 +969,8 @@ function renderBasicSections() {
     `).join("")}</div>
   `);
 
+  renderAccessLogos();
+
   document.getElementById("segments").innerHTML = sectionShell("segments", `
     <div class="cards-grid">${s.segments.cards.map((item, i) => `
       <article class="strategy-card ${i === 1 ? "featured" : ""}">
@@ -968,6 +994,31 @@ function renderBasicSections() {
   document.getElementById("standard").innerHTML = sectionShell("standard", `
     <div class="cards-grid">${s.standard.cards.map((item, i) => card(item[0], item[1], i + 1, i === 0)).join("")}</div>
   `);
+}
+
+function renderAccessLogos() {
+  const isArabic = state.lang === "ar";
+  const eyebrow = isArabic ? "Access Landscape" : "Access Landscape";
+  const title = isArabic ? "شبكة وصول عالمية حول نمط الحياة الفاخر" : "A global access landscape around luxury living.";
+  const note = isArabic
+    ? "إشارات مرجعية لفئات الوصول الفاخر، وليست ادعاءً لاستخدام شعارات أو شراكات رسمية غير موثقة."
+    : "Reference signals for luxury access categories, not an unsupported logo-use or formal partnership claim.";
+  const logoSet = accessLogos.map((name) => `<span class="logo-wordmark en">${escapeHtml(name)}</span>`).join("");
+  document.getElementById("accessLogos").innerHTML = `
+    <div class="access-logo-cloud">
+      <span class="closing-label en">${eyebrow}</span>
+      <h2 class="${textDirClass()}">${title}</h2>
+      <p class="${textDirClass()}">${note}</p>
+      <div class="logo-cloud-rule"></div>
+      <div class="logo-marquee" aria-label="Luxury access logo landscape">
+        <div class="logo-marquee__track">
+          <div class="logo-marquee__group">${logoSet}</div>
+          <div class="logo-marquee__group" aria-hidden="true">${logoSet}</div>
+        </div>
+      </div>
+      <div class="logo-cloud-rule"></div>
+    </div>
+  `;
 }
 
 function renderServices() {
