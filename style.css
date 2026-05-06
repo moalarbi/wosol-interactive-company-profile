@@ -633,25 +633,51 @@ html[dir="ltr"] .card-cta-arrow::after {
 
 .ecosystem-item {
   background: rgba(255,255,255,0.72);
-  min-height: 150px;
+  min-height: 172px;
   aspect-ratio: 8 / 5;
-  padding: 20px 18px;
+  padding: 18px;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 }
 
 .ecosystem-item.has-image {
   background-image:
-    linear-gradient(rgba(246, 244, 241, 0.86), rgba(246, 244, 241, 0.93)),
+    linear-gradient(
+      to top,
+      rgba(4, 16, 38, 0.90) 0%,
+      rgba(4, 16, 38, 0.68) 30%,
+      rgba(4, 16, 38, 0.18) 68%,
+      rgba(4, 16, 38, 0.00) 100%
+    ),
     var(--partner-image);
-  background-size: 100% 100%, contain;
+  background-size: 100% 100%, cover;
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
+  transition: background-size 0.45s ease, filter 0.35s ease;
 }
 
 .ecosystem-item span {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 0;
+  color: rgba(237, 233, 227, 0.58);
+  position: relative;
+  z-index: 1;
+}
+
+.ecosystem-item .card-title {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 26px;
+  z-index: 1;
+  color: var(--beige-warm);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.25;
+  margin: 0;
+  text-shadow: 0 2px 14px rgba(4, 16, 38, 0.34);
 }
 
 .service-tools {
@@ -1048,7 +1074,7 @@ html[dir="rtl"] .service-detail__panel {
   }
 
   .ecosystem-item {
-    min-height: 170px;
+    min-height: 184px;
     aspect-ratio: 8 / 5;
   }
 
@@ -1104,14 +1130,25 @@ html[dir="rtl"] .service-detail__panel {
   }
 
   .ecosystem-item {
-    min-height: 176px;
+    min-height: 190px;
     aspect-ratio: 8 / 5;
   }
 
   .ecosystem-item.has-image {
     background-image:
-      linear-gradient(rgba(246, 244, 241, 0.88), rgba(246, 244, 241, 0.94)),
+      linear-gradient(
+        to top,
+        rgba(4, 16, 38, 0.92) 0%,
+        rgba(4, 16, 38, 0.70) 34%,
+        rgba(4, 16, 38, 0.18) 72%,
+        rgba(4, 16, 38, 0.00) 100%
+      ),
       var(--partner-image);
+  }
+
+  .ecosystem-item .card-title {
+    bottom: 24px;
+    font-size: 19px;
   }
 
   .exec-summary {
