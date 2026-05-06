@@ -634,6 +634,15 @@ html[dir="ltr"] .card-cta-arrow::after {
   padding: 20px 18px;
 }
 
+.ecosystem-item.has-image {
+  background-image:
+    linear-gradient(rgba(246, 244, 241, 0.84), rgba(246, 244, 241, 0.92)),
+    var(--partner-image);
+  background-size: 100% 100%, contain;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
 .ecosystem-item span {
   display: block;
   margin-bottom: 16px;

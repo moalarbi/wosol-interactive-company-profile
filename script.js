@@ -816,6 +816,19 @@ for (const blueprint of serviceBlueprints) {
   blueprint.imagePrompt = imagePrompts[blueprint.id];
 }
 
+const ecosystemImageFiles = [
+  "luxury-hotels",
+  "private-aviation",
+  "superyachts",
+  "resorts",
+  "fine-dining",
+  "wellness-retreats",
+  "real-estate",
+  "luxury-fashion",
+  "art-and-design",
+  "private-events"
+];
+
 let state = {
   lang: localStorage.getItem("wosol-lang") || "en",
   filter: "all",
@@ -929,7 +942,7 @@ function renderBasicSections() {
   document.getElementById("ecosystem").innerHTML = sectionShell("ecosystem", `
     ${s.ecosystem.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
     <div class="ecosystem-map">${s.ecosystem.items.map((item, i) => `
-      <div class="ecosystem-item"><span class="card-num en">${String(i + 1).padStart(2, "0")}</span><div class="card-title ${textDirClass()}">${escapeHtml(item)}</div></div>
+      <div class="ecosystem-item has-image" style="--partner-image: url('assets/images/partners/${ecosystemImageFiles[i]}.png')"><span class="card-num en">${String(i + 1).padStart(2, "0")}</span><div class="card-title ${textDirClass()}">${escapeHtml(item)}</div></div>
     `).join("")}</div>
   `);
 
