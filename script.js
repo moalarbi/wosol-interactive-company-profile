@@ -1102,6 +1102,20 @@ function accessLogoMarkup(name) {
       </span>
     `;
   }
+  if (name === "The Luxury Collection") {
+    return `
+      <span class="logo-wordmark logo-wordmark--image logo-wordmark--luxury-collection en">
+        <img src="assets/logos/luxury-collection.svg" alt="The Luxury Collection" loading="lazy" />
+      </span>
+    `;
+  }
+  if (name === "Alpha Star Aviation Services") {
+    return `
+      <span class="logo-wordmark logo-wordmark--image logo-wordmark--alpha-star en">
+        <img src="assets/logos/alpha-star-aviation.jpeg" alt="Alpha Star Aviation Services" loading="lazy" />
+      </span>
+    `;
+  }
   return `<span class="logo-wordmark en">${escapeHtml(name)}</span>`;
 }
 

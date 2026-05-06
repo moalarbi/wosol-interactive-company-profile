@@ -1214,6 +1214,15 @@ body[dir="rtl"] .partner-gallery-card p {
   object-fit: contain;
 }
 
+.logo-wordmark--luxury-collection img {
+  max-width: 190px;
+}
+
+.logo-wordmark--alpha-star img {
+  height: clamp(30px, 2.8vw, 42px);
+  max-width: 230px;
+}
+
 .logo-wordmark:nth-child(3n) {
   color: rgba(176, 150, 90, 0.76);
   font-weight: 400;
@@ -1993,6 +2002,11 @@ html[dir="rtl"] .service-detail__panel {
   .logo-wordmark--image img {
     height: 24px;
     max-width: 142px;
+  }
+
+  .logo-wordmark--alpha-star img {
+    height: 30px;
+    max-width: 170px;
   }
 
   .exec-summary {
