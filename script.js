@@ -556,7 +556,7 @@ const serviceBlueprints = [
 const content = {
   en: {
     meta: "Interactive Company Profile · Confidential · 2026",
-    nav: { explore: "Explore Profile", services: "View Services", print: "Print Profile", copy: "Copy", copied: "Copied" },
+    nav: { explore: "Explore Profile", services: "View Services", copy: "Copy", copied: "Copied" },
     cover: {
       label: "Private Profile 01 of 11",
       title: "Private Lifestyle Management, Designed Around You.",
@@ -655,7 +655,6 @@ const content = {
         title: "Begin With a Private Inquiry.",
         body: "Share the request, destination, occasion, or lifestyle need. WOSOL will review the context and recommend the right service path with discretion.",
         request: "Request Private Inquiry",
-        print: "Download / Print Profile",
         email: "Email",
         phone: "Phone",
         website: "Website"
@@ -675,7 +674,7 @@ const content = {
   },
   ar: {
     meta: "ملف شركة تفاعلي · سري · 2026",
-    nav: { explore: "استكشف الملف", services: "عرض الخدمات", print: "طباعة الملف", copy: "نسخ", copied: "تم النسخ" },
+    nav: { explore: "استكشف الملف", services: "عرض الخدمات", copy: "نسخ", copied: "تم النسخ" },
     cover: {
       label: "ملف خاص 01 من 11",
       title: "إدارة نمط حياة خاص... مصممة حولك.",
@@ -774,7 +773,6 @@ const content = {
         title: "ابدأ بطلب خاص.",
         body: "شاركنا الطلب أو الوجهة أو المناسبة أو احتياج نمط الحياة. ستراجع وصول السياق وتقترح مسار الخدمة الأنسب بسرية.",
         request: "طلب تواصل خاص",
-        print: "تحميل / طباعة الملف",
         email: "البريد الإلكتروني",
         phone: "الهاتف",
         website: "الموقع الإلكتروني"
@@ -885,7 +883,6 @@ function renderCover() {
         <div class="hero-actions">
           <button class="action-btn primary" type="button" data-jump="essence">${content[state.lang].nav.explore}</button>
           <button class="action-btn subtle" type="button" data-jump="services">${content[state.lang].nav.services}</button>
-          <button class="action-btn subtle" type="button" data-print>${content[state.lang].nav.print}</button>
         </div>
       </div>
       <div class="visual-frame" role="img" aria-label="${escapeHtml(c.visual)}">
@@ -1022,7 +1019,6 @@ function renderInquiry() {
       </div>
       <div class="contact-actions">
         <a class="action-btn primary" href="mailto:info@wosolconcierge.com?subject=WOSOL%20Private%20Inquiry">${s.request}</a>
-        <button class="action-btn subtle" type="button" data-print>${s.print}</button>
       </div>
     </div>
   `;
@@ -1128,9 +1124,6 @@ function renderAll() {
 function bindDynamicEvents() {
   document.querySelectorAll("[data-jump]").forEach((btn) => {
     btn.onclick = () => document.getElementById(btn.dataset.jump)?.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-  document.querySelectorAll("[data-print]").forEach((btn) => {
-    btn.onclick = () => window.print();
   });
   document.querySelectorAll("[data-open-service]").forEach((btn) => {
     btn.onclick = () => {

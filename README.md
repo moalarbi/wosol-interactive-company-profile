@@ -100,5 +100,4 @@ The `.nojekyll` file is included so GitHub Pages serves the static files directl
 - All 16 services have dedicated detail panels.
 - Services support search and category filtering.
 - Contact details can be copied.
-- Print/export uses the browser print dialog.
 - The profile works without React, Tailwind, Bootstrap, or a build step.
