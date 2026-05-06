@@ -1028,54 +1028,19 @@ function renderBasicSections() {
 
 function renderPartnerShowcase(items) {
   const roles = ecosystemRoles[state.lang];
-  const columns = [0, 1, 2].map((column) => items
-    .map((item, index) => ({ item, index }))
-    .filter(({ index }) => index % 3 === column));
-  const photoColumns = columns.map((columnItems, columnIndex) => `
-    <div class="partner-photo-col partner-photo-col--${columnIndex + 1}">
-      ${columnItems.map(({ item, index }) => partnerPhotoCard(item, index)).join("")}
-    </div>
-  `).join("");
-  const rows = items.map((item, index) => `
-    <button class="partner-row ${index === 0 ? "active" : ""}" type="button" data-partner-id="${index}">
-      <span class="partner-row__mark" aria-hidden="true"></span>
-      <span class="partner-row__text">
-        <strong class="${textDirClass()}">${escapeHtml(item)}</strong>
-        <small class="${textDirClass()}">${escapeHtml(roles[index])}</small>
-      </span>
-    </button>
-  `).join("");
 
   return `
     <div class="partner-showcase" data-partner-showcase>
       <div class="partner-desktop-showcase">
-        <div class="partner-photo-grid" aria-label="${state.lang === "ar" ? "صور فئات الشركاء" : "Partner category imagery"}">
-          ${photoColumns}
-        </div>
-        <div class="partner-list" aria-label="${state.lang === "ar" ? "قائمة فئات الشركاء" : "Partner categories"}">
-          ${rows}
-        </div>
+        ${renderPartnerGallery(items, roles, "desktop")}
       </div>
-      ${renderPartnerMobileGallery(items, roles)}
+      ${renderPartnerGallery(items, roles, "mobile")}
     </div>
   `;
 }
 
-function partnerPhotoCard(item, index) {
-  return `
-    <button
-      class="partner-photo-card ${index === 0 ? "active" : ""}"
-      type="button"
-      data-partner-id="${index}"
-      aria-label="${escapeHtml(item)}"
-    >
-      <img src="assets/images/partners/${ecosystemImageFiles[index]}.jpg" alt="${escapeHtml(item)}" loading="lazy" />
-      <span class="partner-photo-card__label ${textDirClass()}">${escapeHtml(item)}</span>
-    </button>
-  `;
-}
-
-function renderPartnerMobileGallery(items, roles) {
+function renderPartnerGallery(items, roles, variant) {
+  const isMobile = variant === "mobile";
   const readLabel = state.lang === "ar" ? "استكشف الفئة" : "Explore category";
   const slides = items.map((item, index) => `
     <article class="partner-gallery-card" data-partner-slide="${index}">
@@ -1093,11 +1058,11 @@ function renderPartnerMobileGallery(items, roles) {
   `).join("");
 
   return `
-    <div class="partner-mobile-gallery" data-partner-gallery>
+    <div class="partner-gallery partner-gallery--${variant}" data-partner-gallery>
       <div class="partner-gallery-head">
         <div>
-          <span class="closing-label en">${state.lang === "ar" ? "Mobile Access View" : "Curated Access View"}</span>
-          <p class="${textDirClass()}">${state.lang === "ar" ? "استعرض فئات الوصول بصور واضحة وتفاصيل مختصرة." : "Swipe through partner categories with focused imagery and concise context."}</p>
+          <span class="closing-label en">${isMobile ? (state.lang === "ar" ? "Mobile Access View" : "Curated Access View") : (state.lang === "ar" ? "Curated Access Gallery" : "Curated Access Gallery")}</span>
+          <p class="${textDirClass()}">${state.lang === "ar" ? "استعرض فئات الوصول بصور واضحة وتفاصيل مختصرة." : "Browse partner categories through larger, clearer visual cards."}</p>
         </div>
         <div class="partner-gallery-controls">
           <button class="partner-gallery-btn" type="button" data-gallery-prev aria-label="Previous partner category">‹</button>
