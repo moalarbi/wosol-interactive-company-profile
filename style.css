@@ -272,6 +272,7 @@ html[lang="ar"] .page-title {
 .visual-frame {
   position: relative;
   min-height: 360px;
+  aspect-ratio: 16 / 10;
   border: 1px solid var(--border);
   background:
     linear-gradient(135deg, rgba(4, 16, 38, 0.92), rgba(22, 48, 78, 0.84)),
@@ -281,6 +282,8 @@ html[lang="ar"] .page-title {
 }
 
 .service-image-frame {
+  min-height: 0;
+  width: 100%;
   background-image:
     linear-gradient(135deg, rgba(4, 16, 38, 0.42), rgba(22, 48, 78, 0.22)),
     var(--service-image);
@@ -630,13 +633,16 @@ html[dir="ltr"] .card-cta-arrow::after {
 
 .ecosystem-item {
   background: rgba(255,255,255,0.72);
-  min-height: 128px;
+  min-height: 150px;
+  aspect-ratio: 8 / 5;
   padding: 20px 18px;
+  position: relative;
+  isolation: isolate;
 }
 
 .ecosystem-item.has-image {
   background-image:
-    linear-gradient(rgba(246, 244, 241, 0.84), rgba(246, 244, 241, 0.92)),
+    linear-gradient(rgba(246, 244, 241, 0.86), rgba(246, 244, 241, 0.93)),
     var(--partner-image);
   background-size: 100% 100%, contain;
   background-position: center, center;
@@ -685,7 +691,8 @@ html[dir="ltr"] .card-cta-arrow::after {
 }
 
 .service-card-visual {
-  height: 112px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   margin: -30px -25px 24px;
   background:
     linear-gradient(135deg, rgba(4, 16, 38, 0.88), rgba(31, 70, 109, 0.68)),
@@ -935,7 +942,8 @@ html[dir="rtl"] .service-detail__panel {
 }
 
 .service-hero .visual-frame {
-  min-height: 300px;
+  min-height: 0;
+  aspect-ratio: 16 / 10;
 }
 
 .detail-grid {
@@ -1030,6 +1038,20 @@ html[dir="rtl"] .service-detail__panel {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .visual-frame,
+  .service-hero .visual-frame {
+    aspect-ratio: 16 / 10;
+  }
+
+  .service-card-visual {
+    aspect-ratio: 16 / 10;
+  }
+
+  .ecosystem-item {
+    min-height: 170px;
+    aspect-ratio: 8 / 5;
+  }
+
   .detail-grid {
     grid-template-columns: 1fr;
   }
@@ -1064,6 +1086,32 @@ html[dir="rtl"] .service-detail__panel {
   .contact-grid,
   .ecosystem-map {
     grid-template-columns: 1fr;
+  }
+
+  .visual-frame {
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+
+  .service-card-visual {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 22px;
+  }
+
+  .service-hero .visual-frame {
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+
+  .ecosystem-item {
+    min-height: 176px;
+    aspect-ratio: 8 / 5;
+  }
+
+  .ecosystem-item.has-image {
+    background-image:
+      linear-gradient(rgba(246, 244, 241, 0.88), rgba(246, 244, 241, 0.94)),
+      var(--partner-image);
   }
 
   .exec-summary {
