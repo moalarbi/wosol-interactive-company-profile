@@ -555,10 +555,10 @@ const serviceBlueprints = [
 
 const content = {
   en: {
-    meta: "Interactive Company Profile · Confidential · 2026",
+    meta: "",
     nav: { explore: "Explore Profile", services: "View Services", copy: "Copy", copied: "Copied" },
     cover: {
-      label: "Private Profile 01 of 11",
+      label: "",
       title: "Private Lifestyle Management, Designed Around You.",
       desc: "WOSOL Concierge manages the hidden complexity behind high-value lifestyles through privacy, anticipation, trusted access, and seamless execution.",
       sub: "Luxury concierge · travel · access · events · private lifestyle coordination",
@@ -673,10 +673,10 @@ const content = {
     }
   },
   ar: {
-    meta: "ملف شركة تفاعلي · سري · 2026",
+    meta: "",
     nav: { explore: "استكشف الملف", services: "عرض الخدمات", copy: "نسخ", copied: "تم النسخ" },
     cover: {
-      label: "ملف خاص 01 من 11",
+      label: "",
       title: "إدارة نمط حياة خاص... مصممة حولك.",
       desc: "وصول كونسيرج تدير التعقيد الخفي خلف أنماط الحياة عالية القيمة عبر الخصوصية والاستباقية والوصول الموثوق والتنفيذ السلس.",
       sub: "كونسيرج فاخر · سفر · وصول خاص · مناسبات · تنسيق نمط حياة",
@@ -889,7 +889,6 @@ function renderCover() {
   document.getElementById("cover").innerHTML = `
     <div class="hero-layout">
       <div>
-        <span class="hero-tag en">${c.label}</span>
         <h1 class="hero-title ${textDirClass()}">${c.title}</h1>
         <p class="hero-desc ${textDirClass()}">${c.desc}</p>
         <div class="hero-en en">${c.sub}</div>
