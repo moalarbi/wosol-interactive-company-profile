@@ -897,7 +897,7 @@ function renderCover() {
           <button class="action-btn subtle" type="button" data-jump="services">${content[state.lang].nav.services}</button>
         </div>
       </div>
-      <div class="visual-frame" role="img" aria-label="${escapeHtml(c.visual)}">
+      <div class="visual-frame cover-card" role="img" aria-label="${escapeHtml(c.visual)}">
         <div class="visual-caption">
           <span class="en">Private Operating Layer</span>
           <strong class="${textDirClass()}">${c.visual}</strong>
