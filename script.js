@@ -662,13 +662,16 @@ const content = {
     },
     serviceLabels: {
       forWhom: "For Whom",
+      bestFor: "Best For",
       when: "When It Matters",
       handles: "WOSOL Handles",
       standard: "Experience Standard",
       difference: "What Makes It Different",
+      wosolDifference: "The WOSOL Difference",
       samples: "Sample Requests",
+      typicalRequests: "Typical Requests",
       audience: "Target Audience Relevance",
-      outcome: "Emotional Outcome",
+      outcome: "Outcome",
       back: "Back to Services"
     }
   },
@@ -687,7 +690,7 @@ const content = {
       essence: {
         num: "02",
         title: "جوهر العلامة",
-        label: "Private Lifestyle Management Partner",
+        label: "شريك إدارة نمط الحياة الخاص",
         body: [
           "توجد وصول للعملاء الذين تتحرك حياتهم بين الخاص والمهني والدولي. دورها ليس إضافة ضجيج جديد، بل إزالة التعقيد من خلفية الحياة عالية القيمة.",
           "تدير العلامة الوقت والوصول والخصوصية وجودة الخدمة والمتابعة من خلال طبقة تنسيق واحدة وسرية."
@@ -701,7 +704,7 @@ const content = {
       principles: {
         num: "03",
         title: "الرؤية والرسالة والقيم",
-        label: "Profile Foundation From Source PDF",
+        label: "أساس الملف التعريفي",
         cards: [
           ["الرؤية", "أن نكون مجموعة كونسيرج فاخرة عالمية رائدة، تقود استثمارات استراتيجية في قطاع السياحة والضيافة الفاخرة."],
           ["الرسالة", "تمكين علاماتنا وخدماتنا من تقديم تجارب ضيافة استثنائية تخلق قيمة مستدامة لعملائنا وشركائنا وأصحاب المصلحة."],
@@ -711,21 +714,21 @@ const content = {
       global: {
         num: "04",
         title: "الوصول العالمي",
-        label: "Serving You Globally",
+        label: "نخدمك أينما كنت",
         body: ["نخدمك عالمياً، أينما كنت.", "تتمحور وصول حول الحركة الدولية والوصول الموثوق والتنسيق الخاص عبر الوجهات والمساكن والمناسبات واحتياجات نمط الحياة."],
-        metrics: [["16", "عائلة خدمات كونسيرج"], ["05", "مسارات لشرائح العملاء"], ["Global", "حسب الطلب وشبكة الشركاء"], ["Private", "تنسيق يبدأ بطلب خاص"]]
+        metrics: [["16", "عائلة خدمات كونسيرج"], ["05", "مسارات لشرائح العملاء"], ["عالمي", "حسب الطلب وشبكة الشركاء"], ["خاص", "تنسيق يبدأ بطلب خاص"]]
       },
       ecosystem: {
         num: "05",
         title: "منظومة الشركاء والوصول",
-        label: "Curated Network, Not Public Claims",
+        label: "شبكة منتقاة بعناية",
         body: ["تعمل وصول عبر منظومة شركاء منتقاة. تُعرض فئات الشركاء دون استخدام شعارات غير موثقة، حفاظاً على الاحترافية ووضوح حقوق الاستخدام."],
         items: ["فنادق فاخرة", "طيران خاص", "يخوت فاخرة", "منتجعات", "مطاعم راقية", "منتجعات عافية", "عقارات", "أزياء فاخرة", "فن وتصميم", "مناسبات خاصة"]
       },
       services: {
         num: "06",
         title: "نظرة عامة على الخدمات",
-        label: "Explore Dedicated Service Profiles",
+        label: "استكشف ملفات الخدمات",
         search: "ابحث في الخدمات",
         all: "كل الخدمات",
         empty: "لا توجد خدمات مطابقة للبحث والتصفية الحالية.",
@@ -734,7 +737,7 @@ const content = {
       segments: {
         num: "08",
         title: "شرائح العملاء",
-        label: "Pathways By Client Need",
+        label: "مسارات حسب احتياج العميل",
         cards: [
           ["الأفراد الخاصون", "يحتاجون حماية للوقت وخصوصية ودعماً راقياً لنمط الحياة.", "كونسيرج نمط الحياة، المساعد الشخصي، الوصول الخاص"],
           ["الشركات والتنفيذيون", "يحتاجون سفراً سلساً واستضافة وتنسيقاً لضيوف عالي القيمة.", "سفر الأعمال، كونسيرج الشركات، التنقل"],
@@ -746,7 +749,7 @@ const content = {
       process: {
         num: "09",
         title: "كيف تعمل وصول",
-        label: "Private Inquiry To Continuous Relationship",
+        label: "من طلب خاص إلى علاقة مستمرة",
         steps: [
           ["طلب خاص", "يُستقبل الطلب بسرية ويُحدد نطاقه حسب الوقت والحساسية والنتيجة المقصودة."],
           ["تقييم نمط الحياة", "تتحول التفضيلات والأولويات واحتياجات الخصوصية وسجل الخدمة إلى ملف عمل واضح."],
@@ -758,7 +761,7 @@ const content = {
       standard: {
         num: "10",
         title: "معيار وصول",
-        label: "Operating Principles",
+        label: "مبادئ التشغيل",
         cards: [
           ["الخصوصية", "يُدار سياق العميل وحركته الشخصية بكثير من التحفظ."],
           ["السرية", "تُقدم الفخامة دون استعراض غير ضروري."],
@@ -769,7 +772,7 @@ const content = {
         ]
       },
       inquiry: {
-        label: "Contact & Private Inquiry",
+        label: "التواصل والطلب الخاص",
         title: "ابدأ بطلب خاص.",
         body: "شاركنا الطلب أو الوجهة أو المناسبة أو احتياج نمط الحياة. ستراجع وصول السياق وتقترح مسار الخدمة الأنسب بسرية.",
         request: "طلب تواصل خاص",
@@ -780,13 +783,16 @@ const content = {
     },
     serviceLabels: {
       forWhom: "لمن",
+      bestFor: "الأفضل عند",
       when: "متى تكون مهمة",
       handles: "ما تتولاه وصول",
       standard: "معيار التجربة",
       difference: "ما يجعل التجربة مختلفة",
+      wosolDifference: "ما يميز تجربة وصول",
       samples: "نماذج طلبات",
+      typicalRequests: "نماذج طلبات",
       audience: "ملاءمة الشريحة المستهدفة",
-      outcome: "الأثر العاطفي",
+      outcome: "النتيجة",
       back: "العودة إلى الخدمات"
     }
   }
@@ -950,7 +956,7 @@ function renderCover() {
       <div>
         <h1 class="hero-title ${textDirClass()}">${c.title}</h1>
         <p class="hero-desc ${textDirClass()}">${c.desc}</p>
-        <div class="hero-en en">${c.sub}</div>
+        <div class="hero-en ${textDirClass()}">${c.sub}</div>
         <div class="hero-actions">
           <button class="action-btn primary" type="button" data-jump="essence">${content[state.lang].nav.explore}</button>
           <button class="action-btn subtle" type="button" data-jump="services">${content[state.lang].nav.services}</button>
@@ -958,7 +964,7 @@ function renderCover() {
       </div>
       <div class="visual-frame cover-card" role="img" aria-label="${escapeHtml(c.visual)}">
         <div class="visual-caption">
-          <span class="en">Private Operating Layer</span>
+          <span class="${textDirClass()}">${state.lang === "ar" ? "طبقة تشغيل خاصة" : "Private Operating Layer"}</span>
           <strong class="${textDirClass()}">${c.visual}</strong>
         </div>
       </div>
@@ -968,7 +974,7 @@ function renderCover() {
 
 function renderSummary() {
   document.getElementById("executiveSummary").innerHTML = `
-    <span class="exec-label en">Executive Summary</span>
+    <span class="exec-label ${textDirClass()}">${state.lang === "ar" ? "الملخص التنفيذي" : "Executive Summary"}</span>
     <p class="${textDirClass()}">${content[state.lang].summary}</p>
   `;
 }
@@ -989,7 +995,7 @@ function renderBasicSections() {
     <div class="split-grid">
       <div>${s.global.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}</div>
       <div class="visual-frame" role="img" aria-label="Luxury abstract global access map">
-        <div class="visual-caption"><span class="en">Global Access Map</span><strong class="${textDirClass()}">${escapeHtml(s.global.body[0])}</strong></div>
+        <div class="visual-caption"><span class="${textDirClass()}">${state.lang === "ar" ? "خريطة وصول عالمية" : "Global Access Map"}</span><strong class="${textDirClass()}">${escapeHtml(s.global.body[0])}</strong></div>
       </div>
     </div>
   `);
@@ -1042,6 +1048,9 @@ function renderPartnerShowcase(items) {
 function renderPartnerGallery(items, roles, variant) {
   const isMobile = variant === "mobile";
   const readLabel = state.lang === "ar" ? "استكشف الفئة" : "Explore category";
+  const galleryLabel = state.lang === "ar"
+    ? (isMobile ? "عرض الوصول للجوال" : "معرض الوصول المنتقى")
+    : (isMobile ? "Curated Access View" : "Curated Access Gallery");
   const slides = items.map((item, index) => `
     <article class="partner-gallery-card" data-partner-slide="${index}">
       <img src="assets/images/partners/${ecosystemImageFiles[index]}.jpg" alt="${escapeHtml(item)}" loading="lazy" />
@@ -1061,7 +1070,7 @@ function renderPartnerGallery(items, roles, variant) {
     <div class="partner-gallery partner-gallery--${variant}" data-partner-gallery>
       <div class="partner-gallery-head">
         <div>
-          <span class="closing-label en">${isMobile ? (state.lang === "ar" ? "Mobile Access View" : "Curated Access View") : (state.lang === "ar" ? "Curated Access Gallery" : "Curated Access Gallery")}</span>
+          <span class="closing-label ${textDirClass()}">${galleryLabel}</span>
           <p class="${textDirClass()}">${state.lang === "ar" ? "استعرض فئات الوصول بصور واضحة وتفاصيل مختصرة." : "Browse partner categories through larger, clearer visual cards."}</p>
         </div>
         <div class="partner-gallery-controls">
@@ -1230,32 +1239,44 @@ function renderServiceDetail(id) {
   const service = getServices().find((item) => item.id === id);
   if (!service) return;
   const labels = content[state.lang].serviceLabels;
+  const listSummary = (items) => items.slice(0, 3).join(state.lang === "ar" ? "، " : ", ");
+  const quickSummary = [
+    [labels.forWhom, listSummary(service.forWhom)],
+    [labels.bestFor, listSummary(service.whenItMatters)],
+    [labels.outcome, service.outcome]
+  ];
   document.getElementById("serviceDetailContent").innerHTML = `
     <div class="service-hero">
       <div>
         <span class="doc-label en">${escapeHtml(service.category)}</span>
         <h2 class="page-title ${textDirClass()}" id="serviceTitle">${escapeHtml(service.title)}</h2>
+        <p class="service-tagline ${textDirClass()}">${escapeHtml(service.tagline)}</p>
         <p class="hero-desc ${textDirClass()}">${escapeHtml(service.description)}</p>
-        <div class="hero-en en">${escapeHtml(service.tagline)}</div>
-        <div class="service-actions">
-          <a class="action-btn primary" href="mailto:info@wosolconcierge.com?subject=${encodeURIComponent(service.title + " Inquiry")}">${escapeHtml(service.cta)}</a>
-          <button class="action-btn subtle" type="button" data-close-service>${labels.back}</button>
-        </div>
       </div>
       <div class="visual-frame service-image-frame" style="--service-image: url('${escapeHtml(service.image)}')" role="img" aria-label="${escapeHtml(service.imagePrompt)}">
-        <div class="visual-caption"><span class="en">Image Direction</span><strong class="${textDirClass()}">${escapeHtml(service.imageLabel)}</strong></div>
+        <div class="visual-caption"><span class="${textDirClass()}">${escapeHtml(service.category)}</span><strong class="${textDirClass()}">${escapeHtml(service.imageLabel)}</strong></div>
       </div>
     </div>
-    <div class="detail-grid">
-      ${detailBlock(labels.outcome, service.outcome)}
-      ${detailBlock(labels.standard, service.experienceStandard)}
-      ${detailList(labels.forWhom, service.forWhom)}
-      ${detailList(labels.when, service.whenItMatters)}
-      ${detailList(labels.handles, service.wosolHandles)}
-      ${detailList(labels.samples, service.sampleRequests)}
-      ${detailBlock(labels.difference, service.difference, true)}
-      ${detailBlock(labels.audience, service.audienceRelevance)}
+    <div class="service-quick-strip">
+      ${quickSummary.map(([title, value]) => `
+        <section class="service-quick-card">
+          <h3 class="${textDirClass()}">${escapeHtml(title)}</h3>
+          <p class="${textDirClass()}">${escapeHtml(value)}</p>
+        </section>
+      `).join("")}
     </div>
+    <div class="service-focus-grid">
+      ${detailList(labels.handles, service.wosolHandles, "service-chip-list")}
+      ${detailList(labels.typicalRequests, service.sampleRequests, "service-chip-list subtle")}
+    </div>
+    <section class="service-difference">
+      <span class="${textDirClass()}">${escapeHtml(labels.wosolDifference)}</span>
+      <p class="${textDirClass()}">${escapeHtml(service.difference)}</p>
+      <div class="service-actions">
+        <a class="action-btn primary" href="mailto:info@wosolconcierge.com?subject=${encodeURIComponent(service.title + " Inquiry")}">${escapeHtml(service.cta)}</a>
+        <button class="action-btn subtle" type="button" data-close-service>${labels.back}</button>
+      </div>
+    </section>
   `;
   const detail = document.getElementById("serviceDetail");
   detail.classList.add("open");
@@ -1273,11 +1294,11 @@ function detailBlock(title, value, full = false) {
   `;
 }
 
-function detailList(title, items) {
+function detailList(title, items, className = "") {
   return `
     <section class="detail-block">
-      <h3 class="en">${escapeHtml(title)}</h3>
-      <ul class="detail-list ${textDirClass()}">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+      <h3 class="${textDirClass()}">${escapeHtml(title)}</h3>
+      <ul class="detail-list ${className} ${textDirClass()}">${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
     </section>
   `;
 }
