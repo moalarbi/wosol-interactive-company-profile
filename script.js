@@ -1148,7 +1148,6 @@ function sectionShell(key, inner) {
       <span class="section-num en">${section.num}</span>
       <div>
         <h2 class="section-title ${textDirClass()}">${section.title}</h2>
-        <p class="section-title-en en">${section.label}</p>
       </div>
     </div>
     <div class="section-body ${textDirClass()}">${inner}</div>
