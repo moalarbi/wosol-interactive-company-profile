@@ -1502,6 +1502,13 @@ body[dir="rtl"] .partner-gallery-card p {
   transform: translateY(-2px);
 }
 
+.social-link svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
 .closing-section {
   margin-top: 80px;
   padding-top: 48px;
