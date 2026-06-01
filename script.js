@@ -1263,7 +1263,6 @@ function renderPartnerShowcase(items) {
 
 function renderPartnerGallery(items, roles, variant) {
   const isMobile = variant === "mobile";
-  const readLabel = state.lang === "ar" ? "استكشف الفئة" : "Explore category";
   const galleryLabel = state.lang === "ar"
     ? (isMobile ? "فئات الوصول" : "معرض الوصول")
     : (isMobile ? "Curated Access View" : "Curated Access Gallery");
@@ -1274,7 +1273,6 @@ function renderPartnerGallery(items, roles, variant) {
       <div class="partner-gallery-card__content">
         <h3 class="${textDirClass()}">${escapeHtml(item)}</h3>
         <p class="${textDirClass()}">${escapeHtml(roles[index])}</p>
-        <span class="partner-gallery-card__link ${textDirClass()}">${readLabel}</span>
       </div>
     </article>
   `).join("");

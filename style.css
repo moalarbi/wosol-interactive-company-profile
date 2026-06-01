@@ -983,7 +983,7 @@ html[dir="ltr"] .card-cta-arrow::after {
 }
 
 .partner-gallery-card p {
-  margin: 0 0 26px;
+  margin: 0;
   color: rgba(237, 233, 227, 0.78);
   font-size: 13px;
   letter-spacing: 0.12em;
@@ -993,22 +993,6 @@ html[dir="ltr"] .card-cta-arrow::after {
 body[dir="rtl"] .partner-gallery-card p {
   letter-spacing: 0;
   text-transform: none;
-}
-
-.partner-gallery-card__link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--beige-warm);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.partner-gallery-card__link::after {
-  content: '';
-  width: 22px;
-  height: 1px;
-  margin-inline-start: 10px;
-  background: currentColor;
 }
 
 .partner-gallery-dots {
@@ -2124,7 +2108,6 @@ html[lang="ar"] .service-difference span {
   }
 
   .partner-gallery-card p {
-    margin-bottom: 22px;
     font-size: 11px;
   }
 
