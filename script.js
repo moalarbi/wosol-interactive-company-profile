@@ -773,104 +773,104 @@ for (const blueprint of serviceBlueprints) {
 const content = {
   en: {
     meta: "",
-    nav: { explore: "Explore Profile", services: "View Services", copy: "Copy", copied: "Copied" },
+    nav: { explore: "Private Assessment", services: "Request Pathways", copy: "Copy", copied: "Copied" },
     cover: {
       label: "",
-      title: "Private Lifestyle Management, Designed Around You.",
-      desc: "WOSOL Concierge manages the hidden complexity behind high-value lifestyles through privacy, anticipation, trusted access, and seamless execution.",
-      sub: "Luxury concierge · travel · access · events · private lifestyle coordination",
-      visual: "Quiet coordination for people whose time, privacy, and standards require a trusted operating partner."
+      title: "Every Detail, Quietly Handled.",
+      desc: "WOSOL begins with a private review of your context, then recommends the right path for travel, access, hosting, lifestyle, or executive coordination.",
+      sub: "Private assessment · discreet coordination · request-led access",
+      visual: "A private operating layer for people whose time, privacy, and standards require careful judgment."
     },
-    summary: "WOSOL Concierge is not simply a service provider. It is a <strong>private lifestyle management partner</strong> for individuals, families, executives, corporate clients, VIP guests, and luxury partners who require trusted coordination across travel, access, hospitality, events, assets, and daily life.",
+    summary: "WOSOL Concierge is a <strong>private operating relationship</strong>, not a public catalogue. Each request is reviewed for fit, timing, sensitivity, availability, and the level of coordination required before a service path is recommended.",
     sections: {
       essence: {
         num: "02",
-        title: "Brand Essence",
-        label: "Private Lifestyle Management Partner",
+        title: "The Private Layer",
+        label: "Relationship Before Service",
         body: [
-          "WOSOL exists for clients whose lives move across private, professional, and international contexts. The role is not to add noise, but to remove complexity from the background of high-value living.",
-          "The brand manages time, access, privacy, service quality, and follow-through through one discreet coordination layer."
+          "WOSOL is built for requests that need judgment before action. The first step is understanding the client, the context, and the outcome that matters.",
+          "The relationship stays intentionally private. What appears simple to the client is supported by scoping, partner review, confirmations, and follow-through."
         ],
         cards: [
-          ["Complexity", "WOSOL translates broad lifestyle needs into executable requests with clear ownership."],
-          ["Time", "The client does not need to manage every vendor, confirmation, route, and change."],
-          ["Privacy", "Requests are handled with discretion and sensitivity to family, business, and social context."]
+          ["Assessment", "Every request is reviewed before it is positioned, priced, or handed to a partner."],
+          ["Judgment", "The team identifies what should be arranged, what should be avoided, and what needs confirmation."],
+          ["Privacy", "Client context is kept within the smallest practical circle required to execute the request."]
         ]
       },
       principles: {
         num: "03",
-        title: "Vision, Mission & Values",
-        label: "Profile Foundation From Source PDF",
+        title: "What WOSOL Protects",
+        label: "The Standard Behind Each Request",
         cards: [
-          ["Vision", "Be a premier global luxury concierge group, strategically driving investments across the tourism sector."],
-          ["Mission", "Empower our brands to deliver exceptional hospitality experiences, creating lasting value for our stakeholders."],
-          ["Values", "Luxury is not just about appearances, but experiences designed with care to enhance your lifestyle with ease and privacy."]
+          ["Time", "The client should not have to manage every supplier, route, change, or confirmation."],
+          ["Privacy", "Personal movement, guest details, and sensitive preferences are handled with restraint."],
+          ["Clarity", "The client receives what is possible, what is conditional, and what requires further review."]
         ]
       },
       global: {
         num: "04",
-        title: "Global Reach",
-        label: "Serving You Globally",
-        body: ["Serving you globally, no matter where you are.", "WOSOL is positioned around international movement, trusted access, and private coordination across destinations, residences, events, and lifestyle needs."],
-        metrics: [["16", "Concierge service families"], ["05", "Client segment pathways"], ["Global", "By request and partner network"], ["Private", "Inquiry-led coordination"]]
+        title: "Where The Relationship Moves",
+        label: "By Request, Context, And Availability",
+        body: ["WOSOL supports private requests across destinations, residences, hospitality, events, travel, access, and lifestyle coordination.", "Each movement depends on destination, timing, client fit, partner terms, and the level of privacy required."],
+        metrics: [["Private", "Assessment first"], ["Selected", "Partner network"], ["Global", "By request"], ["Separate", "Third-party costs"]]
       },
       ecosystem: {
         num: "05",
         title: "Partnership Network",
-        label: "Approved Luxury Access Landscape",
-        body: ["WOSOL coordinates client requests through a selected network across luxury hospitality, private aviation, residences, yachts, lifestyle, and premium service partners.", "Each request is reviewed against availability, destination, timing, privacy, and partner terms before execution."],
-        items: []
+        label: "Selected Access, Not A Public Promise",
+        body: ["WOSOL works through selected partners across hospitality, aviation, residences, yachts, lifestyle, and premium services.", "Partner access is always subject to availability, timing, client fit, request sensitivity, pricing, and the partner’s own terms."],
+        items: ["Luxury Hotels", "Private Aviation", "Yachts", "Private Resorts", "Fine Dining", "Wellness Retreats", "Real Estate", "Luxury Fashion", "Art & Design", "Private Events"]
       },
       services: {
         num: "06",
-        title: "Services Overview",
-        label: "Explore Dedicated Service Profiles",
-        all: "All Services",
+        title: "Request Pathways",
+        label: "What May Be Reviewed Privately",
+        all: "All Pathways",
         empty: "No services match the current filter.",
-        explore: "Explore Service"
+        explore: "Review Pathway"
       },
       segments: {
         num: "08",
         title: "Client Segments",
         label: "Pathways By Client Need",
         cards: [
-          ["Private Individuals", "Need time protection, privacy, and refined lifestyle support.", "Lifestyle Concierge, Personal Assistant, VIP Access"],
-          ["Corporate & Executives", "Need seamless travel, hosting, and high-value guest coordination.", "Business Travel, Corporate Concierge, Transportation"],
-          ["Families & Estates", "Need continuity, trusted support, and destination or residence coordination.", "Luxury Accommodation, Travel Management, Lifestyle Concierge"],
-          ["VIP Guests", "Need arrival care, privileged access, and discreet movement.", "VIP Access, Transportation, Event Planning"],
-          ["Luxury Partners", "Need a reliable concierge layer for premium client experiences.", "Corporate Concierge, Events, Yacht Charters"]
+          ["Private Individuals", "Need discreet coordination for travel, hosting, access, and personal requests.", "Assessment, scoping, execution"],
+          ["Executives & Offices", "Need reliable handling for movement, guests, meetings, and time-sensitive details.", "Travel, hosting, logistics"],
+          ["Families & Estates", "Need continuity, trusted communication, and careful management of preferences.", "Residence, travel, lifestyle"],
+          ["VIP Guests", "Need quiet arrival care, route planning, and carefully selected access.", "Reception, movement, access"],
+          ["Luxury Partners", "Need a private concierge layer that protects the quality of their client experience.", "Guest care, events, support"]
         ]
       },
       process: {
         num: "09",
         title: "How WOSOL Works",
-        label: "Private Inquiry To Continuous Relationship",
+        label: "Private Assessment To Execution",
         steps: [
-          ["Private Inquiry", "The request is received discreetly and scoped for timing, sensitivity, and intended outcome."],
-          ["Lifestyle Assessment", "Preferences, priorities, privacy needs, and service history are translated into a working profile."],
-          ["Service Matching", "WOSOL identifies the right service path and partner layer for the request."],
-          ["Execution & Coordination", "The team coordinates vendors, timing, communication, confirmations, and contingency handling."],
-          ["Continuous Relationship", "Client understanding improves over time, reducing repetition and increasing precision."]
+          ["Private Inquiry", "The request is received with the minimum information needed to understand intent, timing, and sensitivity."],
+          ["Private Assessment", "WOSOL reviews fit, feasibility, privacy needs, partner options, and likely conditions."],
+          ["Recommended Path", "The client receives a practical route, including what is possible and what remains conditional."],
+          ["Execution", "Confirmations, partners, timelines, changes, and communication are coordinated through one layer."],
+          ["Relationship Memory", "Useful preferences are retained so future requests require less repetition and more precision."]
         ]
       },
       standard: {
         num: "10",
-        title: "The WOSOL Standard",
-        label: "Operating Principles",
+        title: "Boundaries & Standards",
+        label: "What Keeps The Relationship Precise",
         cards: [
-          ["Privacy", "Client context and personal movement are handled with restraint."],
-          ["Discretion", "Luxury is delivered without unnecessary display."],
-          ["Anticipation", "Preferences and risks are considered before the client has to chase details."],
-          ["Trusted Access", "Requests move through suitable partners and informed channels."],
-          ["Seamless Coordination", "The visible experience stays calm because the operating layer is managed."],
-          ["Personal Understanding", "Service improves through familiarity, not generic scripts."]
+          ["No Open Access Claims", "Partner access is reviewed case by case and is never presented as unlimited or automatic."],
+          ["Separate Costs", "Hotels, aviation, yachts, suppliers, venues, and other third-party costs remain separate."],
+          ["No Regulated Advice", "WOSOL does not provide legal, financial, medical, or investment advice."],
+          ["Request Review", "Some requests may be declined, deferred, or redirected if fit, timing, or standards are not suitable."],
+          ["Discretion", "Luxury is handled without unnecessary display or excessive explanation."],
+          ["Continuity", "The relationship improves as preferences and expectations become clearer over time."]
         ]
       },
       inquiry: {
-        label: "Contact & Private Inquiry",
-        title: "Begin With a Private Inquiry.",
-        body: "Share the request, destination, occasion, or lifestyle need. WOSOL will review the context and recommend the right service path with discretion.",
-        request: "Request Private Inquiry",
+        label: "Private Assessment",
+        title: "Begin Privately.",
+        body: "Share the request, destination, occasion, or context. WOSOL will review whether the request fits the relationship and recommend the next step discreetly.",
+        request: "Request Private Assessment",
         email: "Email",
         phone: "Phone",
         website: "Website"
@@ -893,104 +893,104 @@ const content = {
   },
   ar: {
     meta: "",
-    nav: { explore: "ابدأ التصفح", services: "الخدمات", copy: "نسخ", copied: "تم النسخ" },
+    nav: { explore: "اطلب تقييماً خاصاً", services: "مسارات الطلب", copy: "نسخ", copied: "تم النسخ" },
     cover: {
       label: "",
-      title: "خدمات كونسيرج خاصة مصممة لك",
-      desc: "من السفر والإقامة إلى الضيافة، التنقل، الوصول الخاص، والمناسبات. وصول ترتب التفاصيل التي لا تريد أن تنشغل بها.",
-      sub: "كونسيرج خاص · سفر · ضيافة · وصول · مناسبات",
-      visual: "تفاصيلك الخاصة تُدار بهدوء وخصوصية."
+      title: "كل التفاصيل، معتنى بها.",
+      desc: "تبدأ وصول بفهم سياقك أولاً، ثم تقترح المسار الأنسب للسفر، الوصول، الضيافة، أسلوب الحياة، أو التنسيق التنفيذي.",
+      sub: "تقييم خاص · تنسيق سري · وصول حسب الطلب",
+      visual: "طبقة تشغيل خاصة لمن يحتاج إلى وقت محفوظ، خصوصية أعلى، وحكم أدق."
     },
-    summary: "وصول تمنحك جهة واحدة تفهم الطلب، ترتب الخيارات، وتتابع التنفيذ <strong>بخصوصية ووضوح</strong>، حتى لا تضيع التفاصيل بين أكثر من طرف.",
+    summary: "وصول ليست قائمة خدمات مفتوحة. هي <strong>علاقة تشغيل خاصة</strong> تبدأ بتقييم الطلب، ملاءمته، توقيته، حساسيته، والشركاء المناسبين قبل اقتراح أي مسار تنفيذ.",
     sections: {
       essence: {
         num: "02",
-        title: "ما الذي تحصل عليه",
-        label: "إدارة خاصة لطلباتك المهمة",
+        title: "الطبقة الخاصة",
+        label: "العلاقة قبل الخدمة",
         body: [
-          "عندما يكون الطلب مهماً أو حساساً، لا تحتاج إلى شرح التفاصيل لأكثر من جهة.",
-          "وصول تحدد المطلوب، تختار المسار الأنسب، وتتابع التنفيذ حتى تحصل على نتيجة واضحة."
+          "عندما يكون الطلب مهماً أو حساساً، لا يبدأ التنفيذ قبل فهم السياق والنتيجة المطلوبة.",
+          "وصول تراجع الطلب، تحدد المسار المناسب، وتدير التأكيدات والمتابعة من خلال جهة واحدة."
         ],
         cards: [
-          ["تنفيذ أوضح", "طلبك يتحول إلى خطوات قابلة للمتابعة."],
-          ["متابعة أقل", "المواعيد والتأكيدات تُدار نيابة عنك."],
-          ["خصوصية أعلى", "تفاصيلك تبقى ضمن نطاق محدود وواضح."]
+          ["تقييم", "كل طلب يُراجع قبل تسعيره أو توجيهه إلى شريك."],
+          ["حكم", "نحدد ما يمكن ترتيبه، وما يحتاج شروطاً، وما لا يناسب الطلب."],
+          ["خصوصية", "تفاصيلك تبقى ضمن أضيق نطاق عملي يخدم التنفيذ."]
         ]
       },
       principles: {
         num: "03",
-        title: "ما نلتزم به",
-        label: "أساس التجربة",
+        title: "ما تحميه وصول",
+        label: "المعيار خلف كل طلب",
         cards: [
-          ["الثقة", "تعرف من يتابع طلبك وما الخطوة التالية."],
-          ["الخصوصية", "وجهتك، ضيوفك، وتفاصيلك لا تُتداول إلا عند الحاجة."],
-          ["الوضوح", "نوضح الممكن، الوقت المتوقع، وأي شروط قبل التنفيذ."]
+          ["الوقت", "لا تحتاج إلى متابعة كل مورد، تأكيد، مسار، أو تغيير بنفسك."],
+          ["الخصوصية", "حركتك، ضيوفك، وتفضيلاتك الحساسة تُدار بتحفظ."],
+          ["الوضوح", "نوضح الممكن، المشروط، وما يحتاج مراجعة إضافية."]
         ]
       },
       global: {
         num: "04",
-        title: "داخل المملكة وخارجها",
-        label: "خدمة تتحرك مع احتياجك",
-        body: ["سواء كان طلبك داخل المملكة أو في وجهة دولية، تعمل وصول عبر شبكة شركاء مختارة حسب نوع الطلب.", "تحصل على خيارات مناسبة للوجهة، الوقت، مستوى الخصوصية، والميزانية."],
-        metrics: [["16", "خدمة رئيسية"], ["05", "مسارات احتياج"], ["عالمي", "حسب الوجهة"], ["خاص", "تواصل مباشر وسري"]]
+        title: "حيث يتحرك طلبك",
+        label: "حسب السياق والتوفر والملاءمة",
+        body: ["تدعم وصول الطلبات الخاصة داخل المملكة وخارجها في السفر، الإقامة، الضيافة، الوصول، المناسبات، ونمط الحياة.", "كل طلب يرتبط بالوجهة، التوقيت، ملاءمة العميل، شروط الشريك، ومستوى الخصوصية المطلوب."],
+        metrics: [["خاص", "تقييم أولاً"], ["مختار", "شبكة شركاء"], ["عالمي", "حسب الطلب"], ["منفصل", "تكاليف الأطراف الأخرى"]]
       },
       ecosystem: {
         num: "05",
         title: "شبكة الشراكات",
-        label: "نطاق وصول فاخر معتمد",
-        body: ["تعمل وصول عبر شبكة مختارة في الضيافة الفاخرة، الطيران الخاص، الإقامات، اليخوت، العقار، ونمط الحياة.", "يُراجع كل طلب حسب الوجهة، التوقيت، الخصوصية، التوفر، وشروط الشريك قبل بدء التنفيذ."],
-        items: []
+        label: "وصول مختار وليس وعداً عاماً",
+        body: ["تعمل وصول مع شركاء مختارين في الضيافة، الطيران، الإقامات، اليخوت، نمط الحياة، والخدمات الراقية.", "أي وصول عبر الشركاء يخضع للتوفر، التوقيت، ملاءمة الطلب، التسعير، وحسب شروط الشريك."],
+        items: ["فنادق فاخرة", "طيران خاص", "يخوت", "منتجعات خاصة", "مطاعم وتجارب", "عافية واستشفاء", "عقارات مختارة", "أزياء فاخرة", "فن وتصميم", "استضافة خاصة"]
       },
       services: {
         num: "06",
-        title: "الخدمات",
-        label: "اختر ما يناسب طلبك",
-        all: "كل الخدمات",
+        title: "مسارات الطلب",
+        label: "ما يمكن مراجعته بشكل خاص",
+        all: "كل المسارات",
         empty: "لا توجد خدمات مطابقة للتصفية الحالية.",
-        explore: "اعرض التفاصيل"
+        explore: "راجع المسار"
       },
       segments: {
         num: "08",
         title: "لمن صممت الخدمة",
         label: "احتياجات مختلفة، جهة واحدة",
         cards: [
-          ["الأفراد", "طلبات شخصية، سفر، وصول خاص، وتنسيق يومي يقلل انشغالك.", "كونسيرج نمط الحياة، المساعد الشخصي، الوصول الخاص"],
-          ["التنفيذيون والشركات", "سفر أعمال، استقبال ضيوف، اجتماعات، وضيافة بمستوى يليق بالجهة.", "سفر الأعمال، كونسيرج الشركات، التنقل"],
-          ["العائلات", "إقامات، سفر، مناسبات، وخدمات منزلية تحتاج متابعة موثوقة.", "الإقامة الفاخرة، إدارة السفر، كونسيرج نمط الحياة"],
-          ["الضيوف المهمون", "استقبال، تنقل، إقامة، ووصول خاص بتجربة مرتبة من البداية.", "الوصول الخاص، التنقل، تخطيط المناسبات"],
-          ["الشركاء", "طبقة كونسيرج تضيف قيمة لتجربة عملائك وتخفف العبء التشغيلي.", "كونسيرج الشركات، المناسبات، تأجير اليخوت"]
+          ["الأفراد", "طلبات شخصية تحتاج خصوصية وتنسيقاً هادئاً للسفر، الضيافة، والوصول.", "تقييم، ترتيب، متابعة"],
+          ["التنفيذيون والمكاتب", "حركة، ضيوف، اجتماعات، وتفاصيل حساسة تحتاج جهة واحدة.", "سفر، ضيافة، لوجستيات"],
+          ["العائلات", "استمرارية في التفضيلات، التواصل، وترتيب الرحلات أو الإقامات.", "إقامة، سفر، نمط حياة"],
+          ["الضيوف المهمون", "استقبال، تنقل، ووصول مختار مع قدر عال من الخصوصية.", "استقبال، حركة، وصول"],
+          ["الشركاء", "طبقة كونسيرج خاصة تحافظ على جودة تجربة عملائهم.", "ضيافة، مناسبات، دعم"]
         ]
       },
       process: {
         num: "09",
         title: "طريقة العمل",
-        label: "من أول رسالة إلى التأكيد",
+        label: "من التقييم الخاص إلى التنفيذ",
         steps: [
-          ["تشارك الطلب", "ترسل المطلوب، الوجهة، الوقت، وعدد الأشخاص إن وجد."],
-          ["نراجع الإمكانية", "نوضح الخيارات المتاحة، الوقت المتوقع، وأي شروط مهمة."],
-          ["نرتب التفاصيل", "نثبت المواعيد، الموردين، ومسار التنفيذ المناسب."],
-          ["نتابع التنفيذ", "تُدار التأكيدات والتغييرات حتى الإغلاق."],
-          ["نتذكر تفضيلاتك", "تُحفظ التفاصيل المهمة لتقليل الشرح في الطلبات القادمة."]
+          ["طلب خاص", "تشارك المطلوب، الوجهة، التوقيت، والحساسية بقدر مناسب."],
+          ["تقييم خاص", "نراجع الملاءمة، الإمكانية، مستوى الخصوصية، وخيارات الشركاء."],
+          ["مسار مقترح", "نوضح ما يمكن ترتيبه، ما يبقى مشروطاً، والخطوة التالية."],
+          ["تنفيذ", "تُدار التأكيدات، الشركاء، التوقيت، والتغييرات من جهة واحدة."],
+          ["ذاكرة العلاقة", "تُحفظ التفضيلات المهمة لتقليل الشرح ورفع الدقة لاحقاً."]
         ]
       },
       standard: {
         num: "10",
-        title: "معيار الخدمة",
-        label: "ما يحكم كل طلب",
+        title: "الحدود والمعايير",
+        label: "ما يحافظ على دقة العلاقة",
         cards: [
-          ["الخصوصية", "معلوماتك لا تُستخدم إلا بقدر ما يخدم الطلب."],
-          ["الدقة", "المواعيد والمتطلبات تُراجع قبل التنفيذ."],
-          ["الوضوح", "نقول ما يمكن ترتيبه، وما يحتاج وقتاً أو شروطاً."],
-          ["الشركاء", "كل طلب يمر عبر الجهة الأنسب له."],
-          ["المرونة", "عند التغيير، نبحث عن بدائل عملية كلما أمكن."],
-          ["المعرفة", "تفضيلاتك المهمة تُحفظ لتسهيل الطلبات القادمة."]
+          ["لا وعود مفتوحة", "الوصول عبر الشركاء يُراجع لكل حالة ولا يُقدم كوعد مطلق."],
+          ["تكاليف منفصلة", "الفنادق، الطيران، اليخوت، الموردون، والمواقع تُحسب بشكل مستقل."],
+          ["لا نصائح منظمة", "وصول لا تقدم استشارات قانونية أو مالية أو طبية أو استثمارية."],
+          ["مراجعة الطلب", "قد يُرفض أو يؤجل أو يعاد توجيه أي طلب لا يناسب التوقيت أو المعيار."],
+          ["تحفظ", "الفخامة تُدار بهدوء ودون شرح زائد أو استعراض."],
+          ["استمرارية", "تتحسن العلاقة كلما أصبحت التفضيلات والتوقعات أوضح."]
         ]
       },
       inquiry: {
-        label: "التواصل والطلب الخاص",
-        title: "ابدأ بطلبك الخاص.",
-        body: "شارك نوع الطلب، الوجهة، التاريخ، وعدد الأشخاص إن وجد. سنراجع التفاصيل ونقترح المسار الأنسب للتنفيذ.",
-        request: "طلب تواصل خاص",
+        label: "تقييم خاص",
+        title: "ابدأ بشكل خاص.",
+        body: "شارك الطلب، الوجهة، المناسبة، أو السياق. ستراجع وصول ملاءمة الطلب للعلاقة وتقترح الخطوة التالية بهدوء.",
+        request: "اطلب تقييماً خاصاً",
         email: "البريد الإلكتروني",
         phone: "الهاتف",
         website: "الموقع الإلكتروني"
@@ -1118,7 +1118,7 @@ const socialIcons = {
 };
 
 let state = {
-  lang: "en",
+  lang: "ar",
   filter: "all"
 };
 
@@ -1171,24 +1171,28 @@ function card(title, desc, index, featured = false, meta = "") {
 
 function renderCover() {
   const c = content[state.lang].cover;
+  const cover = document.getElementById("cover");
   document.getElementById("documentMeta").textContent = content[state.lang].meta;
-  document.getElementById("cover").innerHTML = `
-    <div class="hero-layout">
-      <div>
-        <h1 class="hero-title ${textDirClass()}">${c.title}</h1>
-        <p class="hero-desc ${textDirClass()}">${c.desc}</p>
-        <div class="hero-en ${textDirClass()}">${c.sub}</div>
-        <div class="hero-actions">
-          <button class="action-btn primary" type="button" data-jump="essence">${content[state.lang].nav.explore}</button>
-          <button class="action-btn subtle" type="button" data-jump="services">${content[state.lang].nav.services}</button>
-        </div>
+  cover.classList.add("video-hero");
+  cover.innerHTML = `
+    <video
+      class="hero-video"
+      src="https://yellowstoneclub.com/images/Mountains-v6-3mbps.mp4"
+      poster="https://yellowstoneclub.com/imager/images/5628/home-page-banner_0f233927fd5f15efa70a39d82348704b.jpg"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      aria-hidden="true"
+    ></video>
+    <div class="hero-video-overlay" aria-hidden="true"></div>
+    <div class="hero-video-content">
+      <div class="hero-video-logo en" aria-label="WOSOL Concierge">
+        <span class="hero-video-logo__name">WOSOL</span>
+        <span class="hero-video-logo__sub">CONCIERGE</span>
       </div>
-      <div class="visual-frame cover-card" role="img" aria-label="${escapeHtml(c.visual)}">
-        <div class="visual-caption">
-          <span class="${textDirClass()}">${state.lang === "ar" ? "تنسيق خاص" : "Private Operating Layer"}</span>
-          <strong class="${textDirClass()}">${c.visual}</strong>
-        </div>
-      </div>
+      <h1 class="hero-title ${textDirClass()}">${c.title}</h1>
     </div>
   `;
 }
@@ -1370,9 +1374,15 @@ function renderInquiry() {
       ${socialIcons[item.icon]}
     </a>
   `).join("");
+  const inquiry = content[state.lang].sections.inquiry;
   document.getElementById("inquiry").innerHTML = `
     <div class="contact-signature">
       <div class="contact-signature__inner">
+        <div class="private-assessment-copy">
+          <span class="closing-label ${textDirClass()}">${escapeHtml(inquiry.label)}</span>
+          <h2 class="${textDirClass()}">${escapeHtml(inquiry.title)}</h2>
+          <p class="${textDirClass()}">${escapeHtml(inquiry.body)}</p>
+        </div>
         <div class="contact-brand en" aria-label="WOSOL Concierge">
           <span class="contact-brand__name">WOSOL</span>
           <span class="contact-brand__sub">CONCIERGE</span>
