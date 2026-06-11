@@ -816,10 +816,10 @@ const content = {
       },
       ecosystem: {
         num: "05",
-        title: "Partners & Access Ecosystem",
-        label: "Curated Network, Not Public Claims",
-        body: ["WOSOL operates through a curated partner ecosystem. Partner categories are shown without unsupported logo usage, preserving professionalism and rights clarity."],
-        items: ["Luxury hotels", "Private aviation", "Superyachts", "Resorts", "Fine dining", "Wellness retreats", "Real estate", "Luxury fashion", "Art and design", "Private events"]
+        title: "Partnership Network",
+        label: "Approved Luxury Access Landscape",
+        body: ["WOSOL coordinates client requests through a selected network across luxury hospitality, private aviation, residences, yachts, lifestyle, and premium service partners.", "Each request is reviewed against availability, destination, timing, privacy, and partner terms before execution."],
+        items: []
       },
       services: {
         num: "06",
@@ -937,10 +937,10 @@ const content = {
       },
       ecosystem: {
         num: "05",
-        title: "شبكة الوصول",
-        label: "شركاء مناسبون لكل طلب",
-        body: ["تستفيد طلباتك من شركاء في الضيافة، السفر، التنقل، العقار، والمناسبات، مع توضيح التوفر والشروط قبل بدء التنفيذ."],
-        items: ["فنادق فاخرة", "طيران خاص", "يخوت", "منتجعات", "مطاعم", "استشفاء", "عقارات", "أزياء", "فن وتصميم", "مناسبات"]
+        title: "شبكة الشراكات",
+        label: "نطاق وصول فاخر معتمد",
+        body: ["تعمل وصول عبر شبكة مختارة في الضيافة الفاخرة، الطيران الخاص، الإقامات، اليخوت، العقار، ونمط الحياة.", "يُراجع كل طلب حسب الوجهة، التوقيت، الخصوصية، التوفر، وشروط الشريك قبل بدء التنفيذ."],
+        items: []
       },
       services: {
         num: "06",
@@ -1039,68 +1039,28 @@ for (const blueprint of serviceBlueprints) {
   blueprint.imagePrompt = imagePrompts[blueprint.id];
 }
 
-const ecosystemImageFiles = [
-  "luxury-hotels",
-  "private-aviation",
-  "superyachts",
-  "resorts",
-  "fine-dining",
-  "wellness-retreats",
-  "real-estate",
-  "luxury-fashion",
-  "art-and-design",
-  "private-events"
-];
-
-const ecosystemRoles = {
-  en: [
-    "Hospitality access",
-    "Private mobility",
-    "Marine lifestyle",
-    "Resort stays",
-    "Dining curation",
-    "Wellness retreats",
-    "Property access",
-    "Personal style",
-    "Culture and interiors",
-    "Private hosting"
-  ],
-  ar: [
-    "ضيافة فاخرة",
-    "تنقل خاص",
-    "تجارب بحرية",
-    "إقامات خاصة",
-    "مطاعم وتجارب",
-    "عافية واستشفاء",
-    "عقارات مختارة",
-    "أزياء وإهداء",
-    "فن وتصميم",
-    "استضافة خاصة"
-  ]
-};
-
-const accessLogos = [
-  "Four Seasons",
-  "Mandarin Oriental",
-  "Aman",
-  "Dorchester Collection",
-  "Waldorf Astoria",
-  "Bvlgari Hotels & Resorts",
-  "Rosewood Hotel Group",
-  "One&Only",
-  "The Ritz-Carlton",
-  "Raffles",
-  "The Leading Hotels of the World",
-  "JOALI",
-  "Rocco Forte Hotels",
-  "Anantara",
-  "Cheval Blanc",
-  "Jumeirah",
-  "The Luxury Collection",
-  "Alpha Star Aviation Services",
-  "Edmiston",
-  "Cabrio",
-  "Maison de L'Amie Flowers"
+const partnerBrands = [
+  { name: "Dorchester Collection", slug: "dorchester-collection", category: { en: "Luxury hospitality", ar: "ضيافة فاخرة" } },
+  { name: "Waldorf Astoria", slug: "waldorf-astoria", category: { en: "Hotels & residences", ar: "فنادق وإقامات" } },
+  { name: "The Ritz-Carlton", slug: "ritz-carlton", category: { en: "Club hospitality", ar: "ضيافة راقية" } },
+  { name: "The Luxury Collection", slug: "luxury-collection", category: { en: "Luxury hotels", ar: "فنادق فاخرة" } },
+  { name: "The Leading Hotels of the World", slug: "leading-hotels", category: { en: "Independent luxury hotels", ar: "فنادق عالمية مختارة" } },
+  { name: "Rosewood Hotels & Resorts", slug: "rosewood", category: { en: "Hotels & resorts", ar: "فنادق ومنتجعات" } },
+  { name: "Rocco Forte Hotels", slug: "rocco-forte", category: { en: "European hospitality", ar: "ضيافة أوروبية" } },
+  { name: "Raffles Hotels & Resorts", slug: "raffles", category: { en: "Iconic hospitality", ar: "ضيافة أيقونية" } },
+  { name: "Alpha Star Aviation Services", slug: "alpha-star", category: { en: "Private aviation", ar: "طيران خاص" } },
+  { name: "One&Only", slug: "one-and-only", category: { en: "Resorts & private stays", ar: "منتجعات وإقامات خاصة" } },
+  { name: "Mandarin Oriental", slug: "mandarin-oriental", category: { en: "Hotel group", ar: "مجموعة فندقية" } },
+  { name: "Jumeirah Hotels & Resorts", slug: "jumeirah", category: { en: "Hotels & resorts", ar: "فنادق ومنتجعات" } },
+  { name: "JOALI", slug: "joali", category: { en: "Island resorts", ar: "منتجعات جزرية" } },
+  { name: "Four Seasons", slug: "four-seasons", category: { en: "Hotels & residences", ar: "فنادق وإقامات" } },
+  { name: "Edmiston", slug: "edmiston", category: { en: "Yacht access", ar: "وصول لليخوت" } },
+  { name: "Cheval Blanc", slug: "cheval-blanc", category: { en: "Maison hospitality", ar: "ضيافة ميزون" } },
+  { name: "Cabrio", slug: "cabrio", category: { en: "Mobility partner", ar: "شريك تنقل" } },
+  { name: "Bvlgari Hotels & Resorts", slug: "bvlgari", category: { en: "Hotels & resorts", ar: "فنادق ومنتجعات" } },
+  { name: "Anantara Hotels, Resorts & Spas", slug: "anantara", category: { en: "Resorts & spas", ar: "منتجعات وسبا" } },
+  { name: "Aman", slug: "aman", category: { en: "Private resorts", ar: "منتجعات خاصة" } },
+  { name: "Maison de L'Amie Flowers", slug: "maison-de-lamie", category: { en: "Floral styling", ar: "تنسيق زهور" } }
 ];
 
 const socialLinks = [
@@ -1226,7 +1186,7 @@ function renderBasicSections() {
 
   document.getElementById("ecosystem").innerHTML = sectionShell("ecosystem", `
     ${s.ecosystem.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
-    ${renderPartnerShowcase(s.ecosystem.items)}
+    ${renderPartnerShowcase()}
   `);
 
   renderAccessLogos();
@@ -1256,35 +1216,34 @@ function renderBasicSections() {
   `);
 }
 
-function renderPartnerShowcase(items) {
-  const roles = ecosystemRoles[state.lang];
-
+function renderPartnerShowcase() {
   return `
     <div class="partner-showcase" data-partner-showcase>
       <div class="partner-desktop-showcase">
-        ${renderPartnerGallery(items, roles, "desktop")}
+        ${renderPartnerGallery("desktop")}
       </div>
-      ${renderPartnerGallery(items, roles, "mobile")}
+      ${renderPartnerGallery("mobile")}
     </div>
   `;
 }
 
-function renderPartnerGallery(items, roles, variant) {
+function renderPartnerGallery(variant) {
   const isMobile = variant === "mobile";
   const galleryLabel = state.lang === "ar"
-    ? (isMobile ? "فئات الوصول" : "معرض الوصول")
-    : (isMobile ? "Curated Access View" : "Curated Access Gallery");
-  const slides = items.map((item, index) => `
+    ? (isMobile ? "شركاء الوصول" : "معرض الشراكات")
+    : (isMobile ? "Partner Access View" : "Partnership Gallery");
+  const slides = partnerBrands.map((brand, index) => `
     <article class="partner-gallery-card" data-partner-slide="${index}">
-      <img src="assets/images/partners/${ecosystemImageFiles[index]}.jpg" alt="${escapeHtml(item)}" loading="lazy" />
-      <div class="partner-gallery-card__shade" aria-hidden="true"></div>
+      <div class="partner-gallery-card__logo">
+        <img src="assets/logos/partners/${brand.slug}.png" alt="${escapeHtml(brand.name)}" loading="lazy" decoding="async" />
+      </div>
       <div class="partner-gallery-card__content">
-        <h3 class="${textDirClass()}">${escapeHtml(item)}</h3>
-        <p class="${textDirClass()}">${escapeHtml(roles[index])}</p>
+        <h3 class="en">${escapeHtml(brand.name)}</h3>
+        <p class="${textDirClass()}">${escapeHtml(brand.category[state.lang])}</p>
       </div>
     </article>
   `).join("");
-  const dots = items.map((_, index) => `
+  const dots = partnerBrands.map((_, index) => `
     <button class="partner-gallery-dot ${index === 0 ? "active" : ""}" type="button" data-gallery-dot="${index}" aria-label="Go to partner slide ${index + 1}"></button>
   `).join("");
 
@@ -1310,7 +1269,7 @@ function renderPartnerGallery(items, roles, variant) {
 
 function renderAccessLogos() {
   const isArabic = state.lang === "ar";
-  const logoSet = accessLogos.map(accessLogoMarkup).join("");
+  const logoSet = partnerBrands.map(accessLogoMarkup).join("");
   document.getElementById("accessLogos").innerHTML = `
     <div class="access-logo-cloud" aria-label="${isArabic ? "علامات وشركاء ضمن نطاق الوصول الفاخر" : "Luxury access logo landscape"}">
       <div class="logo-marquee" aria-hidden="false">
@@ -1325,36 +1284,12 @@ function renderAccessLogos() {
   `;
 }
 
-function accessLogoMarkup(name) {
-  if (name === "Jumeirah") {
-    return `
-      <span class="logo-wordmark logo-wordmark--image en">
-        <img src="assets/logos/jumeirah.png" alt="Jumeirah" loading="lazy" />
-      </span>
-    `;
-  }
-  if (name === "The Luxury Collection") {
-    return `
-      <span class="logo-wordmark logo-wordmark--image logo-wordmark--luxury-collection en">
-        <img src="assets/logos/luxury-collection.svg" alt="The Luxury Collection" loading="lazy" />
-      </span>
-    `;
-  }
-  if (name === "Alpha Star Aviation Services") {
-    return `
-      <span class="logo-wordmark logo-wordmark--image logo-wordmark--alpha-star en">
-        <img src="assets/logos/alpha-star-aviation.jpeg" alt="Alpha Star Aviation Services" loading="lazy" />
-      </span>
-    `;
-  }
-  if (name === "Rocco Forte Hotels") {
-    return `
-      <span class="logo-wordmark logo-wordmark--image logo-wordmark--rocco-forte en">
-        <img src="assets/logos/rocco-forte-hotels.svg" alt="Rocco Forte Hotels" loading="lazy" />
-      </span>
-    `;
-  }
-  return `<span class="logo-wordmark en">${escapeHtml(name)}</span>`;
+function accessLogoMarkup(brand) {
+  return `
+    <span class="logo-wordmark logo-wordmark--image en">
+      <img src="assets/logos/partners/${brand.slug}.png" alt="${escapeHtml(brand.name)}" loading="lazy" decoding="async" />
+    </span>
+  `;
 }
 
 function renderServices() {
@@ -1594,33 +1529,7 @@ function bindDynamicEvents() {
   document.querySelectorAll("[data-close-service]").forEach((btn) => {
     btn.onclick = () => closeServiceDetail(true);
   });
-  bindPartnerShowcase();
   bindPartnerGallery();
-}
-
-function bindPartnerShowcase() {
-  const root = document.querySelector("[data-partner-showcase]");
-  if (!root) return;
-  const items = root.querySelectorAll("[data-partner-id]");
-  const setActive = (id) => {
-    items.forEach((item) => {
-      const active = item.dataset.partnerId === id;
-      item.classList.toggle("active", active);
-      item.classList.toggle("dimmed", !active);
-    });
-  };
-  const clearActive = () => {
-    items.forEach((item) => {
-      item.classList.toggle("active", item.dataset.partnerId === "0");
-      item.classList.remove("dimmed");
-    });
-  };
-  items.forEach((item) => {
-    item.onmouseenter = () => setActive(item.dataset.partnerId);
-    item.onfocus = () => setActive(item.dataset.partnerId);
-    item.onclick = () => setActive(item.dataset.partnerId);
-  });
-  root.onmouseleave = clearActive;
 }
 
 function bindPartnerGallery() {
