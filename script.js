@@ -1039,6 +1039,46 @@ for (const blueprint of serviceBlueprints) {
   blueprint.imagePrompt = imagePrompts[blueprint.id];
 }
 
+const ecosystemImageFiles = [
+  "luxury-hotels",
+  "private-aviation",
+  "superyachts",
+  "resorts",
+  "fine-dining",
+  "wellness-retreats",
+  "real-estate",
+  "luxury-fashion",
+  "art-and-design",
+  "private-events"
+];
+
+const ecosystemRoles = {
+  en: [
+    "Hospitality access",
+    "Private mobility",
+    "Marine lifestyle",
+    "Resort stays",
+    "Dining curation",
+    "Wellness retreats",
+    "Property access",
+    "Personal style",
+    "Culture and interiors",
+    "Private hosting"
+  ],
+  ar: [
+    "ضيافة فاخرة",
+    "تنقل خاص",
+    "تجارب بحرية",
+    "إقامات خاصة",
+    "مطاعم وتجارب",
+    "عافية واستشفاء",
+    "عقارات مختارة",
+    "أزياء وإهداء",
+    "فن وتصميم",
+    "استضافة خاصة"
+  ]
+};
+
 const partnerBrands = [
   { name: "Dorchester Collection", slug: "dorchester-collection", category: { en: "Luxury hospitality", ar: "ضيافة فاخرة" } },
   { name: "Waldorf Astoria", slug: "waldorf-astoria", category: { en: "Hotels & residences", ar: "فنادق وإقامات" } },
@@ -1186,7 +1226,7 @@ function renderBasicSections() {
 
   document.getElementById("ecosystem").innerHTML = sectionShell("ecosystem", `
     ${s.ecosystem.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
-    ${renderPartnerShowcase()}
+    ${renderPartnerShowcase(s.ecosystem.items)}
   `);
 
   renderAccessLogos();
@@ -1216,34 +1256,35 @@ function renderBasicSections() {
   `);
 }
 
-function renderPartnerShowcase() {
+function renderPartnerShowcase(items) {
+  const roles = ecosystemRoles[state.lang];
+
   return `
     <div class="partner-showcase" data-partner-showcase>
       <div class="partner-desktop-showcase">
-        ${renderPartnerGallery("desktop")}
+        ${renderPartnerGallery(items, roles, "desktop")}
       </div>
-      ${renderPartnerGallery("mobile")}
+      ${renderPartnerGallery(items, roles, "mobile")}
     </div>
   `;
 }
 
-function renderPartnerGallery(variant) {
+function renderPartnerGallery(items, roles, variant) {
   const isMobile = variant === "mobile";
   const galleryLabel = state.lang === "ar"
-    ? (isMobile ? "شركاء الوصول" : "معرض الشراكات")
-    : (isMobile ? "Partner Access View" : "Partnership Gallery");
-  const slides = partnerBrands.map((brand, index) => `
+    ? (isMobile ? "فئات الوصول" : "معرض الوصول")
+    : (isMobile ? "Curated Access View" : "Curated Access Gallery");
+  const slides = items.map((item, index) => `
     <article class="partner-gallery-card" data-partner-slide="${index}">
-      <div class="partner-gallery-card__logo">
-        <img src="assets/logos/partners/${brand.slug}.png" alt="${escapeHtml(brand.name)}" loading="lazy" decoding="async" />
-      </div>
+      <img src="assets/images/partners/${ecosystemImageFiles[index]}.jpg" alt="${escapeHtml(item)}" loading="lazy" />
+      <div class="partner-gallery-card__shade" aria-hidden="true"></div>
       <div class="partner-gallery-card__content">
-        <h3 class="en">${escapeHtml(brand.name)}</h3>
-        <p class="${textDirClass()}">${escapeHtml(brand.category[state.lang])}</p>
+        <h3 class="${textDirClass()}">${escapeHtml(item)}</h3>
+        <p class="${textDirClass()}">${escapeHtml(roles[index])}</p>
       </div>
     </article>
   `).join("");
-  const dots = partnerBrands.map((_, index) => `
+  const dots = items.map((_, index) => `
     <button class="partner-gallery-dot ${index === 0 ? "active" : ""}" type="button" data-gallery-dot="${index}" aria-label="Go to partner slide ${index + 1}"></button>
   `).join("");
 
