@@ -827,7 +827,7 @@ const content = {
         label: "Explore Dedicated Service Profiles",
         search: "Search services",
         all: "All Services",
-        empty: "No services match the current search and filter.",
+        empty: "No services match the current filter.",
         explore: "Explore Service"
       },
       segments: {
@@ -948,7 +948,7 @@ const content = {
         label: "اختر ما يناسب طلبك",
         search: "ابحث في الخدمات",
         all: "كل الخدمات",
-        empty: "لا توجد خدمات مطابقة للبحث والتصفية الحالية.",
+        empty: "لا توجد خدمات مطابقة للتصفية الحالية.",
         explore: "اعرض التفاصيل"
       },
       segments: {
@@ -1121,8 +1121,7 @@ const socialIcons = {
 
 let state = {
   lang: "en",
-  filter: "all",
-  query: ""
+  filter: "all"
 };
 
 function getServices(lang = state.lang) {
@@ -1337,16 +1336,7 @@ function renderServices() {
   const s = content[state.lang].sections.services;
   const services = getServices();
   const filtered = services.filter((service) => {
-    const matchesFilter = state.filter === "all" || service.categoryKey === state.filter;
-    const haystack = [
-      service.title,
-      service.category,
-      service.tagline,
-      service.description,
-      service.forWhom.join(" "),
-      service.sampleRequests.join(" ")
-    ].join(" ").toLowerCase();
-    return matchesFilter && haystack.includes(state.query.toLowerCase());
+    return state.filter === "all" || service.categoryKey === state.filter;
   });
 
   const categoryButtons = [
@@ -1356,7 +1346,6 @@ function renderServices() {
 
   document.getElementById("services").innerHTML = sectionShell("services", `
     <div class="service-tools">
-      <input class="search-box ${textDirClass()}" id="serviceSearch" type="search" value="${escapeHtml(state.query)}" placeholder="${s.search}" aria-label="${s.search}" />
       <div class="filter-row">${categoryButtons}</div>
     </div>
     <div class="cards-grid" id="serviceGrid">
@@ -1550,15 +1539,6 @@ function bindDynamicEvents() {
       bindDynamicEvents();
     };
   });
-  const search = document.getElementById("serviceSearch");
-  if (search) {
-    search.oninput = (event) => {
-      state.query = event.target.value;
-      renderServices();
-      bindDynamicEvents();
-      document.getElementById("serviceSearch")?.focus();
-    };
-  }
   document.querySelectorAll("[data-copy]").forEach((btn) => {
     btn.onclick = async () => {
       await copyText(btn.dataset.copy);

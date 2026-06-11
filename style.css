@@ -1019,26 +1019,7 @@ body[dir="rtl"] .partner-gallery-card p {
 }
 
 .service-tools {
-  display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
-  gap: 20px;
   margin-bottom: 28px;
-}
-
-.search-box {
-  width: 100%;
-  min-height: 44px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.72);
-  border-radius: 4px;
-  padding: 0 14px;
-  color: var(--navy-deep);
-  outline: none;
-}
-
-.search-box:focus {
-  border-color: rgba(31, 70, 109, 0.42);
-  box-shadow: 0 0 0 3px rgba(31, 70, 109, 0.06);
 }
 
 .filter-row {
