@@ -825,7 +825,6 @@ const content = {
         num: "06",
         title: "Services Overview",
         label: "Explore Dedicated Service Profiles",
-        search: "Search services",
         all: "All Services",
         empty: "No services match the current filter.",
         explore: "Explore Service"
@@ -946,7 +945,6 @@ const content = {
         num: "06",
         title: "الخدمات",
         label: "اختر ما يناسب طلبك",
-        search: "ابحث في الخدمات",
         all: "كل الخدمات",
         empty: "لا توجد خدمات مطابقة للتصفية الحالية.",
         explore: "اعرض التفاصيل"
