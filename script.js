@@ -1310,13 +1310,10 @@ function renderAccessLogos() {
   const logoSet = partnerBrands.map(accessLogoMarkup).join("");
   document.getElementById("accessLogos").innerHTML = `
     <div class="access-logo-cloud" aria-label="${isArabic ? "علامات وشركاء ضمن نطاق الوصول الفاخر" : "Luxury access logo landscape"}">
-      <div class="logo-marquee" aria-hidden="false">
+      <div class="logo-marquee logo-marquee--static" aria-hidden="false">
         <div class="logo-marquee__track">
           <div class="logo-marquee__group">${logoSet}</div>
-          <div class="logo-marquee__group" aria-hidden="true">${logoSet}</div>
         </div>
-        <span class="logo-edge-blur logo-edge-blur--left" aria-hidden="true"></span>
-        <span class="logo-edge-blur logo-edge-blur--right" aria-hidden="true"></span>
       </div>
     </div>
   `;
