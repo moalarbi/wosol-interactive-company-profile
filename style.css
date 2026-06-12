@@ -1120,7 +1120,7 @@ html[dir="ltr"] .card-cta-arrow::after {
 
 .partner-gallery-card {
   position: relative;
-  flex: 0 0 calc((100% - 44px) / 3);
+  flex: 0 0 calc((100% - 66px) / 3.25);
   min-height: 420px;
   overflow: hidden;
   border-radius: 6px;
