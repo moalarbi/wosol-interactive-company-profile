@@ -1562,7 +1562,7 @@ function initScrollReveals() {
   const nodes = document.querySelectorAll(".exec-summary, .section, .strategy-card, .process-step, .partner-gallery-card, .private-assessment-panel, .contact-signature");
   nodes.forEach((node, index) => {
     node.classList.add("reveal-on-scroll");
-    node.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+    node.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 20}ms`);
   });
 
   if (!("IntersectionObserver" in window)) {
@@ -1577,7 +1577,7 @@ function initScrollReveals() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  }, { threshold: 0.08, rootMargin: "0px 0px 8% 0px" });
 
   nodes.forEach((node) => observer.observe(node));
 }
