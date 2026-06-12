@@ -704,15 +704,29 @@ html[lang="ar"] .doc-label {
   display: block;
 }
 
+html[lang="ar"] .exec-label {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  font-size: clamp(24px, 1.9vw, 31px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--navy-deep);
+  margin-bottom: 24px;
+}
+
 .exec-summary p {
-  font-size: clamp(18px, 2.2vw, 27px);
+  font-size: clamp(18px, 1.45vw, 23px);
   font-weight: 300;
-  line-height: 2.05;
+  line-height: 1.95;
   color: var(--navy-deep);
   position: relative;
   z-index: 1;
   margin: 0;
   max-width: 920px;
+}
+
+html[lang="ar"] .exec-summary p {
+  font-size: clamp(18px, 1.55vw, 24px);
+  line-height: 1.95;
 }
 
 .exec-summary strong {
@@ -744,7 +758,7 @@ html[lang="ar"] .doc-label {
 }
 
 .section-title {
-  font-size: clamp(28px, 4.2vw, 54px);
+  font-size: clamp(30px, 3.3vw, 46px);
   font-weight: 600;
   color: var(--navy-deep);
   margin: 0;
@@ -758,9 +772,9 @@ html[lang="ar"] .doc-label {
 }
 
 .section-body {
-  font-size: 16px;
+  font-size: clamp(15px, 1vw, 17px);
   color: var(--text-body);
-  line-height: 2;
+  line-height: 1.9;
 }
 
 .section-body p {
@@ -2411,8 +2425,29 @@ html[lang="ar"] .service-difference span {
     padding: 32px 22px;
   }
 
+  html[lang="ar"] .exec-label {
+    font-size: clamp(21px, 6vw, 26px);
+    margin-bottom: 18px;
+  }
+
+  .exec-summary p,
+  html[lang="ar"] .exec-summary p {
+    font-size: 16.5px;
+    line-height: 1.9;
+  }
+
   .section-header {
     align-items: flex-start;
+  }
+
+  .section-title {
+    font-size: clamp(26px, 7.4vw, 36px);
+    line-height: 1.24;
+  }
+
+  .section-body {
+    font-size: 15px;
+    line-height: 1.85;
   }
 
   .process-step {
