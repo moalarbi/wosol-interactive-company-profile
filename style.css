@@ -12,6 +12,14 @@
   --gold-light: #d4b97a;
   --surface: rgba(255, 255, 255, 0.74);
   --shadow: 0 18px 48px rgba(4, 16, 38, 0.08);
+  --type-eyebrow: clamp(11px, 0.72vw, 12px);
+  --type-caption: clamp(12px, 0.78vw, 13px);
+  --type-small: clamp(13px, 0.86vw, 14px);
+  --type-body: clamp(15px, 0.95vw, 16px);
+  --type-lead: clamp(17px, 1.25vw, 21px);
+  --type-card-title: clamp(18px, 1.25vw, 22px);
+  --type-section-title: clamp(30px, 3vw, 42px);
+  --type-display: clamp(44px, 4.6vw, 76px);
 }
 
 * { box-sizing: border-box; }
@@ -269,7 +277,7 @@ html[lang="ar"] .page-title {
 }
 
 .top-bar-meta {
-  font-size: 10.5px;
+  font-size: var(--type-eyebrow);
   color: var(--text-light);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -434,7 +442,7 @@ html[lang="ar"] .page-title {
 }
 
 .hero-video-logo__name {
-  font-size: clamp(24px, 3vw, 42px);
+  font-size: clamp(24px, 2.55vw, 38px);
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0.20em;
@@ -451,7 +459,7 @@ html[lang="ar"] .page-title {
   margin: 0;
   align-self: center;
   color: #fff;
-  font-size: clamp(44px, 5.7vw, 94px);
+  font-size: var(--type-display);
   font-weight: 400;
   line-height: 1.12;
   text-align: center;
@@ -516,7 +524,7 @@ html[lang="ar"] .video-hero .hero-title {
 
 .hero-title,
 .page-title {
-  font-size: clamp(34px, 5vw, 58px);
+  font-size: clamp(34px, 3.8vw, 54px);
   font-weight: 700;
   color: var(--navy-deep);
   line-height: 1.15;
@@ -526,14 +534,14 @@ html[lang="ar"] .video-hero .hero-title {
 
 .hero-title {
   max-width: 640px;
-  font-size: clamp(42px, 4.8vw, 72px);
+  font-size: clamp(40px, 4vw, 64px);
   line-height: 1.08;
   margin-bottom: 30px;
   text-wrap: balance;
 }
 
 .hero-desc {
-  font-size: 17px;
+  font-size: var(--type-lead);
   font-weight: 300;
   color: var(--text-body);
   line-height: 2;
@@ -552,7 +560,7 @@ html[lang="ar"] .video-hero .hero-title {
 }
 
 .hero-en {
-  font-size: 11px;
+  font-size: var(--type-eyebrow);
   color: var(--beige-sand);
   letter-spacing: 0.20em;
   overflow-wrap: anywhere;
@@ -577,7 +585,7 @@ html[lang="ar"] .doc-label {
 
 .action-btn {
   padding: 11px 20px;
-  font-size: 12px;
+  font-size: var(--type-caption);
   font-weight: 600;
   letter-spacing: 0.04em;
 }
@@ -647,7 +655,7 @@ html[lang="ar"] .doc-label {
 .visual-caption span {
   display: block;
   font-family: 'Poppins', sans-serif;
-  font-size: 9px;
+  font-size: var(--type-eyebrow);
   letter-spacing: 0.20em;
   color: var(--beige-sand);
   text-transform: uppercase;
@@ -657,7 +665,7 @@ html[lang="ar"] .doc-label {
 .visual-caption strong {
   display: block;
   max-width: 320px;
-  font-size: 20px;
+  font-size: clamp(18px, 1.22vw, 21px);
   line-height: 1.5;
   font-weight: 500;
 }
@@ -696,7 +704,7 @@ html[lang="ar"] .doc-label {
 
 .exec-label {
   font-family: 'Poppins', sans-serif;
-  font-size: 9px;
+  font-size: var(--type-eyebrow);
   letter-spacing: 0.28em;
   color: var(--navy-light);
   text-transform: uppercase;
@@ -706,7 +714,7 @@ html[lang="ar"] .doc-label {
 
 html[lang="ar"] .exec-label {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
-  font-size: clamp(24px, 1.9vw, 31px);
+  font-size: clamp(24px, 1.85vw, 30px);
   font-weight: 600;
   line-height: 1.35;
   color: var(--navy-deep);
@@ -714,7 +722,7 @@ html[lang="ar"] .exec-label {
 }
 
 .exec-summary p {
-  font-size: clamp(18px, 1.45vw, 23px);
+  font-size: var(--type-lead);
   font-weight: 300;
   line-height: 1.95;
   color: var(--navy-deep);
@@ -725,7 +733,7 @@ html[lang="ar"] .exec-label {
 }
 
 html[lang="ar"] .exec-summary p {
-  font-size: clamp(18px, 1.55vw, 24px);
+  font-size: clamp(17px, 1.3vw, 21px);
   line-height: 1.95;
 }
 
@@ -750,7 +758,7 @@ html[lang="ar"] .exec-summary p {
 
 .section-num {
   font-family: 'Poppins', sans-serif;
-  font-size: 11px;
+  font-size: var(--type-eyebrow);
   color: var(--beige-sand);
   font-weight: 400;
   letter-spacing: 0.1em;
@@ -758,7 +766,7 @@ html[lang="ar"] .exec-summary p {
 }
 
 .section-title {
-  font-size: clamp(30px, 3.3vw, 46px);
+  font-size: var(--type-section-title);
   font-weight: 600;
   color: var(--navy-deep);
   margin: 0;
@@ -766,13 +774,13 @@ html[lang="ar"] .exec-summary p {
 }
 
 .section-title-en {
-  font-size: 10px;
+  font-size: var(--type-eyebrow);
   margin: 4px 0 0;
   letter-spacing: 0.18em;
 }
 
 .section-body {
-  font-size: clamp(15px, 1vw, 17px);
+  font-size: var(--type-body);
   color: var(--text-body);
   line-height: 1.9;
 }
@@ -857,7 +865,7 @@ html[lang="ar"] .exec-summary p {
 .card-meta,
 .filter-label {
   font-family: 'Poppins', sans-serif;
-  font-size: 11px;
+  font-size: var(--type-eyebrow);
   font-weight: 400;
   color: var(--beige-sand);
   letter-spacing: 0.14em;
@@ -870,15 +878,15 @@ html[lang="ar"] .exec-summary p {
 }
 
 .card-title {
-  font-size: clamp(18px, 1.8vw, 24px);
-  font-weight: 700;
+  font-size: var(--type-card-title);
+  font-weight: 600;
   color: var(--navy-deep);
   line-height: 1.45;
   margin-bottom: 14px;
 }
 
 .card-desc {
-  font-size: 14px;
+  font-size: var(--type-small);
   color: var(--text-light);
   line-height: 1.8;
   flex: 1;
@@ -892,7 +900,7 @@ html[lang="ar"] .exec-summary p {
   border-bottom: 1px solid currentColor;
   color: var(--navy-deep);
   padding: 0 0 6px;
-  font-size: 12px;
+  font-size: var(--type-caption);
   font-weight: 600;
   min-height: 0;
 }
@@ -958,7 +966,7 @@ html[dir="ltr"] .card-cta-arrow::after {
 
 .strip-num {
   font-family: 'Poppins', sans-serif;
-  font-size: 30px;
+  font-size: clamp(24px, 2vw, 30px);
   font-weight: 300;
   color: var(--navy-deep);
   line-height: 1;
@@ -966,7 +974,7 @@ html[dir="ltr"] .card-cta-arrow::after {
 }
 
 .strip-label {
-  font-size: 12px;
+  font-size: var(--type-caption);
   color: var(--text-light);
   line-height: 1.5;
 }
@@ -1022,7 +1030,7 @@ html[dir="ltr"] .card-cta-arrow::after {
   color: var(--beige-warm);
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(15px, 1.28vw, 19px);
+  font-size: clamp(15px, 1.05vw, 18px);
   line-height: 1.18;
   margin: 0;
   text-shadow: 0 2px 14px rgba(4, 16, 38, 0.34);
@@ -1062,7 +1070,7 @@ html[dir="ltr"] .card-cta-arrow::after {
   max-width: 500px;
   margin: 0;
   color: var(--text-light);
-  font-size: 13px;
+  font-size: var(--type-small);
   line-height: 1.8;
 }
 
@@ -1158,7 +1166,7 @@ html[dir="ltr"] .card-cta-arrow::after {
 .partner-gallery-card h3 {
   margin: 0 0 10px;
   color: var(--beige-warm);
-  font-size: clamp(22px, 4.8vw, 30px);
+  font-size: clamp(22px, 2.15vw, 30px);
   line-height: 1.12;
   text-wrap: balance;
 }
@@ -1166,7 +1174,7 @@ html[dir="ltr"] .card-cta-arrow::after {
 .partner-gallery-card p {
   margin: 0;
   color: rgba(237, 233, 227, 0.78);
-  font-size: 13px;
+  font-size: var(--type-caption);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -1213,7 +1221,7 @@ body[dir="rtl"] .partner-gallery-card p {
 .filter-btn {
   min-height: 34px;
   padding: 7px 12px;
-  font-size: 11px;
+  font-size: var(--type-caption);
 }
 
 .service-card-visual {
@@ -1258,7 +1266,7 @@ body[dir="rtl"] .partner-gallery-card p {
   right: 22px;
   bottom: 18px;
   font-family: 'Poppins', sans-serif;
-  font-size: 9px;
+  font-size: var(--type-eyebrow);
   color: var(--beige-sand);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -1331,7 +1339,7 @@ body[dir="rtl"] .partner-gallery-card p {
   max-width: 620px;
   margin: 0 auto 10px;
   color: var(--navy-deep);
-  font-size: clamp(22px, 3vw, 34px);
+  font-size: clamp(22px, 2.25vw, 32px);
   line-height: 1.28;
 }
 
@@ -1339,7 +1347,7 @@ body[dir="rtl"] .partner-gallery-card p {
   max-width: 680px;
   margin: 0 auto 24px;
   color: var(--text-light);
-  font-size: 13px;
+  font-size: var(--type-small);
   line-height: 1.8;
 }
 
@@ -1383,7 +1391,7 @@ body[dir="rtl"] .partner-gallery-card p {
   min-width: max-content;
   min-height: 36px;
   color: rgba(4, 16, 38, 0.60);
-  font-size: clamp(17px, 2vw, 28px);
+  font-size: clamp(16px, 1.55vw, 24px);
   font-weight: 500;
   letter-spacing: 0.08em;
   white-space: nowrap;
@@ -1478,7 +1486,7 @@ body[dir="rtl"] .partner-gallery-card p {
   position: relative;
   z-index: 1;
   margin: 0 0 16px;
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(28px, 3vw, 40px);
   line-height: 1.25;
 }
 
@@ -1547,7 +1555,7 @@ body[dir="rtl"] .partner-gallery-card p {
 .private-assessment-panel h2 {
   margin: 0 0 14px;
   color: var(--navy-deep);
-  font-size: clamp(32px, 5vw, 58px);
+  font-size: clamp(30px, 3.4vw, 46px);
   line-height: 1.16;
   letter-spacing: 0;
 }
@@ -1556,7 +1564,7 @@ body[dir="rtl"] .partner-gallery-card p {
   max-width: 760px;
   margin: 0 auto;
   color: var(--text-body);
-  font-size: clamp(15px, 1.4vw, 19px);
+  font-size: var(--type-lead);
   line-height: 1.85;
 }
 
@@ -1591,6 +1599,7 @@ body[dir="rtl"] .partner-gallery-card p {
   grid-template-columns: minmax(260px, 1fr) 1px minmax(310px, 1fr);
   align-items: center;
   gap: 42px;
+  direction: ltr;
 }
 
 .private-assessment-copy {
@@ -1608,7 +1617,7 @@ body[dir="rtl"] .partner-gallery-card p {
 .private-assessment-copy h2 {
   margin: 0 0 14px;
   color: #fff;
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(28px, 3.2vw, 42px);
   line-height: 1.18;
   letter-spacing: 0;
 }
@@ -1626,12 +1635,13 @@ body[dir="rtl"] .partner-gallery-card p {
   align-items: center;
   text-align: center;
   direction: ltr;
+  grid-column: 1;
 }
 
 .contact-brand__name {
   font-family: 'Poppins', sans-serif;
   color: var(--beige-sand);
-  font-size: clamp(54px, 6.2vw, 82px);
+  font-size: clamp(48px, 5.2vw, 74px);
   font-weight: 500;
   letter-spacing: 0.05em;
   line-height: 0.9;
@@ -1640,7 +1650,7 @@ body[dir="rtl"] .partner-gallery-card p {
 .contact-brand__sub {
   font-family: 'Poppins', sans-serif;
   color: var(--beige-sand);
-  font-size: clamp(20px, 2.7vw, 32px);
+  font-size: clamp(18px, 2.1vw, 28px);
   font-weight: 300;
   letter-spacing: 0.08em;
   line-height: 1.2;
@@ -1648,6 +1658,7 @@ body[dir="rtl"] .partner-gallery-card p {
 }
 
 .contact-divider {
+  grid-column: 2;
   width: 2px;
   height: 230px;
   background: var(--beige-sand);
@@ -1656,6 +1667,7 @@ body[dir="rtl"] .partner-gallery-card p {
 }
 
 .contact-lines {
+  grid-column: 3;
   display: grid;
   gap: 18px;
 }
@@ -1667,11 +1679,12 @@ body[dir="rtl"] .partner-gallery-card p {
   align-items: center;
   color: var(--beige-sand);
   text-decoration: none;
-  font-size: clamp(18px, 1.9vw, 25px);
+  font-size: clamp(17px, 1.55vw, 22px);
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.35;
   overflow-wrap: anywhere;
+  direction: ltr;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -1739,7 +1752,7 @@ body[dir="rtl"] .partner-gallery-card p {
 
 .closing-label {
   font-family: 'Poppins', sans-serif;
-  font-size: 9px;
+  font-size: var(--type-eyebrow);
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--text-light);
@@ -1766,7 +1779,7 @@ body[dir="rtl"] .partner-gallery-card p {
   background: rgba(246, 244, 241, 0.76);
   color: var(--text-light);
   cursor: pointer;
-  font-size: 9px;
+  font-size: var(--type-eyebrow);
   transition: all 0.2s ease;
   box-shadow: 0 4px 12px rgba(4, 16, 38, 0.05);
 }
@@ -1788,7 +1801,7 @@ body[dir="rtl"] .partner-gallery-card p {
   border: 1px solid rgba(4,16,38,0.1);
   background: #ffffff;
   color: #041026;
-  font-size: 18px;
+  font-size: 17px;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
   z-index: 9999;
@@ -1867,7 +1880,7 @@ html[dir="rtl"] .service-detail__panel {
   margin: -10px 0 18px;
   max-width: 620px;
   color: var(--navy-light);
-  font-size: 19px;
+  font-size: var(--type-lead);
   font-weight: 500;
   line-height: 1.55;
 }
@@ -1892,7 +1905,7 @@ html[dir="rtl"] .service-detail__panel {
   display: block;
   margin: 0 0 12px;
   color: var(--gold-muted);
-  font-size: 10px;
+  font-size: var(--type-eyebrow);
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1902,13 +1915,13 @@ html[lang="ar"] .service-quick-card h3,
 html[lang="ar"] .service-difference span {
   letter-spacing: 0;
   text-transform: none;
-  font-size: 12px;
+  font-size: var(--type-caption);
 }
 
 .service-quick-card p {
   margin: 0;
   color: var(--text-body);
-  font-size: 14px;
+  font-size: var(--type-small);
   line-height: 1.75;
 }
 
@@ -1939,7 +1952,7 @@ html[lang="ar"] .service-difference span {
 
 .detail-block h3 {
   margin: 0 0 14px;
-  font-size: 15px;
+  font-size: var(--type-body);
   color: inherit;
 }
 
@@ -1972,7 +1985,7 @@ html[lang="ar"] .service-difference span {
   border: 1px solid rgba(4, 16, 38, 0.10);
   background: rgba(246, 244, 241, 0.72);
   color: var(--navy-deep);
-  font-size: 13px;
+  font-size: var(--type-small);
   line-height: 1.45;
 }
 
@@ -2011,7 +2024,7 @@ html[lang="ar"] .service-difference span {
   max-width: 720px;
   margin: 0;
   color: rgba(237, 233, 227, 0.86);
-  font-size: 16px;
+  font-size: var(--type-body);
   line-height: 1.95;
 }
 
@@ -2085,8 +2098,8 @@ html[lang="ar"] .service-difference span {
 
   .hero-title {
     max-width: 760px;
-    font-size: clamp(38px, 7vw, 56px);
-    line-height: 1.08;
+    font-size: clamp(34px, 5.2vw, 48px);
+    line-height: 1.12;
   }
 
   .cover-card {
@@ -2182,20 +2195,30 @@ html[lang="ar"] .service-difference span {
     text-align: center;
   }
 
+  .contact-brand,
+  .contact-divider,
+  .contact-lines {
+    grid-column: 1;
+  }
+
   .contact-divider {
-    width: min(420px, 72vw);
-    height: 2px;
+    display: none;
   }
 
   .contact-lines {
     width: min(100%, 520px);
     gap: 16px;
+    order: 2;
   }
 
   .contact-line {
     grid-template-columns: 28px 1fr;
-    font-size: clamp(17px, 3.2vw, 22px);
+    font-size: clamp(16px, 2.4vw, 20px);
     text-align: start;
+  }
+
+  .contact-brand {
+    order: 1;
   }
 }
 
@@ -2236,7 +2259,7 @@ html[lang="ar"] .service-difference span {
 
   .video-hero .hero-title {
     max-width: min(100%, 22rem);
-    font-size: clamp(34px, 10.5vw, 48px);
+    font-size: clamp(32px, 8.6vw, 42px);
     line-height: 1.18;
   }
 
@@ -2255,20 +2278,20 @@ html[lang="ar"] .service-difference span {
   .hero-title {
     max-width: min(100%, 21rem);
     margin-inline: auto;
-    font-size: clamp(30px, 7.7vw, 34px);
+    font-size: clamp(29px, 6.8vw, 33px);
     line-height: 1.12;
     margin-bottom: 14px;
   }
 
   .hero-desc {
-    font-size: 14px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.75;
     max-width: min(100%, 21rem);
     margin-inline: auto;
   }
 
   .hero-en {
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1.55;
     letter-spacing: 0.08em;
     max-width: min(100%, 19rem);
@@ -2276,7 +2299,7 @@ html[lang="ar"] .service-difference span {
   }
 
   html[lang="ar"] .hero-en {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.6;
     letter-spacing: 0;
   }
@@ -2367,7 +2390,7 @@ html[lang="ar"] .service-difference span {
   }
 
   .partner-gallery-card p {
-    font-size: 12px;
+    font-size: var(--type-caption);
   }
 
   .ecosystem-item.has-image {
@@ -2384,7 +2407,7 @@ html[lang="ar"] .service-difference span {
 
   .ecosystem-item .card-title {
     bottom: 24px;
-    font-size: 19px;
+    font-size: 17px;
   }
 
   .logo-cloud-section {
@@ -2397,7 +2420,7 @@ html[lang="ar"] .service-difference span {
   }
 
   .access-logo-cloud p {
-    font-size: 12.5px;
+    font-size: var(--type-small);
     line-height: 1.75;
     padding: 0 8px;
   }
@@ -2412,7 +2435,7 @@ html[lang="ar"] .service-difference span {
   }
 
   .logo-wordmark {
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: 0.06em;
   }
 
@@ -2426,14 +2449,14 @@ html[lang="ar"] .service-difference span {
   }
 
   html[lang="ar"] .exec-label {
-    font-size: clamp(21px, 6vw, 26px);
+    font-size: clamp(21px, 5.4vw, 25px);
     margin-bottom: 18px;
   }
 
   .exec-summary p,
   html[lang="ar"] .exec-summary p {
-    font-size: 16.5px;
-    line-height: 1.9;
+    font-size: 16px;
+    line-height: 1.85;
   }
 
   .section-header {
@@ -2441,7 +2464,7 @@ html[lang="ar"] .service-difference span {
   }
 
   .section-title {
-    font-size: clamp(26px, 7.4vw, 36px);
+    font-size: clamp(25px, 6.6vw, 33px);
     line-height: 1.24;
   }
 
@@ -2471,7 +2494,7 @@ html[lang="ar"] .service-difference span {
   }
 
   .private-assessment-panel h2 {
-    font-size: clamp(28px, 9vw, 38px);
+    font-size: clamp(27px, 7.2vw, 34px);
   }
 
   .contact-signature {
@@ -2480,13 +2503,17 @@ html[lang="ar"] .service-difference span {
     padding: 44px 20px 54px;
   }
 
+  .contact-signature__inner {
+    gap: 28px;
+  }
+
   .contact-brand__name {
-    font-size: clamp(42px, 14vw, 58px);
+    font-size: clamp(42px, 12vw, 56px);
   }
 
   .contact-brand__sub {
     margin-top: 12px;
-    font-size: clamp(18px, 6vw, 24px);
+    font-size: clamp(17px, 5vw, 22px);
   }
 
   .contact-lines {
@@ -2496,7 +2523,7 @@ html[lang="ar"] .service-difference span {
   .contact-line {
     grid-template-columns: 26px 1fr;
     gap: 12px;
-    font-size: clamp(15px, 4.2vw, 18px);
+    font-size: clamp(15px, 3.9vw, 17px);
     letter-spacing: 0.01em;
   }
 
@@ -2529,19 +2556,19 @@ html[lang="ar"] .service-difference span {
 
   .hero-title {
     max-width: 19rem;
-    font-size: clamp(28px, 7.2vw, 31px);
+    font-size: clamp(27px, 6.6vw, 30px);
     line-height: 1.12;
     margin-bottom: 12px;
   }
 
   .hero-desc {
     max-width: 19rem;
-    font-size: 13.5px;
-    line-height: 1.65;
+    font-size: 14.5px;
+    line-height: 1.72;
   }
 
   html[lang="ar"] .hero-en {
-    font-size: 9.5px;
+    font-size: 10px;
   }
 }
 
