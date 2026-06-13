@@ -752,13 +752,13 @@ html[lang="ar"] .doc-label {
 }
 
 .exec-summary {
-  background-color: rgba(255, 255, 255, 0.76);
+  background-color: var(--navy-deep);
   padding: clamp(46px, 6vw, 76px) clamp(24px, 6vw, 78px);
   margin-bottom: clamp(96px, 12vw, 150px);
   position: relative;
   overflow: hidden;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid rgba(237, 233, 227, 0.08);
+  border-bottom: 1px solid rgba(237, 233, 227, 0.08);
 }
 
 .exec-summary::before {
@@ -783,11 +783,16 @@ html[lang="ar"] .doc-label {
   border-radius: 50%;
 }
 
+.exec-summary::before,
+.exec-summary::after {
+  display: none;
+}
+
 .exec-label {
   font-family: 'Poppins', sans-serif;
   font-size: var(--type-eyebrow);
   letter-spacing: 0.28em;
-  color: var(--navy-light);
+  color: #fff;
   text-transform: uppercase;
   margin-bottom: 20px;
   display: block;
@@ -798,7 +803,7 @@ html[lang="ar"] .exec-label {
   font-size: clamp(24px, 1.85vw, 30px);
   font-weight: 600;
   line-height: 1.35;
-  color: var(--navy-deep);
+  color: #fff;
   margin-bottom: 24px;
 }
 
@@ -806,7 +811,7 @@ html[lang="ar"] .exec-label {
   font-size: var(--type-lead);
   font-weight: 300;
   line-height: 1.95;
-  color: var(--navy-deep);
+  color: rgba(255, 255, 255, 0.88);
   position: relative;
   z-index: 1;
   margin: 0;
@@ -819,7 +824,7 @@ html[lang="ar"] .exec-summary p {
 }
 
 .exec-summary strong {
-  color: var(--navy-deep);
+  color: #fff;
   font-weight: 600;
 }
 

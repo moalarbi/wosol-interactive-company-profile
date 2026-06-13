@@ -1200,7 +1200,7 @@ function renderCover() {
 
 function renderSummary() {
   document.getElementById("executiveSummary").innerHTML = `
-    <span class="exec-label ${textDirClass()}">${state.lang === "ar" ? "لماذا وصول" : "Executive Summary"}</span>
+    <span class="exec-label ${textDirClass()}">${state.lang === "ar" ? "لماذا عضوية وصول" : "Executive Summary"}</span>
     <p class="${textDirClass()}">${content[state.lang].summary}</p>
   `;
 }
