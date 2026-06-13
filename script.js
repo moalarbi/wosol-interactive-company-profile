@@ -1198,10 +1198,16 @@ function renderCover() {
   `;
 }
 
+function formatSummaryHtml() {
+  const summary = content[state.lang].summary;
+  if (state.lang !== "ar") return summary;
+  return summary.replace(/\. (?=\S)/g, ".<br />");
+}
+
 function renderSummary() {
   document.getElementById("executiveSummary").innerHTML = `
     <span class="exec-label ${textDirClass()}">${state.lang === "ar" ? "لماذا عضوية وصول" : "Executive Summary"}</span>
-    <p class="${textDirClass()}">${content[state.lang].summary}</p>
+    <p class="${textDirClass()}">${formatSummaryHtml()}</p>
   `;
 }
 
