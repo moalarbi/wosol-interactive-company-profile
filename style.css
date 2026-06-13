@@ -2164,6 +2164,22 @@ html[lang="ar"] .service-difference span {
     display: block;
   }
 
+  .partner-gallery-controls {
+    display: none;
+  }
+
+  .partner-gallery-track {
+    gap: 14px;
+    scroll-padding-inline: 24px;
+    padding-inline: 24px;
+    margin-inline: -24px;
+  }
+
+  .partner-gallery-card {
+    flex-basis: min(310px, 82vw);
+    min-height: 380px;
+  }
+
   .logo-cloud-section {
     margin-top: -18px;
   }
@@ -2367,10 +2383,6 @@ html[lang="ar"] .service-difference span {
   .partner-gallery-head {
     align-items: flex-start;
     margin-bottom: 18px;
-  }
-
-  .partner-gallery-controls {
-    display: none;
   }
 
   .partner-gallery-track {
