@@ -8,17 +8,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260613-content-intro" />
+  <link rel="stylesheet" href="style.css?v=20260613-language-gate" />
 </head>
 <body class="intro-active">
   <div class="intro-loader" id="introLoader" aria-label="WOSOL profile loading screen">
     <div class="intro-loader__inner">
+      <div class="intro-loader__progress" aria-hidden="true"><span></span></div>
       <div class="intro-loader__brand en" aria-label="WOSOL Concierge">
         <span class="intro-loader__name">WOSOL</span>
         <span class="intro-loader__sub">CONCIERGE</span>
       </div>
       <span class="intro-loader__rule" aria-hidden="true"></span>
       <span class="intro-loader__label en">PROFILE</span>
+      <div class="intro-loader__actions" aria-label="Choose profile language">
+        <button class="intro-loader__lang ar" type="button" data-intro-lang="ar">العربية</button>
+        <button class="intro-loader__lang en" type="button" data-intro-lang="en">English</button>
+      </div>
     </div>
   </div>
   <div class="pattern-bg" aria-hidden="true"></div>
@@ -70,6 +75,6 @@
     </article>
   </section>
 
-  <script src="script.js?v=20260613-content-intro"></script>
+  <script src="script.js?v=20260613-language-gate"></script>
 </body>
 </html>

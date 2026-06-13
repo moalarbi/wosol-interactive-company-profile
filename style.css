@@ -110,6 +110,30 @@ body.intro-active {
   transform: translateY(3vh);
 }
 
+.intro-loader__progress {
+  width: min(260px, 68vw);
+  height: 1px;
+  overflow: hidden;
+  background: rgba(4, 16, 38, 0.12);
+  transform-origin: left;
+  transition: opacity 0.42s ease, transform 0.42s ease;
+}
+
+.intro-loader__progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--navy-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: introProgress 1.35s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.intro-loader.is-ready .intro-loader__progress {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
 .intro-loader__brand {
   display: grid;
   justify-items: center;
@@ -118,7 +142,10 @@ body.intro-active {
   text-align: center;
   transform: translateY(8px);
   opacity: 0;
-  animation: introBrandIn 0.9s ease forwards;
+}
+
+.intro-loader.is-ready .intro-loader__brand {
+  animation: introBrandIn 0.78s ease forwards;
 }
 
 .intro-loader__name {
@@ -146,7 +173,10 @@ body.intro-active {
   background: linear-gradient(90deg, transparent, rgba(4, 16, 38, 0.26), transparent);
   transform: scaleX(0.24);
   opacity: 0;
-  animation: introRuleIn 1.05s 0.28s ease forwards;
+}
+
+.intro-loader.is-ready .intro-loader__rule {
+  animation: introRuleIn 0.86s 0.16s ease forwards;
 }
 
 .intro-loader__label {
@@ -160,7 +190,56 @@ body.intro-active {
   text-align: center;
   filter: blur(5px);
   opacity: 0;
-  animation: introLabelIn 1.2s 0.55s ease forwards;
+}
+
+.intro-loader.is-ready .intro-loader__label {
+  animation: introLabelIn 0.78s 0.28s ease forwards;
+}
+
+.intro-loader__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+.intro-loader.is-ready .intro-loader__actions {
+  pointer-events: auto;
+  animation: introActionsIn 0.7s 0.48s ease forwards;
+}
+
+.intro-loader__lang {
+  min-width: 92px;
+  min-height: 38px;
+  padding: 9px 16px;
+  border: 1px solid rgba(4, 16, 38, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.36);
+  color: var(--navy-deep);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.intro-loader__lang:hover,
+.intro-loader__lang:focus-visible {
+  background: var(--navy-deep);
+  color: var(--beige-warm);
+  border-color: var(--navy-deep);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+@keyframes introProgress {
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes introBrandIn {
@@ -181,6 +260,13 @@ body.intro-active {
   to {
     filter: blur(0);
     opacity: 1;
+  }
+}
+
+@keyframes introActionsIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
