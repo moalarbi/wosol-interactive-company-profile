@@ -217,7 +217,7 @@ body.intro-active {
   min-height: 38px;
   padding: 9px 16px;
   border: 1px solid rgba(4, 16, 38, 0.16);
-  border-radius: 999px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.36);
   color: var(--navy-deep);
   font-size: 12px;
@@ -1204,7 +1204,7 @@ html[dir="ltr"] .card-cta-arrow::after {
   flex: 0 0 calc((100% - 66px) / 3.25);
   min-height: 420px;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 0;
   background: var(--navy-deep);
   scroll-snap-align: start;
   box-shadow: none;
