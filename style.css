@@ -1444,6 +1444,8 @@ body[dir="rtl"] .partner-gallery-card p {
 }
 
 .logo-marquee {
+  --logo-cloud-gap: 48px;
+  --logo-cloud-half-gap: 24px;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -1455,13 +1457,10 @@ body[dir="rtl"] .partner-gallery-card p {
   display: flex;
   align-items: center;
   width: max-content;
-  gap: 42px;
+  gap: var(--logo-cloud-gap);
   will-change: transform;
+  transform: translate3d(0, 0, 0);
   animation: logoCloudSlide 60s linear infinite;
-}
-
-.logo-marquee:hover .logo-marquee__track {
-  animation-duration: 96s;
 }
 
 .logo-marquee__group {
@@ -1469,7 +1468,7 @@ body[dir="rtl"] .partner-gallery-card p {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  gap: 42px;
+  gap: var(--logo-cloud-gap);
   min-width: max-content;
 }
 
@@ -1485,13 +1484,12 @@ body[dir="rtl"] .partner-gallery-card p {
   font-weight: 500;
   letter-spacing: 0.08em;
   white-space: nowrap;
-  filter: saturate(0.72) contrast(0.96);
-  opacity: 0.88;
+  opacity: 0.9;
 }
 
 .logo-wordmark--image {
-  width: clamp(132px, 10vw, 204px);
-  height: clamp(46px, 4.6vw, 70px);
+  width: clamp(150px, 10.6vw, 188px);
+  height: clamp(58px, 4.4vw, 72px);
   opacity: 0.9;
 }
 
@@ -1499,7 +1497,8 @@ body[dir="rtl"] .partner-gallery-card p {
   display: block;
   width: 100%;
   height: 100%;
-  max-width: 230px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -1510,7 +1509,6 @@ body[dir="rtl"] .partner-gallery-card p {
   z-index: 2;
   width: min(18vw, 160px);
   pointer-events: none;
-  backdrop-filter: blur(1px);
 }
 
 .logo-cloud-fade--left {
@@ -1533,7 +1531,7 @@ body[dir="rtl"] .partner-gallery-card p {
   }
 
   to {
-    transform: translate3d(calc(-50% - 21px), 0, 0);
+    transform: translate3d(calc(-50% - var(--logo-cloud-half-gap)), 0, 0);
   }
 }
 
@@ -1542,20 +1540,20 @@ body[dir="rtl"] .partner-gallery-card p {
 .logo-raffles,
 .logo-mandarin-oriental,
 .logo-anantara {
-  transform: scale(1.2);
+  transform: none;
 }
 
 .logo-luxury-collection,
 .logo-joali,
 .logo-cabrio,
 .logo-aman {
-  transform: scale(1.08);
+  transform: none;
 }
 
 .logo-leading-hotels,
 .logo-bvlgari,
 .logo-dorchester-collection {
-  width: clamp(190px, 17vw, 280px);
+  width: clamp(150px, 10.6vw, 188px);
 }
 
 .logo-rocco-forte,
@@ -1563,11 +1561,11 @@ body[dir="rtl"] .partner-gallery-card p {
 .logo-four-seasons,
 .logo-cheval-blanc,
 .logo-maison-de-lamie {
-  width: clamp(170px, 14vw, 250px);
+  width: clamp(150px, 10.6vw, 188px);
 }
 
 .logo-edmiston {
-  transform: scale(1.18);
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2323,8 +2321,7 @@ html[lang="ar"] .service-difference span {
   }
 
   .logo-marquee__group {
-    gap: 22px 32px;
-    padding: 0 22px;
+    padding: 0;
   }
 
   .detail-grid {
@@ -2572,12 +2569,13 @@ html[lang="ar"] .service-difference span {
   }
 
   .logo-marquee {
+    --logo-cloud-gap: 32px;
+    --logo-cloud-half-gap: 16px;
     padding: 16px 0;
   }
 
   .logo-marquee__group {
-    gap: 18px 26px;
-    padding: 0 18px;
+    padding: 0;
   }
 
   .logo-wordmark {
@@ -2587,7 +2585,7 @@ html[lang="ar"] .service-difference span {
 
   .logo-wordmark--image img {
     height: 100%;
-    max-width: 160px;
+    max-width: 100%;
   }
 
   .exec-summary {
