@@ -1159,9 +1159,9 @@ function sectionShell(key, inner) {
   `;
 }
 
-function card(title, desc, index, featured = false, meta = "") {
+function card(title, desc, index, meta = "") {
   return `
-    <article class="strategy-card ${featured ? "featured" : ""}">
+    <article class="strategy-card">
       <span class="card-num en">${meta || String(index).padStart(2, "0")}</span>
       <div class="card-title ${textDirClass()}">${escapeHtml(title)}</div>
       <div class="card-desc ${textDirClass()}">${escapeHtml(desc)}</div>
@@ -1215,11 +1215,11 @@ function renderBasicSections() {
 
   document.getElementById("essence").innerHTML = sectionShell("essence", `
     ${s.essence.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
-    <div class="cards-grid">${s.essence.cards.map((item, i) => card(item[0], item[1], i + 1, i === 0)).join("")}</div>
+    <div class="cards-grid">${s.essence.cards.map((item, i) => card(item[0], item[1], i + 1)).join("")}</div>
   `);
 
   document.getElementById("principles").innerHTML = sectionShell("principles", `
-    <div class="cards-grid">${s.principles.cards.map((item, i) => card(item[0], item[1], i + 1, i === 0)).join("")}</div>
+    <div class="cards-grid">${s.principles.cards.map((item, i) => card(item[0], item[1], i + 1)).join("")}</div>
   `);
 
   document.getElementById("global").innerHTML = sectionShell("global", `
@@ -1233,14 +1233,13 @@ function renderBasicSections() {
 
   document.getElementById("ecosystem").innerHTML = sectionShell("ecosystem", `
     ${s.ecosystem.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("")}
+    ${renderAccessLogos()}
     ${renderPartnerShowcase(s.ecosystem.items)}
   `);
 
-  renderAccessLogos();
-
   document.getElementById("segments").innerHTML = sectionShell("segments", `
     <div class="cards-grid">${s.segments.cards.map((item, i) => `
-      <article class="strategy-card ${i === 1 ? "featured" : ""}">
+      <article class="strategy-card">
         <span class="card-num en">${String(i + 1).padStart(2, "0")}</span>
         <div class="card-title ${textDirClass()}">${escapeHtml(item[0])}</div>
         <div class="card-desc ${textDirClass()}">${escapeHtml(item[1])}</div>
@@ -1259,7 +1258,7 @@ function renderBasicSections() {
   `);
 
   document.getElementById("standard").innerHTML = sectionShell("standard", `
-    <div class="cards-grid">${s.standard.cards.map((item, i) => card(item[0], item[1], i + 1, i === 0)).join("")}</div>
+    <div class="cards-grid">${s.standard.cards.map((item, i) => card(item[0], item[1], i + 1)).join("")}</div>
   `);
 }
 
@@ -1318,7 +1317,8 @@ function renderPartnerGallery(items, roles, variant) {
 function renderAccessLogos() {
   const isArabic = state.lang === "ar";
   const logoSet = partnerBrands.map(accessLogoMarkup).join("");
-  document.getElementById("accessLogos").innerHTML = `
+  return `
+    <div class="logo-cloud-section" id="accessLogos">
     <div class="access-logo-cloud" aria-label="${isArabic ? "علامات وشركاء ضمن نطاق الوصول الفاخر" : "Luxury access logo landscape"}">
       <div class="logo-marquee" aria-hidden="false">
         <div class="logo-marquee__track">
@@ -1328,6 +1328,7 @@ function renderAccessLogos() {
         <div class="logo-cloud-fade logo-cloud-fade--left" aria-hidden="true"></div>
         <div class="logo-cloud-fade logo-cloud-fade--right" aria-hidden="true"></div>
       </div>
+    </div>
     </div>
   `;
 }
@@ -1370,7 +1371,7 @@ function serviceCard(service, index) {
       <div class="card-title ${textDirClass()}">${escapeHtml(service.title)}</div>
       <div class="card-desc ${textDirClass()}">${escapeHtml(service.tagline)}</div>
       <button class="card-cta" type="button" data-open-service="${service.id}">
-        ${s.explore}<span class="card-cta-arrow"></span>
+        ${s.explore}
       </button>
     </article>
   `;
