@@ -1402,11 +1402,13 @@ function renderInquiry() {
     </a>
   `).join("");
   const inquiry = content[state.lang].sections.inquiry;
+  const inquirySubject = state.lang === "ar" ? "طلب تقييم خاص" : "Private Assessment Request";
   document.getElementById("inquiry").innerHTML = `
     <div class="private-assessment-panel">
       <span class="closing-label ${textDirClass()}">${escapeHtml(inquiry.label)}</span>
       <h2 class="${textDirClass()}">${escapeHtml(inquiry.title)}</h2>
       <p class="${textDirClass()}">${escapeHtml(inquiry.body)}</p>
+      <a class="private-assessment-cta action-btn primary ${textDirClass()}" href="mailto:info@wosolconcierge.com?subject=${encodeURIComponent(inquirySubject)}">${escapeHtml(inquiry.request)}</a>
     </div>
     <div class="contact-signature">
       <div class="contact-signature__inner">

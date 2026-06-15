@@ -1822,19 +1822,10 @@ html[dir="rtl"] .process-step-heading {
   opacity: 0.22;
 }
 
-.private-assessment-panel::after {
-  content: '';
-  position: absolute;
-  left: clamp(24px, 6vw, 72px);
-  right: clamp(24px, 6vw, 72px);
-  bottom: clamp(24px, 4vw, 42px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(209, 199, 186, 0.34), transparent);
-}
-
 .private-assessment-panel .closing-label,
 .private-assessment-panel h2,
-.private-assessment-panel p {
+.private-assessment-panel p,
+.private-assessment-cta {
   position: relative;
   z-index: 1;
 }
@@ -1860,9 +1851,23 @@ html[dir="rtl"] .process-step-heading {
   line-height: 1.85;
 }
 
+.private-assessment-cta {
+  margin: clamp(28px, 4vw, 42px) auto 0;
+  border-color: var(--beige-warm);
+  background: var(--beige-warm);
+  color: var(--navy-deep);
+}
+
+.private-assessment-cta:hover {
+  border-color: var(--beige-warm);
+  background: transparent;
+  color: var(--beige-warm);
+}
+
 .private-assessment-panel.reveal-on-scroll .closing-label,
 .private-assessment-panel.reveal-on-scroll h2,
-.private-assessment-panel.reveal-on-scroll p {
+.private-assessment-panel.reveal-on-scroll p,
+.private-assessment-panel.reveal-on-scroll .private-assessment-cta {
   opacity: 0;
   transform: translateY(24px) scale(0.985);
   filter: blur(8px);
@@ -1878,6 +1883,10 @@ html[dir="rtl"] .process-step-heading {
 
 .private-assessment-panel.reveal-on-scroll.is-visible p {
   animation: ctaTextAppear 0.92s ease-out 0.28s forwards;
+}
+
+.private-assessment-panel.reveal-on-scroll.is-visible .private-assessment-cta {
+  animation: ctaTextAppear 0.92s ease-out 0.42s forwards;
 }
 
 @keyframes ctaTextAppear {
