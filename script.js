@@ -1250,10 +1250,16 @@ function renderBasicSections() {
 
   document.getElementById("process").innerHTML = sectionShell("process", `
     <div class="process-list">${s.process.steps.map((item, i) => `
-      <div class="process-step">
-        <div class="process-step-num en">${String(i + 1).padStart(2, "0")}</div>
-        <div><div class="card-title ${textDirClass()}">${escapeHtml(item[0])}</div><p>${escapeHtml(item[1])}</p></div>
-      </div>
+      <article class="process-step process-step--${i % 2 === 0 ? "start" : "end"}">
+        <div class="process-step-icon" aria-hidden="true">${processIcon(i)}</div>
+        <div class="process-step-card">
+          <div class="process-step-heading">
+            <span class="process-step-num en">${String(i + 1).padStart(2, "0")}</span>
+            <h3 class="card-title ${textDirClass()}">${escapeHtml(item[0])}</h3>
+          </div>
+          <p>${escapeHtml(item[1])}</p>
+        </div>
+      </article>
     `).join("")}</div>
   `);
 
@@ -1339,6 +1345,18 @@ function accessLogoMarkup(brand) {
       <img src="assets/logos/partners/${brand.slug}.png" alt="${escapeHtml(brand.name)}" loading="lazy" decoding="async" />
     </span>
   `;
+}
+
+function processIcon(index) {
+  const icons = [
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4.2-4.2"></path><path d="M8.5 11h5"></path><path d="M11 8.5v5"></path></svg>`,
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.4 13.7 8a2.7 2.7 0 0 0 1.7 1.7L20 11.4l-4.6 1.7a2.7 2.7 0 0 0-1.7 1.7L12 19.4l-1.7-4.6a2.7 2.7 0 0 0-1.7-1.7L4 11.4l4.6-1.7A2.7 2.7 0 0 0 10.3 8z"></path><path d="M19 3v3"></path><path d="M20.5 4.5h-3"></path></svg>`,
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.7 8.9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6.5a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.6 0C14.5 4.3 17 5.5 19 5.5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>`,
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11.5 11.5 8a2.8 2.8 0 0 1 4 0l.5.5"></path><path d="m14 12.5 2.5-2.5a2.8 2.8 0 0 1 4 4l-3.2 3.2a3 3 0 0 1-4.2 0l-.6-.6"></path><path d="m10 11.5-2.5 2.5a2.8 2.8 0 0 1-4-4l3.2-3.2a3 3 0 0 1 4.2 0l.6.6"></path><path d="m8 17 1.5 1.5"></path><path d="m11 14 1.5 1.5"></path></svg>`,
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"></line><line x1="10" x2="3" y1="4" y2="4"></line><circle cx="12" cy="4" r="2"></circle><line x1="21" x2="12" y1="12" y2="12"></line><line x1="8" x2="3" y1="12" y2="12"></line><circle cx="10" cy="12" r="2"></circle><line x1="21" x2="16" y1="20" y2="20"></line><line x1="12" x2="3" y1="20" y2="20"></line><circle cx="14" cy="20" r="2"></circle></svg>`
+  ];
+
+  return icons[index] || icons[0];
 }
 
 function renderServices() {
