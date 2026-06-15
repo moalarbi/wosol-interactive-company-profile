@@ -1151,7 +1151,6 @@ function sectionShell(key, inner) {
   const section = content[state.lang].sections[key];
   return `
     <div class="section-header">
-      <span class="section-num en">${section.num}</span>
       <div>
         <h2 class="section-title ${textDirClass()}">${section.title}</h2>
       </div>

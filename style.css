@@ -833,30 +833,26 @@ html[lang="ar"] .exec-summary p {
 }
 
 .section-header {
-  display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(18px, 4vw, 46px);
+  display: block;
+  text-align: center;
   margin-bottom: clamp(34px, 5vw, 64px);
   padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
 }
 
 .section-num {
-  font-family: 'Poppins', sans-serif;
-  font-size: var(--type-eyebrow);
-  color: var(--beige-sand);
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  flex-shrink: 0;
+  display: none;
 }
 
 .section-title {
   font-size: var(--type-section-title);
   font-weight: 600;
   color: var(--navy-deep);
-  margin: 0;
+  margin: 0 auto;
   line-height: 1.2;
+  max-width: 1080px;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .section-title-en {
@@ -2604,7 +2600,7 @@ html[lang="ar"] .service-difference span {
   }
 
   .section-header {
-    align-items: flex-start;
+    text-align: center;
   }
 
   .section-title {
