@@ -1,773 +1,1145 @@
-﻿const categories = {
-  lifestyle: { en: "Lifestyle Management", ar: "إدارة نمط الحياة" },
-  travel: { en: "Travel & Mobility", ar: "السفر والتنقل" },
-  access: { en: "Luxury Access", ar: "الوصول الخاص" },
-  events: { en: "Corporate & Private Events", ar: "المناسبات والضيافة" },
-  assets: { en: "Assets, Spaces & Culture", ar: "العقارات والفن والتصميم" }
+const categories = {
+  "lifestyle": {
+    "en": "Lifestyle & Personal Care",
+    "ar": "نمط الحياة والعناية الشخصية"
+  },
+  "travel": {
+    "en": "Travel & Mobility",
+    "ar": "السفر والتنقل"
+  },
+  "access": {
+    "en": "Private Access",
+    "ar": "الوصول الخاص"
+  },
+  "events": {
+    "en": "Corporate & Private Events",
+    "ar": "المناسبات والشركات"
+  },
+  "education": {
+    "en": "Education & Development",
+    "ar": "التعليم والتطوير"
+  },
+  "assets": {
+    "en": "Spaces & Design",
+    "ar": "المساحات والتصميم"
+  }
 };
 
 const serviceBlueprints = [
   {
-    id: "lifestyle-concierge",
-    categoryKey: "lifestyle",
-    en: {
-      title: "Lifestyle Concierge",
-      tagline: "Daily life handled with privacy, taste, and operational calm.",
-      description: "Personalized services that simplify everyday complexity while curating refined experiences around your lifestyle.",
-      outcome: "Your time returns to what matters while the details move quietly in the background.",
-      forWhom: ["Private individuals", "HNW families", "Frequent travelers", "Households needing trusted coordination"],
-      whenItMatters: ["Busy personal calendars", "High-touch home and lifestyle requests", "Private occasions", "Recurring errands and arrangements"],
-      wosolHandles: ["Lifestyle request intake", "Vendor coordination", "Calendar-sensitive planning", "Experience curation", "Follow-through and confirmation"],
-      experienceStandard: "Responsive, discreet, and aligned with the client's preferences rather than a generic service menu.",
-      difference: "WOSOL builds familiarity over time, so requests become faster, more precise, and less repetitive.",
-      sampleRequests: ["Curated dining plan", "Home service coordination", "Private celebration preparation", "Personal shopping appointment", "Weekend experience itinerary"],
-      audienceRelevance: "For clients who value continuity, privacy, and fewer operational interruptions.",
-      cta: "Request Lifestyle Support",
-      imageLabel: "Private lifestyle management"
+    "id": "lifestyle-concierge",
+    "categoryKey": "lifestyle",
+    "en": {
+      "title": "Lifestyle Concierge",
+      "tagline": "Everyday coordination shaped around your lifestyle and preferences.",
+      "description": "Inspired by WOSOL’s lifestyle concierge service, this path helps organize daily needs, reservations, family requirements, and personal arrangements through one trusted point of contact.",
+      "outcome": "Your day feels lighter because routine details are handled with discretion and continuity.",
+      "forWhom": [
+        "Private members",
+        "Families",
+        "Busy professionals",
+        "Households needing trusted support"
+      ],
+      "whenItMatters": [
+        "Daily coordination",
+        "Private reservations",
+        "Family requests",
+        "Lifestyle arrangements"
+      ],
+      "wosolHandles": [
+        "Request review",
+        "Daily planning",
+        "Partner coordination",
+        "Reservations",
+        "Follow-up and confirmation"
+      ],
+      "experienceStandard": "Quiet, responsive, and aligned with the member’s personal preferences.",
+      "difference": "WOSOL manages lifestyle needs as an ongoing relationship, not as one-off errands.",
+      "sampleRequests": [
+        "Restaurant coordination",
+        "Family arrangements",
+        "Private appointments",
+        "Home service support",
+        "Weekend planning"
+      ],
+      "audienceRelevance": "For members who want fewer interruptions and a more organized daily rhythm.",
+      "cta": "Request Lifestyle Concierge",
+      "imageLabel": "Private lifestyle coordination"
     },
-    ar: {
-      title: "كونسيرج نمط الحياة",
-      tagline: "تفاصيل الحياة اليومية بإدارة هادئة وخصوصية عالية وذوق رفيع.",
-      description: "خدمات شخصية مصممة لتبسيط التعقيد اليومي وصناعة تجارب منتقاة حول أسلوب حياة العميل.",
-      outcome: "يعود وقتك لما يستحق الانتباه، بينما تتحرك التفاصيل بهدوء خلف المشهد.",
-      forWhom: ["الأفراد من أصحاب نمط الحياة عالي القيمة", "العائلات الخاصة", "كثيرو السفر", "المنازل التي تحتاج تنسيقاً موثوقاً"],
-      whenItMatters: ["الجداول الشخصية المزدحمة", "طلبات المنزل ونمط الحياة", "المناسبات الخاصة", "المهام المتكررة والترتيبات الدقيقة"],
-      wosolHandles: ["استقبال الطلب وتحليله", "تنسيق المورّدين", "التخطيط وفق الوقت والحساسية", "ترشيح التجارب", "المتابعة والتأكيد"],
-      experienceStandard: "استجابة دقيقة وسرية ومصممة حول تفضيلات العميل، لا حول قائمة خدمات عامة.",
-      difference: "تبني وصول معرفة تراكمية بالعميل، فتتحول الطلبات مع الوقت إلى تنفيذ أسرع وأكثر دقة.",
-      sampleRequests: ["خطة عشاء منتقاة", "تنسيق خدمات منزلية", "تحضير مناسبة خاصة", "موعد تسوق شخصي", "برنامج نهاية أسبوع خاص"],
-      audienceRelevance: "لمن يقدّر الاستمرارية والخصوصية وتقليل الانشغال بالتفاصيل التشغيلية.",
-      cta: "اطلب دعماً خاصاً لنمط الحياة",
-      imageLabel: "إدارة نمط حياة خاصة"
+    "ar": {
+      "title": "نمط وأسلوب الحياة",
+      "tagline": "تنسيق يومي مصمم حول أسلوب حياتك وتفضيلاتك.",
+      "description": "مستوحاة من خدمة نمط الحياة في وصول، يختص هذا المسار بتنظيم الاحتياجات اليومية، الحجوزات، المتطلبات العائلية، والترتيبات الشخصية من خلال نقطة اتصال موثوقة.",
+      "outcome": "يصبح يومك أخف عندما تُدار التفاصيل المعتادة بسرية واستمرارية.",
+      "forWhom": [
+        "الأعضاء الخاصون",
+        "العائلات",
+        "أصحاب الجداول المزدحمة",
+        "المنازل التي تحتاج دعماً موثوقاً"
+      ],
+      "whenItMatters": [
+        "التنسيق اليومي",
+        "الحجوزات الخاصة",
+        "المتطلبات العائلية",
+        "ترتيبات نمط الحياة"
+      ],
+      "wosolHandles": [
+        "مراجعة الطلب",
+        "تخطيط اليوم",
+        "تنسيق الشركاء",
+        "إدارة الحجوزات",
+        "المتابعة والتأكيد"
+      ],
+      "experienceStandard": "خدمة هادئة وسريعة الاستجابة ومتصلة بتفضيلات العضو.",
+      "difference": "تتعامل وصول مع نمط الحياة كعلاقة مستمرة، لا كمهام منفصلة.",
+      "sampleRequests": [
+        "تنسيق مطعم",
+        "ترتيبات عائلية",
+        "مواعيد خاصة",
+        "دعم منزلي",
+        "تخطيط نهاية أسبوع"
+      ],
+      "audienceRelevance": "لمن يريد تقليل الانشغال ورفع جودة تنظيم اليوم.",
+      "cta": "اطلب كونسيرج نمط الحياة",
+      "imageLabel": "تنسيق نمط حياة خاص"
     }
   },
   {
-    id: "travel-management",
-    categoryKey: "travel",
-    en: {
-      title: "Travel Management",
-      tagline: "Journeys coordinated from first intention to final arrival.",
-      description: "End-to-end travel planning across flights, accommodation, transfers, and logistics for journeys that feel seamless and considered.",
-      outcome: "Every movement feels connected, prepared, and free from unnecessary friction.",
-      forWhom: ["Private travelers", "Families", "Couples", "Guests requiring premium journey coordination"],
-      whenItMatters: ["Multi-city itineraries", "Family holidays", "Luxury leisure travel", "Last-minute route changes"],
-      wosolHandles: ["Flight coordination", "Accommodation matching", "Transfers", "Arrival handling", "Itinerary monitoring"],
-      experienceStandard: "Clear, flexible, and designed around comfort, timing, privacy, and personal preferences.",
-      difference: "Travel is managed as a complete experience rather than isolated bookings.",
-      sampleRequests: ["Full leisure itinerary", "Airport to villa transfer", "Hotel and dining coordination", "Family travel plan", "Route adjustment while traveling"],
-      audienceRelevance: "For clients who want the journey to feel as refined as the destination.",
-      cta: "Plan a Private Journey",
-      imageLabel: "Seamless luxury travel"
+    "id": "luxury-accommodation",
+    "categoryKey": "travel",
+    "en": {
+      "title": "Luxury Accommodations",
+      "tagline": "Villas, chalets, penthouses, and stays selected for privacy and comfort.",
+      "description": "WOSOL coordinates premium accommodation options worldwide, from villas and chalets to penthouses and private stays, with supporting services such as chefs, household staff, and security where suitable.",
+      "outcome": "The stay feels prepared around your family, privacy, and rhythm rather than treated as a simple booking.",
+      "forWhom": [
+        "Families",
+        "Long-stay travelers",
+        "Private groups",
+        "Members seeking secured stays"
+      ],
+      "whenItMatters": [
+        "Seasonal stays",
+        "Family holidays",
+        "Private residences",
+        "Extended travel"
+      ],
+      "wosolHandles": [
+        "Requirement mapping",
+        "Property selection",
+        "Stay services",
+        "Arrival preparation",
+        "On-stay follow-up"
+      ],
+      "experienceStandard": "Selected for privacy, suitability, service quality, and the nature of the stay.",
+      "difference": "We assess accommodation as a complete living environment, not only as a beautiful property.",
+      "sampleRequests": [
+        "Private villa",
+        "Family chalet",
+        "Penthouses",
+        "Staffed residence",
+        "Arrival setup"
+      ],
+      "audienceRelevance": "For members who need the privacy of a residence with the reliability of hospitality.",
+      "cta": "Review a Private Stay",
+      "imageLabel": "Selected private accommodation"
     },
-    ar: {
-      title: "إدارة السفر",
-      tagline: "رحلات منسقة من النية الأولى حتى الوصول الأخير.",
-      description: "تخطيط شامل للسفر يشمل الرحلات والإقامة والتنقلات واللوجستيات لصناعة رحلة سلسة ومدروسة.",
-      outcome: "كل حركة في الرحلة تبدو مترابطة ومهيأة وخالية من التعقيد غير الضروري.",
-      forWhom: ["المسافرون الخاصون", "العائلات", "الأزواج", "الضيوف الذين يحتاجون تنسيقاً راقياً للرحلة"],
-      whenItMatters: ["برامج متعددة المدن", "العطلات العائلية", "السفر الترفيهي الفاخر", "تغييرات المسار المفاجئة"],
-      wosolHandles: ["تنسيق الرحلات", "ترشيح الإقامة", "ترتيب التنقلات", "خدمة الوصول", "متابعة البرنامج أثناء السفر"],
-      experienceStandard: "وضوح ومرونة وتجربة مبنية حول الراحة والوقت والخصوصية وتفضيلات العميل.",
-      difference: "تتعامل وصول مع السفر كتجربة متكاملة، لا كسلسلة حجوزات منفصلة.",
-      sampleRequests: ["برنامج رحلة ترفيهية كامل", "تنقل من المطار إلى الفيلا", "تنسيق الفندق والمطاعم", "خطة سفر عائلية", "تعديل المسار أثناء الرحلة"],
-      audienceRelevance: "لمن يريد أن تكون الرحلة بذات رقي الوجهة.",
-      cta: "خطط رحلة خاصة",
-      imageLabel: "سفر فاخر وسلس"
+    "ar": {
+      "title": "الإقامة الفاخرة",
+      "tagline": "فلل وشاليهات وبنتهاوس وإقامات مختارة للخصوصية والراحة.",
+      "description": "تنسق وصول خيارات إقامة فاخرة حول العالم، من الفلل والشاليهات إلى البنتهاوس والإقامات الخاصة، مع خدمات مساندة مثل الطهاة والدعم المنزلي والأمن متى ما لزم الأمر.",
+      "outcome": "تبدو الإقامة مهيأة حول العائلة والخصوصية وإيقاع الرحلة، لا كحجز عابر.",
+      "forWhom": [
+        "العائلات",
+        "الإقامات الطويلة",
+        "المجموعات الخاصة",
+        "من يحتاجون إقامة آمنة"
+      ],
+      "whenItMatters": [
+        "الإقامات الموسمية",
+        "العطلات العائلية",
+        "المساكن الخاصة",
+        "السفر الطويل"
+      ],
+      "wosolHandles": [
+        "تحديد المتطلبات",
+        "اختيار العقار",
+        "تنسيق خدمات الإقامة",
+        "تجهيز الوصول",
+        "متابعة الإقامة"
+      ],
+      "experienceStandard": "اختيار مبني على الخصوصية والملاءمة وجودة الخدمة وطبيعة الإقامة.",
+      "difference": "نقيّم الإقامة كبيئة معيشة كاملة، لا كعقار جميل فقط.",
+      "sampleRequests": [
+        "فيلا خاصة",
+        "شاليه عائلي",
+        "بنتهاوس",
+        "إقامة مدعومة بخدمات",
+        "تجهيز قبل الوصول"
+      ],
+      "audienceRelevance": "لمن يحتاج خصوصية السكن مع موثوقية الضيافة.",
+      "cta": "راجع إقامة خاصة",
+      "imageLabel": "إقامة خاصة منتقاة"
     }
   },
   {
-    id: "private-aviation",
-    categoryKey: "travel",
-    en: {
-      title: "Private Aviation",
-      tagline: "Air travel arranged with discretion, precision, and time certainty.",
-      description: "Customized private aviation coordination, from aircraft options and routing to in-flight preferences and arrival logistics.",
-      outcome: "Time-sensitive movement becomes private, punctual, and aligned with the client's schedule.",
-      forWhom: ["Business leaders", "UHNW individuals", "Families", "Executives requiring flexible movement"],
-      whenItMatters: ["Urgent meetings", "Multi-city travel", "Confidential movement", "VIP arrivals", "Family trips with privacy requirements"],
-      wosolHandles: ["Aircraft coordination", "Preferred routes", "Ground transfers", "In-flight preferences", "Documentation and arrival support"],
-      experienceStandard: "Private, punctual, discreet, and tailored around the client rather than a commercial flight schedule.",
-      difference: "The flight is only one layer; WOSOL coordinates the full movement before and after the aircraft.",
-      sampleRequests: ["Private jet charter coordination", "Multi-city executive itinerary", "Airport to residence transfer", "In-flight preference arrangement", "VIP arrival handling"],
-      audienceRelevance: "For clients whose time, privacy, and route control are critical.",
-      cta: "Coordinate Private Aviation",
-      imageLabel: "Private jet cabin and arrival"
+    "id": "yacht-charters",
+    "categoryKey": "access",
+    "en": {
+      "title": "Yacht Charters",
+      "tagline": "Private yacht experiences curated around guests, routes, and occasion.",
+      "description": "WOSOL arranges yacht charters selected with care, from calm coastal journeys to private celebrations and multi-day sea itineraries, with attention to onboard preferences and guest comfort.",
+      "outcome": "Time at sea becomes private, composed, and aligned with the occasion.",
+      "forWhom": [
+        "Families",
+        "Private groups",
+        "Hosts",
+        "Traveling guests"
+      ],
+      "whenItMatters": [
+        "Coastal trips",
+        "Private celebrations",
+        "Marine hosting",
+        "Multi-day charters"
+      ],
+      "wosolHandles": [
+        "Yacht selection",
+        "Route planning",
+        "Guest preferences",
+        "Crew coordination",
+        "Transfer planning"
+      ],
+      "experienceStandard": "Private, safety-conscious, and tuned to the tone of the guests and occasion.",
+      "difference": "The yacht is only one part; WOSOL coordinates the route, guests, timing, and atmosphere.",
+      "sampleRequests": [
+        "Sunset charter",
+        "Family yacht day",
+        "Private celebration",
+        "Coastal itinerary",
+        "Guest hosting"
+      ],
+      "audienceRelevance": "For members who want a private marine setting without managing operational details.",
+      "cta": "Arrange a Yacht Charter",
+      "imageLabel": "Private yacht experience"
     },
-    ar: {
-      title: "الطيران الخاص",
-      tagline: "سفر جوي منسق بسرية ودقة ويقين في الوقت.",
-      description: "تنسيق حلول الطيران الخاص من خيارات الطائرات والمسارات إلى تفضيلات الرحلة وخدمات الوصول.",
-      outcome: "تتحول الحركة الحساسة للوقت إلى تجربة خاصة ومنضبطة ومتوافقة مع جدول العميل.",
-      forWhom: ["قادة الأعمال", "الأفراد ذوو الملاءة العالية جداً", "العائلات", "المديرون التنفيذيون ذوو الجداول المرنة"],
-      whenItMatters: ["اجتماعات عاجلة", "رحلات متعددة المدن", "تنقلات سرية", "وصول ضيوف رفيعي المستوى", "رحلات عائلية تتطلب خصوصية"],
-      wosolHandles: ["تنسيق الطائرة", "المسارات المفضلة", "النقل الأرضي", "تفضيلات الرحلة", "الدعم في الوثائق والوصول"],
-      experienceStandard: "خصوصية وانضباط وسرية وتجربة تدور حول العميل لا حول جدول رحلة تجارية.",
-      difference: "الطائرة جزء واحد فقط؛ وصول تنسق الحركة الكاملة قبل الرحلة وبعدها.",
-      sampleRequests: ["تنسيق استئجار طائرة خاصة", "برنامج تنفيذي متعدد المدن", "نقل من المطار إلى المقر", "ترتيب تفضيلات الرحلة", "خدمة وصول خاصة"],
-      audienceRelevance: "لمن تمثل له الخصوصية والوقت والتحكم بالمسار عناصر حاسمة.",
-      cta: "نسّق الطيران الخاص",
-      imageLabel: "مقصورة طائرة خاصة ووصول هادئ"
+    "ar": {
+      "title": "اليخوت الفاخرة",
+      "tagline": "تجارب يخوت خاصة تُنسق حول الضيوف والمسار والمناسبة.",
+      "description": "ترتب وصول تجارب اليخوت المختارة بعناية، من الرحلات الساحلية الهادئة إلى المناسبات الخاصة والبرامج البحرية متعددة الأيام، مع الاهتمام بتفضيلات الرحلة وراحة الضيوف.",
+      "outcome": "يتحول الوقت في البحر إلى تجربة خاصة ومرتبة ومتوافقة مع المناسبة.",
+      "forWhom": [
+        "العائلات",
+        "المجموعات الخاصة",
+        "المضيفون",
+        "الضيوف المسافرون"
+      ],
+      "whenItMatters": [
+        "رحلات ساحلية",
+        "احتفالات خاصة",
+        "استضافة بحرية",
+        "برامج متعددة الأيام"
+      ],
+      "wosolHandles": [
+        "اختيار اليخت",
+        "تخطيط المسار",
+        "تفضيلات الضيوف",
+        "تنسيق الطاقم",
+        "ترتيب التنقلات"
+      ],
+      "experienceStandard": "خصوصية ووعي بالسلامة وتجربة مضبوطة على نبرة الضيوف والمناسبة.",
+      "difference": "اليخت جزء واحد فقط؛ وصول تنسق المسار والضيوف والتوقيت والأجواء.",
+      "sampleRequests": [
+        "رحلة وقت الغروب",
+        "يوم عائلي على اليخت",
+        "مناسبة خاصة",
+        "برنامج ساحلي",
+        "استضافة ضيوف"
+      ],
+      "audienceRelevance": "لمن يريد بيئة بحرية خاصة دون إدارة تفاصيل التشغيل.",
+      "cta": "رتب تجربة يخت",
+      "imageLabel": "تجربة يخت خاصة"
     }
   },
   {
-    id: "luxury-accommodation",
-    categoryKey: "access",
-    en: {
-      title: "Luxury Accommodation",
-      tagline: "Residences selected for privacy, comfort, and lifestyle fit.",
-      description: "Curated villas, chalets, penthouses, and premium stays worldwide, paired with services such as private chefs, security, and household support.",
-      outcome: "A stay feels like a private residence prepared around the way you live.",
-      forWhom: ["Families", "Long-stay travelers", "Private guests", "Clients seeking secure residences"],
-      whenItMatters: ["Seasonal stays", "Family holidays", "High-security travel", "Celebrations", "Remote work retreats"],
-      wosolHandles: ["Property matching", "Service layering", "Private chef coordination", "Security and driver planning", "Check-in and stay support"],
-      experienceStandard: "Selected, prepared, and serviced to match the client's privacy, comfort, and guest profile.",
-      difference: "WOSOL evaluates the residence as an operating environment, not only as a beautiful property.",
-      sampleRequests: ["Private villa with chef", "Mountain chalet for family stay", "Penthouses near business districts", "Security-supported residence", "Arrival grocery and household setup"],
-      audienceRelevance: "For clients who need the privacy of a residence with the reliability of premium hospitality.",
-      cta: "Curate a Private Stay",
-      imageLabel: "Private villa and residence"
+    "id": "private-aviation",
+    "categoryKey": "travel",
+    "en": {
+      "title": "Private Aviation",
+      "tagline": "Private air travel coordinated with precision, comfort, and arrival support.",
+      "description": "WOSOL coordinates private aviation requirements across aircraft options, routes, in-flight preferences, airport support, and related ground arrangements where needed.",
+      "outcome": "Time-sensitive movement becomes more private, flexible, and connected from departure to arrival.",
+      "forWhom": [
+        "Executives",
+        "Families",
+        "Private travelers",
+        "VIP guests"
+      ],
+      "whenItMatters": [
+        "Urgent trips",
+        "Multi-city travel",
+        "Confidential movement",
+        "Special assistance needs"
+      ],
+      "wosolHandles": [
+        "Aircraft options",
+        "Route coordination",
+        "In-flight preferences",
+        "Airport assistance",
+        "Ground transfer alignment"
+      ],
+      "experienceStandard": "Precise, discreet, and designed around the traveler’s timing and comfort.",
+      "difference": "The flight is treated as part of a complete arrival journey, not as an isolated charter.",
+      "sampleRequests": [
+        "Private flight review",
+        "Executive routing",
+        "Special assistance",
+        "In-flight preferences",
+        "Arrival handling"
+      ],
+      "audienceRelevance": "For members whose time, privacy, and route control matter.",
+      "cta": "Coordinate Private Aviation",
+      "imageLabel": "Private aviation arrangement"
     },
-    ar: {
-      title: "الإقامة الفاخرة",
-      tagline: "مساكن مختارة للخصوصية والراحة وملاءمة نمط الحياة.",
-      description: "فلل وشاليهات وبنتهاوس وإقامات عالمية مختارة، مع خدمات مثل الطهاة الخاصين والأمن والدعم المنزلي.",
-      outcome: "تبدو الإقامة كمنزل خاص مجهز حول طريقة حياة العميل.",
-      forWhom: ["العائلات", "المسافرون للإقامات الطويلة", "الضيوف الخاصون", "العملاء الباحثون عن مساكن آمنة"],
-      whenItMatters: ["الإقامات الموسمية", "العطلات العائلية", "السفر عالي الخصوصية", "الاحتفالات", "إقامات العمل عن بعد"],
-      wosolHandles: ["ترشيح العقار", "إضافة طبقات الخدمة", "تنسيق الطاهي الخاص", "ترتيب الأمن والسائقين", "دعم الوصول والإقامة"],
-      experienceStandard: "اختيار وتجهيز وخدمة تناسب خصوصية العميل وراحته وطبيعة ضيوفه.",
-      difference: "تقيّم وصول المسكن كبيئة تشغيل كاملة، لا كعقار جميل فقط.",
-      sampleRequests: ["فيلا خاصة مع طاهٍ", "شاليه جبلي للعائلة", "بنتهاوس قرب منطقة أعمال", "سكن مدعوم بخدمة أمنية", "تجهيز المنزل قبل الوصول"],
-      audienceRelevance: "لمن يحتاج خصوصية السكن مع موثوقية الضيافة الفاخرة.",
-      cta: "رشّح إقامة خاصة",
-      imageLabel: "فيلا ومسكن خاص"
+    "ar": {
+      "title": "الطيران الخاص",
+      "tagline": "سفر جوي خاص يُنسق بدقة وراحة ودعم عند الوصول.",
+      "description": "تنسق وصول متطلبات الطيران الخاص من خيارات الطائرات والمسارات إلى تفضيلات الرحلة، دعم المطارات، وترتيبات النقل الأرضي المرتبطة عند الحاجة.",
+      "outcome": "تصبح الحركة الحساسة للوقت أكثر خصوصية ومرونة وترابطاً من المغادرة حتى الوصول.",
+      "forWhom": [
+        "التنفيذيون",
+        "العائلات",
+        "المسافرون الخاصون",
+        "الضيوف رفيعو المستوى"
+      ],
+      "whenItMatters": [
+        "رحلات عاجلة",
+        "سفر متعدد المدن",
+        "تنقلات سرية",
+        "احتياجات مساعدة خاصة"
+      ],
+      "wosolHandles": [
+        "خيارات الطائرة",
+        "تنسيق المسار",
+        "تفضيلات الرحلة",
+        "دعم المطار",
+        "ربط النقل الأرضي"
+      ],
+      "experienceStandard": "دقة وسرية وتجربة مصممة حول توقيت المسافر وراحته.",
+      "difference": "نتعامل مع الرحلة الجوية كجزء من مسار وصول كامل، لا كرحلة منفصلة.",
+      "sampleRequests": [
+        "مراجعة رحلة خاصة",
+        "مسار تنفيذي",
+        "مساعدة خاصة",
+        "تفضيلات الرحلة",
+        "دعم الوصول"
+      ],
+      "audienceRelevance": "لمن تمثل له الخصوصية والوقت والتحكم بالمسار عناصر أساسية.",
+      "cta": "نسق الطيران الخاص",
+      "imageLabel": "ترتيب طيران خاص"
     }
   },
   {
-    id: "yacht-charters",
-    categoryKey: "access",
-    en: {
-      title: "Yacht Charters",
-      tagline: "Bespoke yacht days and voyages shaped around the guest profile.",
-      description: "Tailored yacht experiences, from quiet coastal movement to private harbor events and multi-day sea itineraries.",
-      outcome: "Time on water becomes private, hosted, and precise without visible effort.",
-      forWhom: ["Families", "Private groups", "Corporate hosts", "Travelers seeking sea-based experiences"],
-      whenItMatters: ["Coastal escapes", "Harbor events", "Celebrations", "Client hosting", "Multi-day charters"],
-      wosolHandles: ["Yacht selection", "Route coordination", "Crew and catering preferences", "Transfer planning", "Guest experience details"],
-      experienceStandard: "Elegant, discreet, safety-conscious, and tuned to the tone of the occasion.",
-      difference: "The charter is curated around mood, guests, privacy, and operational timing.",
-      sampleRequests: ["Sunset yacht charter", "Private family voyage", "Harbor event hosting", "Chef-led onboard dinner", "Multi-day coastal itinerary"],
-      audienceRelevance: "For clients who want a private marine setting without coordinating the many hidden details.",
-      cta: "Arrange a Yacht Experience",
-      imageLabel: "Yacht deck at sunset"
+    "id": "travel-management",
+    "categoryKey": "travel",
+    "en": {
+      "title": "Travel Management",
+      "tagline": "Travel details managed from accommodation and transfers to daily itinerary.",
+      "description": "WOSOL manages travel planning and consultation across accommodation, transport, daily schedules, dining, destination experiences, visas, reception, and airport facilitation.",
+      "outcome": "The journey becomes easier to follow, easier to adjust, and more aligned with your preferences.",
+      "forWhom": [
+        "Private travelers",
+        "Families",
+        "Couples",
+        "Guests requiring full trip support"
+      ],
+      "whenItMatters": [
+        "Complex itineraries",
+        "Family travel",
+        "Visas and arrival needs",
+        "Destination planning"
+      ],
+      "wosolHandles": [
+        "Itinerary planning",
+        "Accommodation coordination",
+        "Transport",
+        "Dining and activities",
+        "Airport and arrival support"
+      ],
+      "experienceStandard": "Clear, responsive, and built around comfort, timing, privacy, and preference.",
+      "difference": "Travel is managed as one connected experience rather than scattered bookings.",
+      "sampleRequests": [
+        "Full itinerary",
+        "Airport reception",
+        "Restaurant coordination",
+        "Tour planning",
+        "Travel adjustment"
+      ],
+      "audienceRelevance": "For members who want the trip to feel managed without being overexplained.",
+      "cta": "Plan Travel Management",
+      "imageLabel": "Coordinated travel management"
     },
-    ar: {
-      title: "تأجير اليخوت",
-      tagline: "تجارب بحرية خاصة مصممة حول طبيعة الضيوف والمناسبة.",
-      description: "تنظيم تجارب يخوت مصممة حسب التفضيلات، من رحلات ساحلية هادئة إلى مناسبات خاصة في المرافئ وبرامج بحرية متعددة الأيام.",
-      outcome: "يتحول الوقت في البحر إلى تجربة خاصة ومضيفة ودقيقة بلا جهد ظاهر.",
-      forWhom: ["العائلات", "المجموعات الخاصة", "المضيفون من الشركات", "المسافرون الباحثون عن تجارب بحرية"],
-      whenItMatters: ["الهروب الساحلي", "مناسبات المرفأ", "الاحتفالات", "استضافة العملاء", "الرحلات البحرية متعددة الأيام"],
-      wosolHandles: ["اختيار اليخت", "تنسيق المسار", "تفضيلات الطاقم والضيافة", "تنظيم التنقلات", "تفاصيل تجربة الضيوف"],
-      experienceStandard: "أناقة وسرية ووعي بالسلامة وتجربة مضبوطة على نبرة المناسبة.",
-      difference: "تُصمم التجربة حول المزاج والضيوف والخصوصية والتوقيت التشغيلي.",
-      sampleRequests: ["رحلة يخت وقت الغروب", "رحلة عائلية خاصة", "استضافة مناسبة بحرية", "عشاء بطاهٍ على اليخت", "برنامج ساحلي لعدة أيام"],
-      audienceRelevance: "لمن يريد بيئة بحرية خاصة دون الانشغال بتفاصيلها الخفية.",
-      cta: "رتّب تجربة يخت",
-      imageLabel: "سطح يخت عند الغروب"
+    "ar": {
+      "title": "إدارة خدمات السفر",
+      "tagline": "تفاصيل السفر تُدار من الإقامة والتنقلات إلى الجدول اليومي.",
+      "description": "تدير وصول التخطيط والاستشارة في السفر، من الإقامة والتنقلات إلى الجداول اليومية والمطاعم والتجارب والتأشيرات والاستقبال وتسهيل إجراءات المطارات.",
+      "outcome": "تصبح الرحلة أوضح في المتابعة، أسهل في التعديل، وأكثر توافقاً مع تفضيلاتك.",
+      "forWhom": [
+        "المسافرون الخاصون",
+        "العائلات",
+        "الأزواج",
+        "الضيوف الذين يحتاجون دعماً كاملاً للرحلة"
+      ],
+      "whenItMatters": [
+        "برامج سفر معقدة",
+        "سفر عائلي",
+        "تأشيرات ووصول",
+        "تخطيط وجهة"
+      ],
+      "wosolHandles": [
+        "تخطيط البرنامج",
+        "تنسيق الإقامة",
+        "التنقلات",
+        "المطاعم والأنشطة",
+        "دعم المطار والوصول"
+      ],
+      "experienceStandard": "وضوح واستجابة وتجربة مبنية حول الراحة والتوقيت والخصوصية والتفضيلات.",
+      "difference": "تدير وصول السفر كتجربة واحدة مترابطة، لا كحجوزات متفرقة.",
+      "sampleRequests": [
+        "برنامج كامل",
+        "استقبال مطار",
+        "تنسيق مطاعم",
+        "جولات خاصة",
+        "تعديل رحلة"
+      ],
+      "audienceRelevance": "لمن يريد رحلة مُدارة دون شرح زائد أو متابعة مرهقة.",
+      "cta": "راجع إدارة السفر",
+      "imageLabel": "إدارة سفر منسقة"
     }
   },
   {
-    id: "health-wellness-resorts",
-    categoryKey: "access",
-    en: {
-      title: "Health & Wellness Resorts",
-      tagline: "Restorative retreats curated with privacy and measured comfort.",
-      description: "Premium wellness programs and holistic retreats selected to renew mind, body, and rhythm in luxurious settings.",
-      outcome: "Wellness becomes a considered reset rather than an improvised escape.",
-      forWhom: ["Executives", "Couples", "Families", "Clients seeking recovery, balance, or preventive wellness"],
-      whenItMatters: ["Burnout recovery", "Seasonal resets", "Post-travel renewal", "Family wellness escapes", "Discreet health retreats"],
-      wosolHandles: ["Retreat matching", "Program coordination", "Accommodation", "Wellness preferences", "Travel and privacy logistics"],
-      experienceStandard: "Calm, respectful, confidential, and tailored to the client's pace and health boundaries.",
-      difference: "WOSOL prioritizes suitability, privacy, and continuity over trend-led wellness packages.",
-      sampleRequests: ["Luxury detox retreat", "Executive recovery weekend", "Holistic resort stay", "Private trainer and chef coordination", "Family wellness program"],
-      audienceRelevance: "For clients who need renewal without exposure, inconvenience, or generic programming.",
-      cta: "Curate a Wellness Retreat",
-      imageLabel: "Private wellness resort"
+    "id": "health-wellness-resorts",
+    "categoryKey": "lifestyle",
+    "en": {
+      "title": "Health & Wellness",
+      "tagline": "Wellness, spa, beauty, and recovery programs selected around your needs.",
+      "description": "WOSOL coordinates personal wellness services, from spas and health resorts to nutrition consultations, fitness programs, medical clinics, and aesthetic care where appropriate.",
+      "outcome": "Wellness becomes a considered reset arranged with privacy and care.",
+      "forWhom": [
+        "Executives",
+        "Families",
+        "Couples",
+        "Members seeking recovery or balance"
+      ],
+      "whenItMatters": [
+        "Restorative travel",
+        "Spa and resort stays",
+        "Health consultations",
+        "Fitness programs"
+      ],
+      "wosolHandles": [
+        "Goal review",
+        "Program selection",
+        "Resort coordination",
+        "Appointments",
+        "Privacy logistics"
+      ],
+      "experienceStandard": "Calm, respectful, confidential, and aligned with personal comfort boundaries.",
+      "difference": "We prioritize suitability and privacy over generic wellness packages.",
+      "sampleRequests": [
+        "Wellness retreat",
+        "Spa booking",
+        "Nutrition consultation",
+        "Fitness program",
+        "Aesthetic clinic coordination"
+      ],
+      "audienceRelevance": "For members who need renewal without exposure or unnecessary friction.",
+      "cta": "Review Wellness Support",
+      "imageLabel": "Private wellness arrangement"
     },
-    ar: {
-      title: "منتجعات الصحة والاستشفاء",
-      tagline: "تجارب استشفاء مختارة بخصوصية وراحة محسوبة.",
-      description: "برامج عافية وتجارب استشفاء شاملة تُرشح لتجديد الذهن والجسد والإيقاع في بيئات فاخرة.",
-      outcome: "تصبح العافية إعادة توازن مدروسة، لا هروباً عابراً.",
-      forWhom: ["المديرون التنفيذيون", "الأزواج", "العائلات", "العملاء الباحثون عن التعافي أو التوازن أو الوقاية"],
-      whenItMatters: ["التعافي من الإرهاق", "إعادة ضبط موسمية", "تجديد ما بعد السفر", "رحلات عافية عائلية", "برامج صحية بسرية عالية"],
-      wosolHandles: ["ترشيح المنتجع", "تنسيق البرنامج", "الإقامة", "تفضيلات العافية", "لوجستيات السفر والخصوصية"],
-      experienceStandard: "هدوء واحترام وسرية وتجربة تناسب وتيرة العميل وحدوده الصحية.",
-      difference: "تركز وصول على الملاءمة والخصوصية والاستمرارية بدلاً من باقات عافية رائجة.",
-      sampleRequests: ["برنامج استشفاء فاخر", "نهاية أسبوع للتعافي التنفيذي", "إقامة في منتجع شمولي", "تنسيق مدرب وطاهٍ خاص", "برنامج عافية عائلي"],
-      audienceRelevance: "لمن يحتاج التجدد دون انكشاف أو إزعاج أو برامج عامة.",
-      cta: "صمّم تجربة استشفاء",
-      imageLabel: "منتجع عافية خاص"
+    "ar": {
+      "title": "الصحة والاستجمام",
+      "tagline": "برامج عافية وسبا وجمال واستشفاء تُختار حول احتياجك.",
+      "description": "تنسق وصول خدمات العافية الشخصية، من السبا والمنتجعات الصحية إلى استشارات التغذية وبرامج التمرين والعيادات الطبية والتجميلية عند الحاجة.",
+      "outcome": "تصبح العافية مساحة استعادة مدروسة تُرتب بخصوصية وعناية.",
+      "forWhom": [
+        "التنفيذيون",
+        "العائلات",
+        "الأزواج",
+        "من يبحثون عن الاستعادة والتوازن"
+      ],
+      "whenItMatters": [
+        "رحلات استشفاء",
+        "إقامات سبا ومنتجعات",
+        "استشارات صحية",
+        "برامج تمرين"
+      ],
+      "wosolHandles": [
+        "مراجعة الهدف",
+        "اختيار البرنامج",
+        "تنسيق المنتجع",
+        "ترتيب المواعيد",
+        "إدارة الخصوصية"
+      ],
+      "experienceStandard": "هدوء واحترام وسرية وتجربة متوافقة مع حدود الراحة الشخصية.",
+      "difference": "نقدّم الملاءمة والخصوصية على البرامج العامة الجاهزة.",
+      "sampleRequests": [
+        "منتجع عافية",
+        "حجز سبا",
+        "استشارة تغذية",
+        "برنامج تمرين",
+        "تنسيق عيادة تجميلية"
+      ],
+      "audienceRelevance": "لمن يحتاج استعادة هادئة دون تعقيد أو تعرض غير ضروري.",
+      "cta": "راجع دعم العافية",
+      "imageLabel": "ترتيب عافية خاص"
     }
   },
   {
-    id: "shopping-gifting",
-    categoryKey: "lifestyle",
-    en: {
-      title: "Shopping & Gifting",
-      tagline: "Taste-led sourcing for personal style, rare gifts, and meaningful gestures.",
-      description: "Exclusive fashion, gifting, and rare collectible sourcing aligned with the client's style, occasion, and relationship context.",
-      outcome: "Every selection feels personal, considered, and appropriate to the moment.",
-      forWhom: ["Private clients", "Executives", "Families", "Hosts seeking exceptional gifts"],
-      whenItMatters: ["Milestone gifts", "Wardrobe refreshes", "Last-minute occasions", "Rare item sourcing", "Corporate gifting with discretion"],
-      wosolHandles: ["Preference profiling", "Sourcing", "Presentation and wrapping", "Delivery coordination", "Occasion-sensitive recommendations"],
-      experienceStandard: "Curated, tasteful, discreet, and never generic.",
-      difference: "WOSOL balances access with meaning, ensuring the item fits the person and the relationship.",
-      sampleRequests: ["Rare collectible sourcing", "Luxury gift curation", "Personal shopping appointment", "Private fashion edit", "Occasion gift delivery"],
-      audienceRelevance: "For clients who want refined choices without time-consuming search or visible effort.",
-      cta: "Curate a Gift or Edit",
-      imageLabel: "Luxury gifting still life"
+    "id": "event-planning",
+    "categoryKey": "events",
+    "en": {
+      "title": "Event Planning",
+      "tagline": "Private celebrations and gatherings coordinated with quiet precision.",
+      "description": "WOSOL plans and coordinates private events, from intimate occasions to larger celebrations, aligning venues, partners, guest movement, and the overall tone of the occasion.",
+      "outcome": "You remain present with your guests while the operational details are handled.",
+      "forWhom": [
+        "Private hosts",
+        "Families",
+        "Companies",
+        "VIP guests"
+      ],
+      "whenItMatters": [
+        "Private dinners",
+        "Family occasions",
+        "Corporate hosting",
+        "Celebrations"
+      ],
+      "wosolHandles": [
+        "Concept planning",
+        "Venue coordination",
+        "Partner management",
+        "Guest flow",
+        "Day-of follow-up"
+      ],
+      "experienceStandard": "Organized, discreet, and reflective of the host’s style.",
+      "difference": "We manage the atmosphere and the hidden details so the host does not have to.",
+      "sampleRequests": [
+        "Private dinner",
+        "Family celebration",
+        "Corporate reception",
+        "Outdoor event",
+        "Guest coordination"
+      ],
+      "audienceRelevance": "For hosts who want a composed event without visible effort.",
+      "cta": "Plan a Private Event",
+      "imageLabel": "Private event coordination"
     },
-    ar: {
-      title: "التسوق والإهداء",
-      tagline: "اختيارات تقودها الذائقة للأناقة الشخصية والهدايا النادرة واللفتات ذات المعنى.",
-      description: "خدمات أزياء وإهداء واقتناء قطع نادرة مصممة حول أسلوب العميل والمناسبة وطبيعة العلاقة.",
-      outcome: "كل اختيار يبدو شخصياً ومدروساً وملائماً للحظة.",
-      forWhom: ["العملاء الخاصون", "المديرون التنفيذيون", "العائلات", "المضيفون الباحثون عن هدايا استثنائية"],
-      whenItMatters: ["هدايا المناسبات المهمة", "تجديد الخزانة", "المناسبات المفاجئة", "البحث عن قطع نادرة", "الإهداء المؤسسي بسرية"],
-      wosolHandles: ["فهم التفضيلات", "البحث والاقتناء", "التغليف والتقديم", "تنسيق التسليم", "ترشيحات حساسة لطبيعة المناسبة"],
-      experienceStandard: "اختيار منتقى وذوق رفيع وسرية وابتعاد عن الخيارات العامة.",
-      difference: "توازن وصول بين الوصول والمعنى، لتناسب القطعة الشخص والعلاقة.",
-      sampleRequests: ["البحث عن قطعة نادرة", "تنسيق هدية فاخرة", "موعد تسوق شخصي", "تحرير اختيارات أزياء خاصة", "توصيل هدية مناسبة"],
-      audienceRelevance: "لمن يريد اختيارات راقية دون بحث طويل أو جهد ظاهر.",
-      cta: "نسّق هدية أو اختياراً خاصاً",
-      imageLabel: "تفاصيل هدية فاخرة"
+    "ar": {
+      "title": "الفعاليات الخاصة",
+      "tagline": "مناسبات واجتماعات خاصة تُنسق بهدوء ودقة.",
+      "description": "تخطط وصول وتنسق الفعاليات الخاصة، من المناسبات الحميمة إلى الاحتفالات الأكبر، مع مواءمة المواقع والشركاء وحركة الضيوف ونبرة المناسبة.",
+      "outcome": "تبقى حاضراً مع ضيوفك بينما تُدار التفاصيل التشغيلية.",
+      "forWhom": [
+        "المضيفون الخاصون",
+        "العائلات",
+        "الشركات",
+        "الضيوف رفيعو المستوى"
+      ],
+      "whenItMatters": [
+        "عشاء خاص",
+        "مناسبة عائلية",
+        "استضافة مؤسسية",
+        "احتفال"
+      ],
+      "wosolHandles": [
+        "تخطيط الفكرة",
+        "تنسيق الموقع",
+        "إدارة الشركاء",
+        "حركة الضيوف",
+        "متابعة يوم المناسبة"
+      ],
+      "experienceStandard": "تنظيم وسرية وتجربة تعكس أسلوب المضيف.",
+      "difference": "ندير الأجواء والتفاصيل الخفية حتى لا ينشغل بها المضيف.",
+      "sampleRequests": [
+        "عشاء خاص",
+        "احتفال عائلي",
+        "استقبال شركة",
+        "مناسبة خارجية",
+        "تنسيق ضيوف"
+      ],
+      "audienceRelevance": "لمن يريد مناسبة متماسكة دون جهد ظاهر.",
+      "cta": "خطط مناسبة خاصة",
+      "imageLabel": "تنسيق فعالية خاصة"
     }
   },
   {
-    id: "business-travel-management",
-    categoryKey: "travel",
-    en: {
-      title: "Business Travel Management",
-      tagline: "Executive movement coordinated around meetings, privacy, and productivity.",
-      description: "Business-oriented travel planning across flights, accommodation, transfers, meeting logistics, and contingency support.",
-      outcome: "The executive arrives prepared, on time, and free to focus on the purpose of the trip.",
-      forWhom: ["Executives", "Founders", "Board members", "Corporate teams", "Visiting delegations"],
-      whenItMatters: ["Board meetings", "Roadshows", "Investor visits", "Multi-city agendas", "High-stakes corporate hosting"],
-      wosolHandles: ["Executive itinerary design", "Flight and hotel coordination", "Ground movement", "Meeting logistics", "Real-time adjustments"],
-      experienceStandard: "Precise, confidential, punctual, and compatible with business pressure.",
-      difference: "WOSOL treats business travel as a productivity environment, not only an itinerary.",
-      sampleRequests: ["C-suite travel week", "Delegation arrival plan", "Airport-boardroom-residence route", "Hotel near meeting venue", "Last-minute schedule recovery"],
-      audienceRelevance: "For leaders and teams whose travel must protect time, privacy, and decision quality.",
-      cta: "Plan Executive Travel",
-      imageLabel: "Executive travel planning"
+    "id": "shopping-gifting",
+    "categoryKey": "lifestyle",
+    "en": {
+      "title": "Shopping & Gifting",
+      "tagline": "Thoughtful selections for style, rare pieces, and meaningful gifting.",
+      "description": "WOSOL supports personal shopping and gifting by understanding style, occasion, and recipient context, then sourcing suitable pieces and arranging presentation or delivery.",
+      "outcome": "A gift or selection arrives with relevance, taste, and timing.",
+      "forWhom": [
+        "Private members",
+        "Families",
+        "Executives",
+        "Hosts"
+      ],
+      "whenItMatters": [
+        "Important gifts",
+        "Personal styling",
+        "Rare pieces",
+        "Occasion-based gifting"
+      ],
+      "wosolHandles": [
+        "Preference review",
+        "Sourcing",
+        "Selection",
+        "Presentation",
+        "Delivery coordination"
+      ],
+      "experienceStandard": "Tasteful, discreet, and aligned with the member’s style and relationship context.",
+      "difference": "The value is in meaning and fit, not in display.",
+      "sampleRequests": [
+        "Special gift",
+        "Personal shopping",
+        "Rare item search",
+        "Gift wrapping",
+        "Delivery coordination"
+      ],
+      "audienceRelevance": "For members who want choices that feel personal and appropriate.",
+      "cta": "Coordinate Shopping & Gifting",
+      "imageLabel": "Curated shopping and gifting"
     },
-    ar: {
-      title: "إدارة سفر الأعمال",
-      tagline: "تنقل تنفيذي منسق حول الاجتماعات والخصوصية والإنتاجية.",
-      description: "تخطيط سفر موجه للأعمال يشمل الرحلات والإقامة والتنقلات ولوجستيات الاجتماعات والدعم عند التغيير.",
-      outcome: "يصل التنفيذي جاهزاً وفي الوقت المناسب ومتحرراً للتركيز على هدف الرحلة.",
-      forWhom: ["المديرون التنفيذيون", "المؤسسون", "أعضاء المجالس", "فرق الشركات", "الوفود الزائرة"],
-      whenItMatters: ["اجتماعات المجلس", "الجولات الاستثمارية", "زيارات المستثمرين", "الجداول متعددة المدن", "استضافة الشركات عالية الأهمية"],
-      wosolHandles: ["تصميم برنامج السفر التنفيذي", "تنسيق الرحلات والفنادق", "الحركة الأرضية", "لوجستيات الاجتماعات", "تعديلات فورية عند الحاجة"],
-      experienceStandard: "دقة وسرية وانضباط زمني وملاءمة لضغط الأعمال.",
-      difference: "تتعامل وصول مع سفر الأعمال كبيئة إنتاجية، لا كبرنامج تنقل فقط.",
-      sampleRequests: ["أسبوع سفر للقيادة التنفيذية", "خطة وصول وفد", "مسار من المطار إلى الاجتماع ثم المقر", "فندق قريب من موقع الاجتماع", "معالجة جدول مفاجئ"],
-      audienceRelevance: "للقادة والفرق التي يجب أن يحمي سفرها الوقت والخصوصية وجودة القرار.",
-      cta: "خطط سفر الأعمال",
-      imageLabel: "تخطيط سفر تنفيذي"
+    "ar": {
+      "title": "التسوق وتنسيق الهدايا",
+      "tagline": "اختيارات مدروسة للأناقة والقطع النادرة والإهداء المناسب.",
+      "description": "تدعم وصول التسوق الشخصي وتنسيق الهدايا من خلال فهم الذوق والمناسبة وسياق العلاقة، ثم البحث عن الخيارات الملائمة وترتيب تقديمها أو تسليمها.",
+      "outcome": "تصل الهدية أو القطعة بملاءمة وذوق وتوقيت مناسب.",
+      "forWhom": [
+        "الأعضاء الخاصون",
+        "العائلات",
+        "التنفيذيون",
+        "المضيفون"
+      ],
+      "whenItMatters": [
+        "هدايا مهمة",
+        "تنسيق مظهر",
+        "قطع نادرة",
+        "إهداء مرتبط بمناسبة"
+      ],
+      "wosolHandles": [
+        "مراجعة التفضيلات",
+        "البحث",
+        "الاختيار",
+        "التقديم",
+        "تنسيق التسليم"
+      ],
+      "experienceStandard": "ذوق وسرية وملاءمة لأسلوب العضو وسياق العلاقة.",
+      "difference": "القيمة هنا في المعنى والملاءمة، لا في الاستعراض.",
+      "sampleRequests": [
+        "هدية خاصة",
+        "تسوق شخصي",
+        "بحث عن قطعة نادرة",
+        "تغليف هدية",
+        "تنسيق التسليم"
+      ],
+      "audienceRelevance": "لمن يريد اختيارات تبدو شخصية ومناسبة.",
+      "cta": "نسق التسوق والإهداء",
+      "imageLabel": "تسوق وإهداء منتقى"
     }
   },
   {
-    id: "personal-assistant",
-    categoryKey: "lifestyle",
-    en: {
-      title: "Personal Assistant",
-      tagline: "Specialized requests managed with judgment, discretion, and follow-through.",
-      description: "Personal assistance for complex, sensitive, or highly specific requests, from elusive access to carefully orchestrated personal moments.",
-      outcome: "The request is understood, prioritized, and executed without burdening the client.",
-      forWhom: ["Private individuals", "Executives", "Families", "Clients with limited time"],
-      whenItMatters: ["Time-sensitive personal needs", "Complex coordination", "Private celebrations", "Guest care", "Unusual sourcing"],
-      wosolHandles: ["Request scoping", "Feasibility review", "Provider coordination", "Confidential communication", "Completion tracking"],
-      experienceStandard: "Measured, respectful, and realistic while still pursuing the highest possible outcome.",
-      difference: "WOSOL protects the client's time by translating unclear requests into executable steps.",
-      sampleRequests: ["Securing hard-to-find tickets", "Coordinating a private celebration", "Managing guest arrivals", "Sourcing a specific item", "Handling a sensitive errand"],
-      audienceRelevance: "For clients who need dependable personal execution without explaining everything repeatedly.",
-      cta: "Assign a Private Request",
-      imageLabel: "Discreet personal assistance"
+    "id": "transportation-services",
+    "categoryKey": "travel",
+    "en": {
+      "title": "Transportation Services & Chauffeurs",
+      "tagline": "Premium movement coordinated for members, guests, and private schedules.",
+      "description": "WOSOL coordinates transportation needs, including self-drive options, chauffeured vehicles, drivers for private vehicles, and movement support across destinations where possible.",
+      "outcome": "Movement becomes clear, calm, and aligned with the day’s schedule.",
+      "forWhom": [
+        "Executives",
+        "Families",
+        "VIP guests",
+        "Event hosts"
+      ],
+      "whenItMatters": [
+        "Airport transfers",
+        "Daily chauffeurs",
+        "Guest movement",
+        "Multi-vehicle plans"
+      ],
+      "wosolHandles": [
+        "Vehicle selection",
+        "Driver coordination",
+        "Route planning",
+        "Timing follow-up",
+        "Guest lists"
+      ],
+      "experienceStandard": "Punctual, discreet, and suitable for the nature of the member or guest.",
+      "difference": "Transportation is handled as part of a wider movement plan, not only as a car request.",
+      "sampleRequests": [
+        "Chauffeured vehicle",
+        "Self-drive option",
+        "Driver for private car",
+        "Airport transfer",
+        "Guest fleet plan"
+      ],
+      "audienceRelevance": "For members who need dependable movement without repeated coordination.",
+      "cta": "Arrange Transportation",
+      "imageLabel": "Private transportation coordination"
     },
-    ar: {
-      title: "المساعد الشخصي",
-      tagline: "طلبات متخصصة تُدار بحكمة وسرية ومتابعة دقيقة.",
-      description: "مساعدة شخصية للطلبات المعقدة أو الحساسة أو شديدة الخصوصية، من الوصول النادر إلى تنظيم اللحظات الشخصية بعناية.",
-      outcome: "يُفهم الطلب ويُرتب حسب الأولوية ويُنفذ دون تحميل العميل تفاصيله.",
-      forWhom: ["الأفراد الخاصون", "المديرون التنفيذيون", "العائلات", "العملاء محدودو الوقت"],
-      whenItMatters: ["احتياجات شخصية عاجلة", "تنسيق معقد", "احتفالات خاصة", "رعاية الضيوف", "البحث عن طلب غير معتاد"],
-      wosolHandles: ["تحديد نطاق الطلب", "مراجعة القابلية للتنفيذ", "تنسيق المورّدين", "تواصل سري", "متابعة الإنجاز"],
-      experienceStandard: "هدوء واحترام وواقعية مع السعي لأفضل نتيجة ممكنة.",
-      difference: "تحمي وصول وقت العميل بتحويل الطلبات غير الواضحة إلى خطوات قابلة للتنفيذ.",
-      sampleRequests: ["تأمين تذاكر صعبة", "تنسيق احتفال خاص", "إدارة وصول الضيوف", "البحث عن قطعة محددة", "إنجاز مهمة حساسة"],
-      audienceRelevance: "لمن يحتاج تنفيذاً شخصياً يعتمد عليه دون تكرار الشرح.",
-      cta: "كلّفنا بطلب خاص",
-      imageLabel: "مساعدة شخصية بسرية"
+    "ar": {
+      "title": "خدمة السيارات والسائقين",
+      "tagline": "تنقلات فاخرة تُنسق للأعضاء والضيوف والجداول الخاصة.",
+      "description": "تنسق وصول احتياجات التنقل، بما يشمل خيارات القيادة الذاتية، السيارات بسائقين، توفير سائقين للسيارات الخاصة، ودعم الحركة بين الوجهات متى ما كان ذلك ممكناً.",
+      "outcome": "تصبح الحركة أوضح وأكثر هدوءاً ومتوافقة مع جدول اليوم.",
+      "forWhom": [
+        "التنفيذيون",
+        "العائلات",
+        "الضيوف رفيعو المستوى",
+        "مضيفو المناسبات"
+      ],
+      "whenItMatters": [
+        "نقل المطار",
+        "سائق يومي",
+        "حركة الضيوف",
+        "خطط متعددة المركبات"
+      ],
+      "wosolHandles": [
+        "اختيار المركبة",
+        "تنسيق السائق",
+        "تخطيط المسار",
+        "متابعة التوقيت",
+        "قوائم الضيوف"
+      ],
+      "experienceStandard": "انضباط وسرية وملاءمة لطبيعة العضو أو الضيف.",
+      "difference": "ننظر للتنقل كجزء من خطة حركة كاملة، لا كطلب سيارة فقط.",
+      "sampleRequests": [
+        "سيارة بسائق",
+        "خيار قيادة ذاتية",
+        "سائق لسيارة خاصة",
+        "نقل مطار",
+        "خطة مركبات للضيوف"
+      ],
+      "audienceRelevance": "لمن يحتاج حركة موثوقة دون تنسيق متكرر.",
+      "cta": "رتب خدمة التنقل",
+      "imageLabel": "تنسيق سيارات وسائقين"
     }
   },
   {
-    id: "special-request",
-    categoryKey: "lifestyle",
-    en: {
-      title: "Special Request",
-      tagline: "Unusual needs turned into structured, discreet execution.",
-      description: "Personalized handling for unique or exclusive needs, making complex requests possible through trusted partners and careful coordination.",
-      outcome: "A difficult request becomes a managed project with clear next steps.",
-      forWhom: ["Private clients", "Family offices", "Executives", "Hosts with unusual requirements"],
-      whenItMatters: ["Rare access needs", "Complex gifting", "Cross-border coordination", "Confidential arrangements", "High-pressure deadlines"],
-      wosolHandles: ["Request clarification", "Partner identification", "Risk and privacy review", "Execution plan", "Status updates"],
-      experienceStandard: "Discreet, realistic, and transparent about what can be done well.",
-      difference: "WOSOL brings structure to requests that do not fit standard service categories.",
-      sampleRequests: ["A rare destination experience", "A private cultural visit", "Confidential guest handling", "Sourcing a difficult item", "Coordinating a surprise itinerary"],
-      audienceRelevance: "For clients who need a trusted point of contact when the request is not ordinary.",
-      cta: "Submit a Special Request",
-      imageLabel: "Bespoke access and execution"
+    "id": "education",
+    "categoryKey": "education",
+    "en": {
+      "title": "Education",
+      "tagline": "Educational pathways coordinated for personal and family growth.",
+      "description": "WOSOL supports educational journeys by coordinating suitable programs, learning experiences, and family requirements with care and clarity.",
+      "outcome": "Education-related needs become easier to explore, compare, and arrange.",
+      "forWhom": [
+        "Families",
+        "Students",
+        "Parents",
+        "Members seeking development programs"
+      ],
+      "whenItMatters": [
+        "School exploration",
+        "Development programs",
+        "Family education planning",
+        "Special learning experiences"
+      ],
+      "wosolHandles": [
+        "Requirement review",
+        "Program search",
+        "Scheduling",
+        "Partner coordination",
+        "Follow-up"
+      ],
+      "experienceStandard": "Thoughtful, structured, and tailored to the learner and family context.",
+      "difference": "We help turn broad educational goals into practical next steps.",
+      "sampleRequests": [
+        "Program search",
+        "Tutor coordination",
+        "Learning trip",
+        "School inquiry",
+        "Development course"
+      ],
+      "audienceRelevance": "For families and members who want education support handled with care.",
+      "cta": "Review Education Support",
+      "imageLabel": "Curated education support"
     },
-    ar: {
-      title: "الطلبات الخاصة",
-      tagline: "احتياجات غير معتادة تتحول إلى تنفيذ منظم وسري.",
-      description: "إدارة شخصية للاحتياجات الفريدة أو الحصرية، لجعل الطلبات المعقدة قابلة للتحقق عبر شركاء موثوقين وتنسيق دقيق.",
-      outcome: "يتحول الطلب الصعب إلى مشروع مدار بخطوات واضحة.",
-      forWhom: ["العملاء الخاصون", "المكاتب العائلية", "المديرون التنفيذيون", "المضيفون ذوو المتطلبات غير التقليدية"],
-      whenItMatters: ["احتياجات وصول نادرة", "إهداء معقد", "تنسيق عابر للحدود", "ترتيبات سرية", "مواعيد ضغط عالية"],
-      wosolHandles: ["توضيح الطلب", "تحديد الشركاء", "مراجعة المخاطر والخصوصية", "خطة التنفيذ", "تحديثات الحالة"],
-      experienceStandard: "سرية وواقعية ووضوح حول ما يمكن تنفيذه بجودة.",
-      difference: "تمنح وصول هيكلاً للطلبات التي لا تنتمي إلى فئة خدمات تقليدية.",
-      sampleRequests: ["تجربة وجهة نادرة", "زيارة ثقافية خاصة", "رعاية ضيوف بسرية", "البحث عن قطعة صعبة", "تنسيق برنامج مفاجئ"],
-      audienceRelevance: "لمن يحتاج نقطة اتصال موثوقة عندما يكون الطلب غير عادي.",
-      cta: "أرسل طلباً خاصاً",
-      imageLabel: "وصول خاص وتنفيذ حسب الطلب"
+    "ar": {
+      "title": "تجارب التطوير",
+      "tagline": "مسارات تعليمية تُنسق للنمو الشخصي والعائلي.",
+      "description": "تدعم وصول الرحلات التعليمية من خلال تنسيق البرامج المناسبة، التجارب التعليمية، ومتطلبات العائلة بعناية ووضوح.",
+      "outcome": "تصبح الاحتياجات التعليمية أسهل في الاستكشاف والمقارنة والترتيب.",
+      "forWhom": [
+        "العائلات",
+        "الطلاب",
+        "الأهالي",
+        "الأعضاء الباحثون عن برامج تطوير"
+      ],
+      "whenItMatters": [
+        "استكشاف المدارس",
+        "برامج التطوير",
+        "تخطيط التعليم العائلي",
+        "تجارب تعلم خاصة"
+      ],
+      "wosolHandles": [
+        "مراجعة المتطلبات",
+        "البحث عن البرامج",
+        "تنسيق المواعيد",
+        "تنسيق الشركاء",
+        "المتابعة"
+      ],
+      "experienceStandard": "خدمة مدروسة ومنظمة ومصممة حول المتعلم وسياق العائلة.",
+      "difference": "نحوّل الأهداف التعليمية العامة إلى خطوات عملية قابلة للترتيب.",
+      "sampleRequests": [
+        "بحث عن برنامج",
+        "تنسيق معلم خاص",
+        "رحلة تعليمية",
+        "استفسار مدرسة",
+        "دورة تطوير"
+      ],
+      "audienceRelevance": "للعائلات والأعضاء الذين يريدون دعماً تعليمياً يُدار بعناية.",
+      "cta": "راجع دعم التعليم",
+      "imageLabel": "دعم تعليمي منتقى"
     }
   },
   {
-    id: "transportation-services",
-    categoryKey: "travel",
-    en: {
-      title: "Transportation Services",
-      tagline: "Ground movement with comfort, discretion, and route confidence.",
-      description: "Comprehensive transportation solutions, from self-drive options to chauffeured services with premium vehicles and experienced drivers.",
-      outcome: "Arrivals, departures, and daily movement feel punctual, private, and composed.",
-      forWhom: ["Executives", "Families", "VIP guests", "Event hosts", "Travelers requiring secure movement"],
-      whenItMatters: ["Airport transfers", "Daily driver needs", "Event arrivals", "Multi-car coordination", "City-to-city movement"],
-      wosolHandles: ["Vehicle matching", "Chauffeur coordination", "Route planning", "Guest manifests", "Timing and contingency management"],
-      experienceStandard: "Clean, punctual, discreet, and aligned with the client's comfort and security expectations.",
-      difference: "WOSOL manages the movement logic behind the vehicle, not just the car itself.",
-      sampleRequests: ["Chauffeured luxury sedan", "Family van coordination", "Executive convoy", "Self-drive premium vehicle", "Event guest transfer plan"],
-      audienceRelevance: "For clients who need ground travel to remain calm, private, and reliable.",
-      cta: "Arrange Transportation",
-      imageLabel: "Executive car arrival"
+    "id": "corporate-concierge-services",
+    "categoryKey": "events",
+    "en": {
+      "title": "Corporate Concierge Services",
+      "tagline": "Executive and organizational support for meetings, guests, logistics, and MICE.",
+      "description": "WOSOL supports executives, boards, organizations, and families with corporate concierge services covering meetings, incentives, conferences, exhibitions, guest care, and logistics.",
+      "outcome": "Corporate hosting and executive movement feel organized, discreet, and consistent with the organization’s standards.",
+      "forWhom": [
+        "Executives",
+        "Boards",
+        "Organizations",
+        "Corporate guests"
+      ],
+      "whenItMatters": [
+        "Board meetings",
+        "MICE programs",
+        "Executive hosting",
+        "Guest logistics"
+      ],
+      "wosolHandles": [
+        "Meeting support",
+        "Travel and transport",
+        "Dining and venues",
+        "Guest itineraries",
+        "On-ground coordination"
+      ],
+      "experienceStandard": "Polished, discreet, and aligned with protocol and executive expectations.",
+      "difference": "The organization receives one coordination layer across guests, schedules, and logistics.",
+      "sampleRequests": [
+        "Guest program",
+        "Board dinner",
+        "Conference support",
+        "Executive arrival",
+        "Partner hosting"
+      ],
+      "audienceRelevance": "For organizations that need a private concierge layer around important people and moments.",
+      "cta": "Request Corporate Concierge",
+      "imageLabel": "Corporate concierge support"
     },
-    ar: {
-      title: "خدمات التنقل",
-      tagline: "حركة أرضية براحة وسرية وثقة في المسار.",
-      description: "حلول تنقل شاملة من خيارات القيادة الذاتية إلى خدمات السائقين بمركبات فاخرة وسائقين ذوي خبرة.",
-      outcome: "تبدو الوصولات والمغادرات والحركة اليومية منضبطة وخاصة وهادئة.",
-      forWhom: ["المديرون التنفيذيون", "العائلات", "الضيوف الخاصون", "مضيفو المناسبات", "المسافرون الذين يحتاجون حركة آمنة"],
-      whenItMatters: ["نقل المطار", "احتياج سائق يومي", "وصول المناسبات", "تنسيق عدة مركبات", "تنقل بين المدن"],
-      wosolHandles: ["مطابقة المركبة", "تنسيق السائق", "تخطيط المسار", "قوائم الضيوف", "إدارة الوقت والبدائل"],
-      experienceStandard: "نظافة وانضباط وسرية وتوافق مع توقعات الراحة والأمان.",
-      difference: "تدير وصول منطق الحركة خلف المركبة، لا السيارة وحدها.",
-      sampleRequests: ["سيارة فاخرة بسائق", "تنسيق مركبة عائلية", "موكب تنفيذي", "سيارة فاخرة للقيادة الذاتية", "خطة نقل ضيوف مناسبة"],
-      audienceRelevance: "لمن يحتاج تنقلاً أرضياً هادئاً وخاصاً وموثوقاً.",
-      cta: "رتّب التنقل",
-      imageLabel: "وصول سيارة تنفيذية"
+    "ar": {
+      "title": "خدمة الكونسيرج للشركات",
+      "tagline": "دعم تنفيذي ومؤسسي للاجتماعات والضيوف واللوجستيات وبرامج الأعمال.",
+      "description": "تدعم وصول التنفيذيين ومجالس الإدارة والمنظمات وعائلاتهم عبر خدمات كونسيرج للشركات تشمل الاجتماعات والحوافز والمؤتمرات والمعارض ورعاية الضيوف واللوجستيات.",
+      "outcome": "تبدو ضيافة الشركات وحركة التنفيذيين منظمة وسرية ومتسقة مع معايير الجهة.",
+      "forWhom": [
+        "التنفيذيون",
+        "مجالس الإدارة",
+        "المنظمات",
+        "ضيوف الشركات"
+      ],
+      "whenItMatters": [
+        "اجتماعات مجلس",
+        "برامج أعمال",
+        "استضافة تنفيذية",
+        "لوجستيات ضيوف"
+      ],
+      "wosolHandles": [
+        "دعم الاجتماعات",
+        "السفر والتنقل",
+        "المطاعم والمواقع",
+        "برامج الضيوف",
+        "التنسيق الميداني"
+      ],
+      "experienceStandard": "احترافية وسرية ومواءمة للبروتوكول وتوقعات التنفيذيين.",
+      "difference": "تحصل الجهة على طبقة تنسيق واحدة للضيوف والجداول واللوجستيات.",
+      "sampleRequests": [
+        "برنامج ضيف",
+        "عشاء مجلس",
+        "دعم مؤتمر",
+        "وصول تنفيذي",
+        "استضافة شريك"
+      ],
+      "audienceRelevance": "للجهات التي تحتاج طبقة كونسيرج خاصة حول الأشخاص واللحظات المهمة.",
+      "cta": "اطلب كونسيرج الشركات",
+      "imageLabel": "دعم كونسيرج للشركات"
     }
   },
   {
-    id: "corporate-concierge-services",
-    categoryKey: "events",
-    en: {
-      title: "Corporate Concierge Services",
-      tagline: "Executive and company needs handled through one discreet coordination layer.",
-      description: "Tailored concierge services for executives and companies, managing meetings, logistics, guest care, and luxury access requirements.",
-      outcome: "Corporate hospitality becomes precise, private, and aligned with the brand's level of expectation.",
-      forWhom: ["Executives", "Corporate offices", "Board teams", "Investor relations", "Guest relations teams"],
-      whenItMatters: ["Executive hosting", "Delegation visits", "Board meetings", "Client entertainment", "High-value employee or partner care"],
-      wosolHandles: ["Meeting support", "Travel and transport", "Dining and venue access", "Guest itineraries", "On-ground coordination"],
-      experienceStandard: "Professional, discreet, punctual, and tuned to corporate reputation.",
-      difference: "WOSOL gives companies a private hospitality layer without building an internal concierge function.",
-      sampleRequests: ["Executive guest itinerary", "Meeting logistics", "Board dinner coordination", "Partner arrival support", "Corporate lifestyle benefit handling"],
-      audienceRelevance: "For organizations that host high-value people and cannot afford fragmented coordination.",
-      cta: "Design Corporate Support",
-      imageLabel: "Corporate private hospitality"
+    "id": "personal-assistant",
+    "categoryKey": "lifestyle",
+    "en": {
+      "title": "Personal Assistance",
+      "tagline": "Dedicated support for calendars, errands, households, and daily follow-through.",
+      "description": "WOSOL coordinates personal assistance needs ranging from calendar management and household errands to recurring follow-up, while anticipating preferences and maintaining continuity.",
+      "outcome": "Personal details move through one trusted support layer.",
+      "forWhom": [
+        "Executives",
+        "Families",
+        "Private members",
+        "Busy households"
+      ],
+      "whenItMatters": [
+        "Calendar pressure",
+        "Household errands",
+        "Recurring needs",
+        "Personal follow-up"
+      ],
+      "wosolHandles": [
+        "Task intake",
+        "Calendar-sensitive planning",
+        "Errand coordination",
+        "Household support",
+        "Follow-through"
+      ],
+      "experienceStandard": "Reliable, discreet, and increasingly precise as preferences become known.",
+      "difference": "The assistant layer protects your time while keeping details organized.",
+      "sampleRequests": [
+        "Appointment coordination",
+        "Household errand",
+        "Reminder follow-up",
+        "Personal booking",
+        "Daily support"
+      ],
+      "audienceRelevance": "For members who need trusted support without explaining every detail repeatedly.",
+      "cta": "Request Personal Assistance",
+      "imageLabel": "Personal assistance support"
     },
-    ar: {
-      title: "خدمات الكونسيرج للشركات",
-      tagline: "احتياجات التنفيذيين والشركات عبر طبقة تنسيق واحدة وسرية.",
-      description: "خدمات كونسيرج مصممة للمديرين والشركات، تدير الاجتماعات واللوجستيات ورعاية الضيوف ومتطلبات الوصول الفاخر.",
-      outcome: "تتحول ضيافة الشركات إلى تجربة دقيقة وخاصة ومتوافقة مع مستوى العلامة.",
-      forWhom: ["المديرون التنفيذيون", "مكاتب الشركات", "فرق المجالس", "علاقات المستثمرين", "فرق رعاية الضيوف"],
-      whenItMatters: ["استضافة التنفيذيين", "زيارات الوفود", "اجتماعات المجلس", "ترفيه العملاء", "رعاية شركاء أو موظفين عالي القيمة"],
-      wosolHandles: ["دعم الاجتماعات", "السفر والتنقل", "الوصول للمطاعم والمواقع", "برامج الضيوف", "التنسيق الميداني"],
-      experienceStandard: "احتراف وسرية وانضباط زمني ووعي بسمعة الشركة.",
-      difference: "تمنح وصول الشركات طبقة ضيافة خاصة دون الحاجة لبناء وظيفة كونسيرج داخلية.",
-      sampleRequests: ["برنامج ضيف تنفيذي", "لوجستيات اجتماع", "تنسيق عشاء مجلس", "دعم وصول شريك", "إدارة مزايا نمط الحياة للشركات"],
-      audienceRelevance: "للمنظمات التي تستضيف أشخاصاً عالي القيمة ولا يناسبها التنسيق المجزأ.",
-      cta: "صمّم دعماً للشركة",
-      imageLabel: "ضيافة شركات خاصة"
+    "ar": {
+      "title": "المساعد الشخصي",
+      "tagline": "دعم مخصص للجداول والمهام المنزلية والمتابعة اليومية.",
+      "description": "تنسق وصول احتياجات المساعدة الشخصية، من إدارة الجداول والمهام المنزلية إلى المتابعة المتكررة، مع توقع التفضيلات والحفاظ على الاستمرارية.",
+      "outcome": "تتحرك التفاصيل الشخصية عبر طبقة دعم واحدة وموثوقة.",
+      "forWhom": [
+        "التنفيذيون",
+        "العائلات",
+        "الأعضاء الخاصون",
+        "المنازل ذات الجداول المزدحمة"
+      ],
+      "whenItMatters": [
+        "ضغط الجداول",
+        "مهام منزلية",
+        "احتياجات متكررة",
+        "متابعة شخصية"
+      ],
+      "wosolHandles": [
+        "استقبال المهام",
+        "تخطيط مرتبط بالوقت",
+        "تنسيق المشاوير",
+        "دعم المنزل",
+        "المتابعة حتى الإنجاز"
+      ],
+      "experienceStandard": "موثوق وسري ويزداد دقة كلما أصبحت التفضيلات أوضح.",
+      "difference": "طبقة المساعدة تحمي وقتك وتحافظ على ترتيب التفاصيل.",
+      "sampleRequests": [
+        "تنسيق موعد",
+        "مهمة منزلية",
+        "متابعة تذكير",
+        "حجز شخصي",
+        "دعم يومي"
+      ],
+      "audienceRelevance": "لمن يحتاج دعماً موثوقاً دون إعادة شرح كل تفصيل.",
+      "cta": "اطلب مساعدة شخصية",
+      "imageLabel": "دعم مساعد شخصي"
     }
   },
   {
-    id: "event-planning",
-    categoryKey: "events",
-    en: {
-      title: "Event Planning",
-      tagline: "Private gatherings and grand moments orchestrated with exacting care.",
-      description: "Memorable event planning from intimate gatherings to larger celebrations, with attention to atmosphere, guest journey, and every operational detail.",
-      outcome: "The host remains present while the event moves with elegance and control.",
-      forWhom: ["Private hosts", "Families", "Executives", "Corporate clients", "Celebration committees"],
-      whenItMatters: ["Milestone birthdays", "Private dinners", "Launch events", "Family celebrations", "Executive receptions"],
-      wosolHandles: ["Concept direction", "Venue and supplier coordination", "Guest flow", "Catering and entertainment", "Event-day management"],
-      experienceStandard: "Polished, emotionally aware, and quietly controlled from planning to close.",
-      difference: "WOSOL aligns the event with the host's privacy, taste, and social context.",
-      sampleRequests: ["Private dinner", "Milestone celebration", "Corporate reception", "Destination event support", "Surprise occasion planning"],
-      audienceRelevance: "For hosts who need atmosphere and execution to meet the same standard.",
-      cta: "Plan a Private Event",
-      imageLabel: "Private event table detail"
+    "id": "special-request",
+    "categoryKey": "access",
+    "en": {
+      "title": "Special Request",
+      "tagline": "Tailored support for unusual, sensitive, or hard-to-arrange requests.",
+      "description": "WOSOL reviews special requests and unique needs, from difficult-to-secure access to private celebrations and one-of-a-kind experiences, then recommends the most suitable path.",
+      "outcome": "A complex request becomes clearer, more structured, and easier to act on.",
+      "forWhom": [
+        "Private members",
+        "Families",
+        "Executives",
+        "Hosts"
+      ],
+      "whenItMatters": [
+        "Hard-to-secure access",
+        "Sensitive timing",
+        "Rare gifting",
+        "Private celebrations"
+      ],
+      "wosolHandles": [
+        "Request clarification",
+        "Feasibility review",
+        "Partner search",
+        "Path recommendation",
+        "Execution follow-up"
+      ],
+      "experienceStandard": "Clear, discreet, and realistic about what can be arranged.",
+      "difference": "We do not promise everything; we review fit and then build the right route.",
+      "sampleRequests": [
+        "Rare tickets",
+        "Private surprise",
+        "Special access",
+        "Unusual gift",
+        "Unique experience"
+      ],
+      "audienceRelevance": "For members who need thoughtful handling of requests outside standard categories.",
+      "cta": "Start a Special Request",
+      "imageLabel": "Special request handling"
     },
-    ar: {
-      title: "تخطيط المناسبات",
-      tagline: "تجمعات خاصة ولحظات كبيرة تُنظم بعناية دقيقة.",
-      description: "تخطيط مناسبات لا تُنسى من اللقاءات الحميمة إلى الاحتفالات الكبرى، مع عناية بالأجواء ورحلة الضيف وكل التفاصيل التشغيلية.",
-      outcome: "يبقى المضيف حاضراً في لحظته بينما تتحرك المناسبة بأناقة وسيطرة.",
-      forWhom: ["المضيفون الخاصون", "العائلات", "المديرون التنفيذيون", "عملاء الشركات", "لجان الاحتفال"],
-      whenItMatters: ["أعياد ميلاد مهمة", "عشاءات خاصة", "فعاليات إطلاق", "احتفالات عائلية", "استقبالات تنفيذية"],
-      wosolHandles: ["اتجاه الفكرة", "تنسيق الموقع والمورّدين", "حركة الضيوف", "الضيافة والترفيه", "إدارة يوم المناسبة"],
-      experienceStandard: "صقل ووعي عاطفي وسيطرة هادئة من التخطيط حتى الختام.",
-      difference: "تربط وصول المناسبة بخصوصية المضيف وذائقته وسياقه الاجتماعي.",
-      sampleRequests: ["عشاء خاص", "احتفال بمناسبة مهمة", "استقبال مؤسسي", "دعم مناسبة في وجهة خارجية", "تخطيط مفاجأة خاصة"],
-      audienceRelevance: "للمضيفين الذين يريدون أن يلتقي الجو والتنفيذ على مستوى واحد.",
-      cta: "خطط مناسبة خاصة",
-      imageLabel: "تفاصيل مائدة مناسبة خاصة"
+    "ar": {
+      "title": "الطلبات الخاصة",
+      "tagline": "دعم مخصص للطلبات غير المعتادة أو الحساسة أو صعبة الترتيب.",
+      "description": "تراجع وصول الطلبات الخاصة والاحتياجات الفريدة، من الوصول صعب الترتيب إلى الاحتفالات الخاصة والتجارب غير التقليدية، ثم تقترح المسار الأنسب.",
+      "outcome": "يتحول الطلب المعقد إلى مسار أوضح وأكثر قابلية للتنفيذ.",
+      "forWhom": [
+        "الأعضاء الخاصون",
+        "العائلات",
+        "التنفيذيون",
+        "المضيفون"
+      ],
+      "whenItMatters": [
+        "وصول صعب",
+        "توقيت حساس",
+        "إهداء نادر",
+        "احتفال خاص"
+      ],
+      "wosolHandles": [
+        "توضيح الطلب",
+        "مراجعة الإمكانية",
+        "البحث عن الشركاء",
+        "اقتراح المسار",
+        "متابعة التنفيذ"
+      ],
+      "experienceStandard": "وضوح وسرية وواقعية في ما يمكن ترتيبه.",
+      "difference": "لا نعد بكل شيء؛ نراجع الملاءمة ثم نبني المسار الصحيح.",
+      "sampleRequests": [
+        "تذاكر نادرة",
+        "مفاجأة خاصة",
+        "وصول خاص",
+        "هدية غير معتادة",
+        "تجربة فريدة"
+      ],
+      "audienceRelevance": "لمن يحتاج تعاملاً مدروساً مع طلبات خارج التصنيفات المعتادة.",
+      "cta": "ابدأ طلباً خاصاً",
+      "imageLabel": "إدارة طلب خاص"
     }
   },
   {
-    id: "arts-design",
-    categoryKey: "assets",
-    en: {
-      title: "Arts & Design",
-      tagline: "Spaces, collections, and cultural access shaped with taste and expertise.",
-      description: "Functional and beautiful design support for living and working spaces, alongside private gallery viewings, personalized acquisitions, and access to renowned designers.",
-      outcome: "The client's environment and collection reflect personal identity with discretion and depth.",
-      forWhom: ["Homeowners", "Collectors", "Executives", "Family offices", "Clients refining private spaces"],
-      whenItMatters: ["New residence setup", "Office refinement", "Art acquisition", "Private gallery access", "Interior refresh"],
-      wosolHandles: ["Designer introductions", "Art viewing coordination", "Acquisition support", "Space brief development", "Supplier alignment"],
-      experienceStandard: "Cultured, understated, and aligned with the client's personal context.",
-      difference: "WOSOL connects design, art, and lifestyle needs rather than treating them as separate tasks.",
-      sampleRequests: ["Private gallery viewing", "Interior designer introduction", "Artwork acquisition coordination", "Home styling brief", "Cultural experience arrangement"],
-      audienceRelevance: "For clients whose spaces and collections need privacy, taste, and trusted access.",
-      cta: "Curate Art or Design Support",
-      imageLabel: "Private gallery and interior detail"
+    "id": "designers",
+    "categoryKey": "assets",
+    "en": {
+      "title": "Designers",
+      "tagline": "Interior and design support for refined living and work spaces.",
+      "description": "As part of WOSOL’s concierge solutions, design services support the creation of beautiful and functional private or professional spaces through suitable design coordination.",
+      "outcome": "Your space moves from idea to direction with clearer options and trusted coordination.",
+      "forWhom": [
+        "Homeowners",
+        "Private offices",
+        "Families",
+        "Members developing spaces"
+      ],
+      "whenItMatters": [
+        "New residence",
+        "Office refinement",
+        "Interior updates",
+        "Design sourcing"
+      ],
+      "wosolHandles": [
+        "Design brief",
+        "Designer coordination",
+        "Space requirements",
+        "Supplier alignment",
+        "Follow-up"
+      ],
+      "experienceStandard": "Tasteful, practical, and respectful of how the space will actually be used.",
+      "difference": "Design support is connected to lifestyle, comfort, and daily function, not only aesthetics.",
+      "sampleRequests": [
+        "Interior designer referral",
+        "Home update",
+        "Office styling",
+        "Furniture sourcing",
+        "Design consultation"
+      ],
+      "audienceRelevance": "For members who want spaces that reflect taste and function without managing every supplier.",
+      "cta": "Review Design Support",
+      "imageLabel": "Private design coordination"
     },
-    ar: {
-      title: "الفنون والتصميم",
-      tagline: "مساحات ومجموعات ووصول ثقافي يتشكل بذائقة وخبرة.",
-      description: "حلول تصميم عملية وجميلة لمساحات السكن والعمل، مع تنسيق زيارات معارض خاصة واقتناء أعمال فنية وتواصل مع مصممين معروفين.",
-      outcome: "تعكس بيئة العميل ومجموعته هويته الشخصية بخصوصية وعمق.",
-      forWhom: ["ملاك المنازل", "جامعو الأعمال", "المديرون التنفيذيون", "المكاتب العائلية", "العملاء الذين يطورون مساحاتهم الخاصة"],
-      whenItMatters: ["تجهيز مسكن جديد", "تحسين مكتب", "اقتناء عمل فني", "زيارة معرض خاصة", "تجديد داخلي"],
-      wosolHandles: ["التعريف بالمصممين", "تنسيق مشاهدة الأعمال الفنية", "دعم الاقتناء", "تطوير موجز المساحة", "مواءمة المورّدين"],
-      experienceStandard: "ذائقة ثقافية وهدوء وملاءمة للسياق الشخصي للعميل.",
-      difference: "تربط وصول بين التصميم والفن ونمط الحياة بدلاً من التعامل معها كمهام منفصلة.",
-      sampleRequests: ["زيارة معرض خاصة", "ترشيح مصمم داخلي", "تنسيق اقتناء عمل فني", "موجز تنسيق منزل", "ترتيب تجربة ثقافية"],
-      audienceRelevance: "لمن تحتاج مساحاته ومجموعاته إلى خصوصية وذائقة ووصول موثوق.",
-      cta: "نسّق دعماً فنياً أو تصميمياً",
-      imageLabel: "معرض خاص وتفاصيل داخلية"
-    }
-  },
-  {
-    id: "vip-access",
-    categoryKey: "access",
-    en: {
-      title: "VIP Access",
-      tagline: "Privileged access pursued through trusted channels and careful judgment.",
-      description: "Exclusive access coordination for high-profile events, luxury venues, and restricted experiences where eligibility, timing, and discretion matter.",
-      outcome: "Access feels considered and protected, never loud or transactional.",
-      forWhom: ["Private clients", "Executives", "Traveling guests", "Corporate hosts", "Lifestyle clients"],
-      whenItMatters: ["High-profile events", "Private venues", "Cultural occasions", "Premium dining", "Restricted experiences"],
-      wosolHandles: ["Access request review", "Partner coordination", "Guest requirements", "Timing and arrival planning", "Confidential handling"],
-      experienceStandard: "Respectful, discreet, and transparent about availability and conditions.",
-      difference: "WOSOL avoids shallow promises and pursues access through suitable, trusted routes.",
-      sampleRequests: ["Private dining access", "Event admission coordination", "Members-only venue inquiry", "Cultural event access", "Guest arrival handling"],
-      audienceRelevance: "For clients who value meaningful access without public exposure or overstatement.",
-      cta: "Explore Private Access",
-      imageLabel: "Exclusive venue access"
-    },
-    ar: {
-      title: "الوصول الخاص",
-      tagline: "وصول مميز عبر قنوات موثوقة وحكم دقيق.",
-      description: "تنسيق الوصول إلى فعاليات رفيعة ومواقع فاخرة وتجارب محدودة، حيث تهم الأهلية والتوقيت والسرية.",
-      outcome: "يبدو الوصول مدروساً ومحميّاً، لا صاخباً ولا تجارياً.",
-      forWhom: ["العملاء الخاصون", "المديرون التنفيذيون", "الضيوف المسافرون", "مضيفو الشركات", "عملاء نمط الحياة"],
-      whenItMatters: ["فعاليات رفيعة", "مواقع خاصة", "مناسبات ثقافية", "مطاعم مميزة", "تجارب محدودة الوصول"],
-      wosolHandles: ["مراجعة طلب الوصول", "تنسيق الشركاء", "متطلبات الضيوف", "تخطيط التوقيت والوصول", "التعامل السري"],
-      experienceStandard: "احترام وسرية ووضوح حول التوفر والشروط.",
-      difference: "تتجنب وصول الوعود السطحية وتسعى للوصول عبر مسارات مناسبة وموثوقة.",
-      sampleRequests: ["وصول إلى عشاء خاص", "تنسيق حضور فعالية", "استفسار عن موقع خاص بالأعضاء", "وصول إلى مناسبة ثقافية", "رعاية وصول الضيوف"],
-      audienceRelevance: "لمن يقدّر الوصول ذي المعنى دون انكشاف أو مبالغة.",
-      cta: "استكشف الوصول الخاص",
-      imageLabel: "وصول إلى موقع حصري"
-    }
-  },
-  {
-    id: "real-estate",
-    categoryKey: "assets",
-    en: {
-      title: "Real Estate",
-      tagline: "Premium property access informed by lifestyle fit and trusted partners.",
-      description: "Support for premium real estate opportunities, luxury residences, investment properties, and lifestyle-led property experiences through trusted partners and private market intelligence.",
-      outcome: "Property decisions are guided by lifestyle, privacy, and long-term suitability.",
-      forWhom: ["Private buyers", "Investors", "Family offices", "Relocating executives", "Clients seeking second homes"],
-      whenItMatters: ["Private residence search", "Second-home exploration", "Investment property review", "Relocation", "Lifestyle-led property visits"],
-      wosolHandles: ["Requirement mapping", "Trusted partner introductions", "Private viewings", "Lifestyle fit review", "Stay and visit logistics"],
-      experienceStandard: "Confidential, informed, and selective without public-market noise.",
-      difference: "WOSOL frames property around how the client will live, host, travel, and protect privacy.",
-      sampleRequests: ["Private villa search", "Luxury apartment viewing", "Second-home destination review", "Investment property introduction", "Relocation stay planning"],
-      audienceRelevance: "For clients who need property access and evaluation to respect lifestyle and confidentiality.",
-      cta: "Discuss Property Access",
-      imageLabel: "Luxury residence access"
-    },
-    ar: {
-      title: "العقارات",
-      tagline: "وصول عقاري فاخر يستند إلى ملاءمة نمط الحياة وشركاء موثوقين.",
-      description: "دعم العملاء في الوصول إلى فرص عقارية فاخرة ومساكن راقية وعقارات استثمارية وتجارب عقارية مرتبطة بنمط الحياة عبر شركاء موثوقين ومعرفة سوقية خاصة.",
-      outcome: "تصبح قرارات العقار موجهة بنمط الحياة والخصوصية والملاءمة طويلة الأمد.",
-      forWhom: ["المشترون الخاصون", "المستثمرون", "المكاتب العائلية", "المديرون المنتقلون", "الباحثون عن منزل ثانٍ"],
-      whenItMatters: ["البحث عن مسكن خاص", "استكشاف منزل ثانٍ", "مراجعة عقار استثماري", "الانتقال", "زيارات عقارية مرتبطة بنمط الحياة"],
-      wosolHandles: ["تحديد المتطلبات", "التعريف بشركاء موثوقين", "تنسيق زيارات خاصة", "مراجعة ملاءمة نمط الحياة", "لوجستيات الإقامة والزيارة"],
-      experienceStandard: "سرية ومعرفة وانتقائية بعيداً عن ضجيج السوق العام.",
-      difference: "تنظر وصول للعقار من زاوية كيف سيعيش العميل ويستضيف ويسافر ويحمي خصوصيته.",
-      sampleRequests: ["بحث عن فيلا خاصة", "زيارة شقة فاخرة", "مراجعة وجهة منزل ثانٍ", "تعريف بفرصة استثمارية", "تخطيط إقامة انتقالية"],
-      audienceRelevance: "لمن يحتاج وصولاً وتقييماً عقارياً يحترم نمط الحياة والسرية.",
-      cta: "ناقش الوصول العقاري",
-      imageLabel: "وصول إلى مسكن فاخر"
+    "ar": {
+      "title": "المصممين",
+      "tagline": "دعم تصميم داخلي ومساحات معيشة وعمل أكثر اتزاناً.",
+      "description": "كجزء من حلول كونسيرج وصول، تدعم خدمات التصميم تنسيق المساحات الخاصة أو العملية الجميلة والعملية من خلال ربطك بخيارات تصميم مناسبة.",
+      "outcome": "تتحول المساحة من فكرة إلى اتجاه واضح بخيارات أفضل وتنسيق موثوق.",
+      "forWhom": [
+        "ملاك المنازل",
+        "المكاتب الخاصة",
+        "العائلات",
+        "الأعضاء الذين يطورون مساحات"
+      ],
+      "whenItMatters": [
+        "منزل جديد",
+        "تحسين مكتب",
+        "تحديث داخلي",
+        "بحث عن قطع تصميم"
+      ],
+      "wosolHandles": [
+        "موجز التصميم",
+        "تنسيق المصممين",
+        "متطلبات المساحة",
+        "مواءمة الموردين",
+        "المتابعة"
+      ],
+      "experienceStandard": "ذوق وواقعية واحترام لطريقة استخدام المساحة فعلياً.",
+      "difference": "دعم التصميم لدينا مرتبط بأسلوب الحياة والراحة والاستخدام اليومي، لا بالمظهر فقط.",
+      "sampleRequests": [
+        "ترشيح مصمم داخلي",
+        "تحديث منزل",
+        "تنسيق مكتب",
+        "بحث عن أثاث",
+        "استشارة تصميم"
+      ],
+      "audienceRelevance": "لمن يريد مساحات تعكس الذوق والاستخدام دون إدارة كل مورد.",
+      "cta": "راجع دعم التصميم",
+      "imageLabel": "تنسيق تصميم خاص"
     }
   }
 ];
 
-const arabicServiceCopy = {
-  "lifestyle-concierge": {
-    title: "إدارة نمط الحياة",
-    tagline: "تحويل تفاصيلك اليومية وتطلعاتك إلى واقع ملموس بمسار هادئ.",
-    description: "في وصول كونسيرج، نحن لا نحجز الخدمات، بل نُدير نمط حياتك عبر واجهة رقمية تمنحك ذكاء الوصول والتحكم الكامل في تفاصيل يومك.",
-    outcome: "تفاصيل يومية مُدارة بسلاسة، ووقت محفوظ لما يستحق انتباهك فعلاً.",
-    forWhom: ["الأعضاء", "الأسر", "كثيرو السفر", "أصحاب الجداول المزدحمة"],
-    whenItMatters: ["جدول مزدحم", "طلبات منزلية", "مناسبة خاصة", "مهام متكررة"],
-    wosolHandles: ["فهم الطلب", "تحديد الأولوية", "تنسيق الجهات", "متابعة التأكيد", "حفظ التفضيلات"],
-    difference: "نعتمد على التخطيط المدروس الذي يسبق الفعل، لضمان أن كل ترتيب يأتي كامتداد طبيعي لأسلوب حياتك الخاص.",
-    sampleRequests: ["ترتيب عشاء", "تنسيق خدمة منزلية", "برنامج نهاية أسبوع", "موعد تسوق", "تجهيز مناسبة شخصية"],
-    cta: "اطلب تقييماً خاصاً",
-    imageLabel: "تفاصيل يومية خاصة"
-  },
-  "travel-management": {
-    title: "إدارة السفر",
-    tagline: "ذكاء الوصول والتحكم في رحلاتك عبر نقطة اتصال واحدة تحيد أي عناء.",
-    description: "يشارك العضو تطلعاته، ليتولى فريقنا خلف الكواليس تحليل احتياجاته وتنسيق الخيارات الموثوقة وتنفيذ تطلعاته بسلاسة مطلقة.",
-    outcome: "رحلة أكثر سهولة وسكينة، دون الانشغال بإدارة التفاصيل التشغيلية.",
-    forWhom: ["الأعضاء المسافرون", "الأسر", "الأزواج", "الضيوف"],
-    whenItMatters: ["رحلات متعددة", "عطلات أسرية", "سفر خاص", "تغيير في الخطة"],
-    wosolHandles: ["تخطيط المسار", "اختيار الإقامة", "تنسيق التنقل", "متابعة الوصول", "تعديل البرنامج"],
-    difference: "لا نقترح خياراً قبل أن نتأكد من ملاءمته التامة لأسلوب حياتكم.",
-    sampleRequests: ["برنامج سفر", "استقبال من المطار", "تنسيق إقامة", "خطة سفر أسرية", "تعديل مسار"],
-    cta: "راجع ترتيب الرحلة",
-    imageLabel: "رحلة مرتبة"
-  },
-  "private-aviation": {
-    title: "الطيران الخاص",
-    tagline: "تنقل جوي يتسم بالسهولة والوضوح ويوافق جدولك المزدحم.",
-    description: "نختار لك بعناية ما يطابق معاييرك، ونستعرض جوهر الحلول الأكثر ملاءمة لتتخذ قرارك بثقة تامة.",
-    outcome: "تنقل جوي خاص يتوافق مع إيقاعك، ويختصر عنك الاحتكاك اللوجستي.",
-    forWhom: ["التنفيذيون", "الأسر", "المكاتب", "الضيوف الخاصون"],
-    whenItMatters: ["اجتماع عاجل", "رحلة متعددة", "تنقل خاص", "وصول مهم", "سفر أسري"],
-    wosolHandles: ["مراجعة المسار", "تنسيق الطائرة", "ترتيب التوقيت", "النقل الأرضي", "متابعة الوصول"],
-    difference: "الطيران الخاص في وصول ليس رحلة فقط، بل مسار وصول كامل قبل الإقلاع وبعد الوصول.",
-    sampleRequests: ["ترتيب طائرة", "رحلة تنفيذية", "نقل من المطار", "متطلبات الرحلة", "استقبال عند الوصول"],
-    cta: "راجع خيار الطيران",
-    imageLabel: "رحلة خاصة"
-  },
-  "luxury-accommodation": {
-    title: "الإقامة الخاصة",
-    tagline: "اختيارات سكنية (فيلل، شاليهات، بنتهاوس) تتشكل حول طبيعة طلبك.",
-    description: "ننسق الإقامات الخاصة من فلل وشاليهات وبنتهاوس بما يتوافق مع الخصوصية، الراحة، وإيقاع الرحلة.",
-    outcome: "إقامة تمنحك السكون والخصوصية، لا مجرد مكان للوصول.",
-    forWhom: ["الأسر", "الإقامات الطويلة", "الضيوف الخاصون", "من يحتاجون سكنًا موثوقًا"],
-    whenItMatters: ["إقامة موسمية", "عطلة أسرية", "رحلة خاصة", "احتفال", "عمل عن بعد"],
-    wosolHandles: ["تحديد المتطلبات", "اختيار الإقامة", "تنسيق الخدمات", "تجهيز الوصول", "متابعة الإقامة"],
-    difference: "نعتمد على ذكاء الانتقاء، لا على القوائم الثابتة أو الخيارات الجاهزة.",
-    sampleRequests: ["فيلا مناسبة", "شاليه للأسرة", "جناح خاص", "سكن مع دعم", "تجهيز قبل الوصول"],
-    cta: "راجع إقامة مناسبة",
-    imageLabel: "إقامة مناسبة"
-  },
-  "yacht-charters": {
-    title: "تأجير اليخوت",
-    tagline: "تنسيق تجارب بحرية خاصة تُصمم بدقة حول ضيوفك.",
-    description: "ننسق تجارب بحرية ويخوت صُممت حول مناسباتك، مع إدارة الأجواء والمتابعة الدقيقة خلف الكواليس.",
-    outcome: "إبحار حصري وسكينة مُدارة دون انشغال بتفاصيل التشغيل.",
-    forWhom: ["الأسر", "المجموعات الخاصة", "المضيفون", "الجهات"],
-    whenItMatters: ["رحلة بحرية", "مناسبة خاصة", "استضافة ضيوف", "احتفال", "برنامج قصير"],
-    wosolHandles: ["اختيار اليخت", "تحديد المسار", "تنسيق الضيافة", "متابعة الطاقم", "حركة الضيوف"],
-    difference: "كل تجربة تُصمم حول المناسبة، الضيوف، ودرجة الخصوصية المطلوبة.",
-    sampleRequests: ["رحلة غروب", "رحلة أسرية", "عشاء على اليخت", "استضافة بحرية", "برنامج ساحلي"],
-    cta: "راجع تجربة بحرية",
-    imageLabel: "ترتيب بحري خاص"
-  },
-  "health-wellness-resorts": {
-    title: "العافية والاستشفاء",
-    tagline: "استعادة التوازن عبر برامج صحية وراحة ذهنية منتقاة.",
-    description: "ننسق برامج صحية وتأملية بعيدة عن المألوف، وفق احتياجك وإيقاع وقتك ومستوى الخصوصية المطلوب.",
-    outcome: "راحة ذهنية وبرامج مختارة بعيداً عن الخيارات العامة.",
-    forWhom: ["التنفيذيون", "الأزواج", "الأسر", "من يحتاجون هدوءًا"],
-    whenItMatters: ["إرهاق العمل", "إعادة توازن", "بعد السفر", "عطلة صحية", "برنامج خاص"],
-    wosolHandles: ["مراجعة الهدف", "اختيار الوجهة", "تنسيق البرنامج", "ترتيب الإقامة", "متابعة الخصوصية"],
-    difference: "لا نختار الوجهة لشهرتها فقط، بل لملاءمتها لسياقك وهدفك من الراحة.",
-    sampleRequests: ["برنامج عافية", "نهاية أسبوع هادئة", "إقامة استشفاء", "مدرب خاص", "رحلة عائلية هادئة"],
-    cta: "راجع برنامج العافية",
-    imageLabel: "راحة خاصة"
-  },
-  "shopping-gifting": {
-    title: "التسوق والإهداء",
-    tagline: "انتقاء مدروس يعكس ذوقك الرفيع في اختيار المقتنيات والهدايا.",
-    description: "ننسق الأزياء والإهداء بانتقاء يعكس الذوق، العلاقة، والمناسبة، بعيداً عن الخيارات المكررة أو غير الملائمة.",
-    outcome: "هدية أو مقتنى يصل بالطريقة التي تليق بالمناسبة والعلاقة.",
-    forWhom: ["الأعضاء", "الأسر", "التنفيذيون", "المضيفون"],
-    whenItMatters: ["هدية مهمة", "مناسبة مفاجئة", "قطعة نادرة", "تسوق خاص", "إهداء جهة"],
-    wosolHandles: ["فهم الذوق", "البحث", "الاختيار", "التغليف", "تنسيق التسليم"],
-    difference: "الانتقاء في وصول لا يقوم على الاسم، بل على المعنى والذوق وسياق العلاقة.",
-    sampleRequests: ["هدية خاصة", "قطعة نادرة", "موعد تسوق", "تنسيق إهداء", "تسليم هدية"],
-    cta: "نسق اختيارًا خاصًا",
-    imageLabel: "إهداء خاص"
-  },
-  "business-travel-management": {
-    title: "تنقلات الأعمال",
-    tagline: "إدارة رحلات الأعمال بدقة تنفيذية تضمن لك الفعالية والراحة.",
-    description: "نُحيد الاحتكاك اللوجستي من مسار العمل، وندير السفر والتنقل والإقامة بما يدعم أولويات جدولكم المزدحم.",
-    outcome: "تنقلات أعمال أكثر فعالية، ووقت محفوظ للقرارات الأهم.",
-    forWhom: ["التنفيذيون", "المؤسسون", "المكاتب", "الوفود"],
-    whenItMatters: ["اجتماع مهم", "جولة عمل", "زيارة مستثمرين", "جدول مزدحم", "استضافة وفد"],
-    wosolHandles: ["برنامج السفر", "الإقامة والرحلات", "التنقلات", "دعم الاجتماعات", "التعديلات"],
-    difference: "نحوّل السفر التنفيذي إلى بنية تشغيلية هادئة تدعم الإنتاجية لا تعطلها.",
-    sampleRequests: ["أسبوع تنفيذي", "وصول وفد", "تنقل بين الاجتماعات", "إقامة قريبة", "تعديل جدول"],
-    cta: "راجع سفر الأعمال",
-    imageLabel: "سفر أعمال منسق"
-  },
-  "personal-assistant": {
-    title: "إدارة التطلعات",
-    tagline: "تحويل احتياجاتكم إلى واقع ملموس عبر مسار متابعة هادئ ومتقن.",
-    description: "نستوعب تفاصيل الطلب وتطلعات العضو، ثم نحوله إلى مسار متابعة واضح يضمن اكتمال الترتيب كما ينبغي.",
-    outcome: "راحة ذهنية ومسؤولية متابعة واضحة من البداية حتى الاكتمال.",
-    forWhom: ["الأعضاء", "التنفيذيون", "الأسر", "أصحاب الوقت المحدود"],
-    whenItMatters: ["طلب عاجل", "تنسيق معقد", "مناسبة خاصة", "رعاية ضيوف", "مهمة حساسة"],
-    wosolHandles: ["فهم الطلب", "تحديد الأولوية", "تنسيق الجهات", "تواصل هادئ", "متابعة الإنجاز"],
-    difference: "من خلال نقطة اتصال واحدة، لا يحتاج العضو إلى شرح الطلب لأكثر من جهة.",
-    sampleRequests: ["تذاكر صعبة", "تنسيق احتفال", "استقبال ضيوف", "بحث عن قطعة", "مهمة خاصة"],
-    cta: "ناقش طلبًا شخصيًا",
-    imageLabel: "متابعة شخصية"
-  },
-  "special-request": {
-    title: "التجارب الاستثنائية",
-    tagline: "براعة في تفكيك الطلبات المعقدة وتحويلها إلى خطوات واضحة قابلة للتنفيذ.",
-    description: "نتعامل مع الطلبات غير التقليدية عبر فهم السياق، تحديد المسار، وانتقاء الشركاء أو الحلول المناسبة بدقة.",
-    outcome: "طلب معقد يتحول إلى مسار واضح قابل للتنفيذ.",
-    forWhom: ["الأعضاء", "المكاتب العائلية", "التنفيذيون", "المضيفون"],
-    whenItMatters: ["وصول نادر", "طلب حساس", "تنسيق خارج المدينة", "وقت محدود", "تجربة مختارة"],
-    wosolHandles: ["توضيح الطلب", "بحث الخيارات", "مراجعة الخصوصية", "ترتيب التنفيذ", "تحديثات مختصرة"],
-    difference: "يبدأ كل طلب بوضوح تام قبل الالتزام، ثم يُدار وفق المسار الأنسب.",
-    sampleRequests: ["تجربة مختارة", "زيارة خاصة", "رعاية ضيوف", "قطعة صعبة", "برنامج مفاجئ"],
-    cta: "ابدأ طلبًا خاصًا",
-    imageLabel: "طلب خاص"
-  },
-  "transportation-services": {
-    title: "الخدمات اللوجستية الخاصة",
-    tagline: "تنقل منسق يضمن لك ولضيوفك وصولاً خاصاً وجدولاً زمنياً ساكناً.",
-    description: "ننسق الحركة والتنقل بما يضمن السهولة والوضوح، ويُحيد الاحتكاك اللوجستي من مسار يومك أو مناسبة ضيوفك.",
-    outcome: "حركة أكثر سكوناً، ووصول خاص، وجدول زمني واضح.",
-    forWhom: ["التنفيذيون", "الأسر", "الضيوف", "مضيفو المناسبات"],
-    whenItMatters: ["نقل المطار", "سائق يومي", "وصول مناسبة", "عدة مركبات", "تنقل بين المدن"],
-    wosolHandles: ["اختيار المركبة", "تنسيق السائق", "تخطيط المسار", "قوائم الضيوف", "متابعة التوقيت"],
-    difference: "التنقل هنا ليس مركبة فقط، بل تنسيق كامل لحركة العضو وضيوفه.",
-    sampleRequests: ["سيارة بسائق", "مركبة للأسرة", "تنقل تنفيذي", "سيارة للقيادة", "خطة نقل ضيوف"],
-    cta: "رتب التنقل",
-    imageLabel: "تنقل خاص"
-  },
-  "corporate-concierge-services": {
-    title: "كونسيرج الشركات",
-    tagline: "دعم التنفيذيين والوفود بطبقة تنسيق تليق بمكانتكم.",
-    description: "نمنح المؤسسات والشركات طبقة تنسيق رفيعة المستوى لإدارة ضيافة الوفود والضيوف، بما يعكس بروتوكولات الرقي والإتقان.",
-    outcome: "ضيافة مؤسسية تليق بمكانة الجهة وتُدار بسلاسة وخصوصية.",
-    forWhom: ["الشركات", "المكاتب التنفيذية", "فرق الضيافة", "علاقات المستثمرين"],
-    whenItMatters: ["استضافة تنفيذيين", "زيارة وفد", "اجتماع مجلس", "ضيافة عملاء", "رعاية شركاء"],
-    wosolHandles: ["دعم الاجتماعات", "السفر والتنقل", "المطاعم والمواقع", "برامج الضيوف", "التنسيق الميداني"],
-    difference: "تحصل الجهة على واجهة تنسيق واحدة تحافظ على خصوصية التجربة وجودتها.",
-    sampleRequests: ["برنامج ضيف", "لوجستيات اجتماع", "عشاء مجلس", "استقبال شريك", "دعم وفد"],
-    cta: "راجع دعم الجهة",
-    imageLabel: "ضيافة شركات"
-  },
-  "event-planning": {
-    title: "تخطيط المناسبات",
-    tagline: "إدارة كواليس مناسباتك الخاصة بهدوء لتتفرغ كلياً لضيوفك.",
-    description: "نتولى كواليس مناسباتكم الخاصة بهدوء واحترافية، لنمنحكم رفاهية التفرغ التام لضيوفكم واهتماماتكم.",
-    outcome: "مناسبة مكتملة الأجواء، ومضيف حاضر بلا انشغال.",
-    forWhom: ["المضيفون", "الأسر", "الجهات", "التنفيذيون"],
-    whenItMatters: ["عشاء خاص", "احتفال", "إطلاق", "استقبال تنفيذي", "مناسبة أسرية"],
-    wosolHandles: ["فكرة المناسبة", "الموقع والموردون", "حركة الضيوف", "الضيافة", "إدارة اليوم"],
-    difference: "يتولى فريقنا إدارة الأجواء والمتابعة الدقيقة حتى تكتمل الترتيبات.",
-    sampleRequests: ["عشاء خاص", "احتفال", "استقبال جهة", "مناسبة خارجية", "ترتيب مفاجأة"],
-    cta: "راجع مناسبة خاصة",
-    imageLabel: "مناسبة خاصة"
-  },
-  "arts-design": {
-    title: "رعاية المقتنيات",
-    tagline: "إدارة ذكية لمساحاتك الخاصة ومقتنياتك الثمينة لتعزيز قيمتها.",
-    description: "ننسق الفن والتصميم ورعاية المقتنيات والوصول إلى المعارض الحصرية، بما يعكس ذوقك ويعزز قيمة مساحاتك الخاصة.",
-    outcome: "مقتنيات ومساحات تُدار بعناية، وتنسجم مع الذوق والقيمة والاستخدام.",
-    forWhom: ["ملاك المنازل", "جامعو الأعمال", "التنفيذيون", "المكاتب العائلية"],
-    whenItMatters: ["تجهيز منزل", "تحسين مكتب", "اقتناء عمل", "زيارة معرض", "تحديث مساحة"],
-    wosolHandles: ["ترشيح مصممين", "زيارات معارض", "دعم الاختيار", "موجز المساحة", "تنسيق الموردين"],
-    difference: "الاختيار لا يتوقف عند المظهر، بل يمتد إلى الراحة والاستدامة وطريقة الاستخدام.",
-    sampleRequests: ["زيارة معرض", "ترشيح مصمم", "تنسيق اقتناء", "موجز تصميم", "تجربة ثقافية"],
-    cta: "راجع دعم التصميم",
-    imageLabel: "فن وتصميم"
-  },
-  "vip-access": {
-    title: "ذكاء الوصول",
-    tagline: "تنسيق مسبق للوصول إلى الفرص والمساحات الأكثر حصرية في العالم.",
-    description: "نراجع إمكانية الوصول وفق التوقيت، درجة الخصوصية، ومعايير العضو الخاصة، بما يضمن الوضوح قبل الالتزام.",
-    outcome: "وصول خاص أكثر وضوحاً، وتنسيق مدروس قبل أي التزام.",
-    forWhom: ["الأعضاء", "التنفيذيون", "الضيوف", "مضيفو الجهات"],
-    whenItMatters: ["فعالية مهمة", "موقع خاص", "مطعم مناسب", "تجربة محدودة", "مناسبة ثقافية"],
-    wosolHandles: ["مراجعة الطلب", "تنسيق الشركاء", "متطلبات الضيوف", "تخطيط الوصول", "حفظ الخصوصية"],
-    difference: "الوصول ليس وعداً عاماً، بل ذكاء انتقاء يخضع للملاءمة والتوقيت.",
-    sampleRequests: ["عشاء خاص", "حضور فعالية", "موقع خاص", "تجربة مختارة", "استقبال ضيوف"],
-    cta: "راجع إمكانية الوصول",
-    imageLabel: "وصول خاص"
-  },
-  "real-estate": {
-    title: "عقارات منتقاة",
-    tagline: "وصول عقاري يستند إلى الخصوصية والملاءمة.",
-    description: "ننسق الوصول إلى عقارات منتقاة وفق الخصوصية، الملاءمة، وطبيعة الاستخدام، بعيداً عن ضجيج الخيارات العامة.",
-    outcome: "خيارات عقارية أكثر صلة، وزيارات تُدار بهدوء ووضوح.",
-    forWhom: ["المشترون", "المستثمرون", "المكاتب العائلية", "المنتقلون"],
-    whenItMatters: ["بحث عن مسكن", "منزل ثان", "فرصة استثمارية", "انتقال", "زيارة عقارية"],
-    wosolHandles: ["فهم المتطلبات", "تعريف بشركاء", "زيارات خاصة", "مراجعة الملاءمة", "تنسيق الزيارة"],
-    difference: "يُراجع العقار حسب الاستخدام والموقع والخصوصية والحركة، لا حسب الاسم وحده.",
-    sampleRequests: ["بحث عن فيلا", "زيارة شقة", "مراجعة منزل ثان", "تعريف بفرصة", "خطة انتقال"],
-    cta: "ناقش طلبًا عقاريًا",
-    imageLabel: "عقار خاص"
-  }
+const imagePrompts = {
+  "lifestyle-concierge": "Private lifestyle coordination",
+  "luxury-accommodation": "Selected private accommodation",
+  "yacht-charters": "Private yacht experience",
+  "private-aviation": "Private aviation arrangement",
+  "travel-management": "Coordinated travel management",
+  "health-wellness-resorts": "Private wellness arrangement",
+  "event-planning": "Private event coordination",
+  "shopping-gifting": "Curated shopping and gifting",
+  "transportation-services": "Private transportation coordination",
+  "education": "Curated education support",
+  "corporate-concierge-services": "Corporate concierge support",
+  "personal-assistant": "Personal assistance support",
+  "special-request": "Special request handling",
+  "designers": "Private design coordination"
 };
 
 for (const blueprint of serviceBlueprints) {
-  if (arabicServiceCopy[blueprint.id]) {
-    Object.assign(blueprint.ar, arabicServiceCopy[blueprint.id]);
-  }
+  blueprint.image = `assets/images/${blueprint.id}.jpg?v=20260615-official-services`;
+  blueprint.imagePrompt = imagePrompts[blueprint.id];
 }
 
 const content = {
@@ -1011,30 +1383,6 @@ const content = {
     }
   }
 };
-
-const imagePrompts = {
-  "lifestyle-concierge": "Editorial photograph of a quiet luxury concierge desk in a private residence, cream stone, navy notebook, no visible logos, discreet service details, soft natural light.",
-  "travel-management": "Premium travel planning still life with passport, bespoke itinerary, luxury hotel key, cream and navy palette, international but understated, no logos.",
-  "private-aviation": "Private jet cabin detail with champagne beige leather, navy accents, runway light through window, quiet executive atmosphere, no people, no logos.",
-  "luxury-accommodation": "Private villa pool at golden hour, architectural calm, warm stone, linen curtains, secluded luxury residence, no visible brand marks.",
-  "yacht-charters": "Luxury yacht deck at sunset with calm water, teak detail, cream upholstery, elegant and uncrowded, no party scene, no logos.",
-  "health-wellness-resorts": "Secluded wellness resort terrace with spa water, warm stone, linen, greenery, quiet restorative mood, realistic luxury hospitality.",
-  "shopping-gifting": "Luxury gifting still life with textured paper, ribbon, leather tray, rare object hint, cream navy muted gold palette, no brand logos.",
-  "business-travel-management": "Executive boardroom travel planning scene with itinerary, premium pen, city view, navy documents, quiet corporate luxury.",
-  "personal-assistant": "Discreet personal assistant service detail, gloved hand placing invitation card on cream desk, refined stationery, private atmosphere.",
-  "special-request": "Bespoke request concept with sealed envelope, private access card, elegant tray, dim luxury interior, understated and confidential.",
-  "transportation-services": "Executive black car arrival at luxury hotel entrance, soft evening light, driver silhouette only, no visible logos, calm and private.",
-  "corporate-concierge-services": "Corporate hospitality setup with boardroom table, fine dining detail, itinerary cards, executive guest welcome, cream and navy tone.",
-  "event-planning": "Private event table detail with linen, candlelight, floral restraint, premium place cards, intimate luxury setting, no crowd.",
-  "arts-design": "Private art gallery viewing with sculptural furniture, warm wall light, quiet collector atmosphere, no visible artist signatures or logos.",
-  "vip-access": "Exclusive venue corridor with velvet rope suggested subtly, warm lighting, empty premium entrance, private access mood, no logos.",
-  "real-estate": "Luxury residence interior with architectural staircase, warm stone, refined furniture, private viewing atmosphere, no real estate signage."
-};
-
-for (const blueprint of serviceBlueprints) {
-  blueprint.image = `assets/images/${blueprint.id}.jpg`;
-  blueprint.imagePrompt = imagePrompts[blueprint.id];
-}
 
 const ecosystemImageFiles = [
   "luxury-hotels",
