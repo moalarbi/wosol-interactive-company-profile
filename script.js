@@ -1425,27 +1425,27 @@ const ecosystemRoles = {
 };
 
 const partnerBrands = [
-  { name: "Dorchester Collection", slug: "dorchester-collection", category: { en: "Luxury hospitality", ar: "ضيافة فاخرة" } },
-  { name: "Waldorf Astoria", slug: "waldorf-astoria", category: { en: "Hotels & residences", ar: "فنادق وإقامات" } },
-  { name: "The Ritz-Carlton", slug: "ritz-carlton", category: { en: "Club hospitality", ar: "ضيافة راقية" } },
-  { name: "The Luxury Collection", slug: "luxury-collection", category: { en: "Luxury hotels", ar: "فنادق فاخرة" } },
-  { name: "The Leading Hotels of the World", slug: "leading-hotels", category: { en: "Independent luxury hotels", ar: "فنادق عالمية مختارة" } },
-  { name: "Rosewood Hotels & Resorts", slug: "rosewood", category: { en: "Hotels & resorts", ar: "فنادق ومنتجعات" } },
-  { name: "Rocco Forte Hotels", slug: "rocco-forte", category: { en: "European hospitality", ar: "ضيافة أوروبية" } },
-  { name: "Raffles Hotels & Resorts", slug: "raffles", category: { en: "Iconic hospitality", ar: "ضيافة أيقونية" } },
-  { name: "Alpha Star Aviation Services", slug: "alpha-star", category: { en: "Private aviation", ar: "طيران خاص" } },
-  { name: "One&Only", slug: "one-and-only", category: { en: "Resorts & private stays", ar: "منتجعات وإقامات خاصة" } },
-  { name: "Mandarin Oriental", slug: "mandarin-oriental", category: { en: "Hotel group", ar: "مجموعة فندقية" } },
-  { name: "Jumeirah Hotels & Resorts", slug: "jumeirah", category: { en: "Hotels & resorts", ar: "فنادق ومنتجعات" } },
-  { name: "JOALI", slug: "joali", category: { en: "Island resorts", ar: "منتجعات جزرية" } },
-  { name: "Four Seasons", slug: "four-seasons", category: { en: "Hotels & residences", ar: "فنادق وإقامات" } },
-  { name: "Edmiston", slug: "edmiston", category: { en: "Yacht access", ar: "وصول لليخوت" } },
-  { name: "Cheval Blanc", slug: "cheval-blanc", category: { en: "Maison hospitality", ar: "ضيافة ميزون" } },
-  { name: "Cabrio", slug: "cabrio", category: { en: "Mobility partner", ar: "شريك تنقل" } },
-  { name: "Bvlgari Hotels & Resorts", slug: "bvlgari", category: { en: "Hotels & resorts", ar: "فنادق ومنتجعات" } },
   { name: "Anantara Hotels, Resorts & Spas", slug: "anantara", category: { en: "Resorts & spas", ar: "منتجعات وسبا" } },
+  { name: "Cheval Blanc", slug: "cheval-blanc", category: { en: "Maison hospitality", ar: "ضيافة ميزون" } },
+  { name: "Rocco Forte Hotels", slug: "rocco-forte", category: { en: "European hospitality", ar: "ضيافة أوروبية" } },
+  { name: "Rosewood Hotel Group", slug: "rosewood", category: { en: "Hotel group", ar: "مجموعة فندقية" } },
+  { name: "The Leading Hotels of the World", slug: "leading-hotels", category: { en: "Independent luxury hotels", ar: "فنادق عالمية مختارة" } },
+  { name: "Dorchester Collection", slug: "dorchester-collection", category: { en: "Luxury hospitality", ar: "ضيافة فاخرة" } },
+  { name: "Bvlgari Hotels & Resorts", slug: "bvlgari", category: { en: "Hotels & resorts", ar: "فنادق ومنتجعات" } },
   { name: "Aman", slug: "aman", category: { en: "Private resorts", ar: "منتجعات خاصة" } },
-  { name: "Maison de L'Amie Flowers", slug: "maison-de-lamie", category: { en: "Floral styling", ar: "تنسيق زهور" } }
+  { name: "Four Seasons", slug: "four-seasons", category: { en: "Hotels & residences", ar: "فنادق وإقامات" } },
+  { name: "JOALI", slug: "joali", category: { en: "Island resorts", ar: "منتجعات جزرية" } },
+  { name: "One&Only", slug: "one-and-only", category: { en: "Resorts & private stays", ar: "منتجعات وإقامات خاصة" } },
+  { name: "The Ritz-Carlton", slug: "ritz-carlton", category: { en: "Luxury hospitality", ar: "ضيافة راقية" } },
+  { name: "Waldorf Astoria", slug: "waldorf-astoria", category: { en: "Hotels & residences", ar: "فنادق وإقامات" } },
+  { name: "The Luxury Collection", slug: "luxury-collection", category: { en: "Luxury hotels", ar: "فنادق فاخرة" } },
+  { name: "Jumeirah Hotels & Resorts", slug: "jumeirah", category: { en: "Hotels & resorts", ar: "فنادق ومنتجعات" } },
+  { name: "Raffles Hotels & Resorts", slug: "raffles", category: { en: "Iconic hospitality", ar: "ضيافة أيقونية" } },
+  { name: "Cabrio", slug: "cabrio", category: { en: "Mobility partner", ar: "شريك تنقل" } },
+  { name: "Mandarin Oriental", slug: "mandarin-oriental", category: { en: "Hotel group", ar: "مجموعة فندقية" } },
+  { name: "Alpha Star Aviation Services", slug: "alpha-star", category: { en: "Private aviation", ar: "طيران خاص" } },
+  { name: "Maison de L'Amie Flowers", slug: "maison-de-lamie", category: { en: "Floral styling", ar: "تنسيق زهور" } },
+  { name: "Edmiston", slug: "edmiston", category: { en: "Yacht access", ar: "وصول لليخوت" } }
 ];
 
 const socialLinks = [
@@ -1690,7 +1690,7 @@ function renderAccessLogos() {
 function accessLogoMarkup(brand) {
   return `
     <span class="logo-wordmark logo-wordmark--image logo-${brand.slug} en">
-      <img src="assets/logos/partners/${brand.slug}.png" alt="${escapeHtml(brand.name)}" loading="lazy" decoding="async" />
+      <img src="assets/logos/partners/${brand.slug}.png" alt="${escapeHtml(brand.name)}" loading="eager" decoding="async" />
     </span>
   `;
 }

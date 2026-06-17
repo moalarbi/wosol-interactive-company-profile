@@ -1481,8 +1481,6 @@ body[dir="rtl"] .partner-gallery-card p {
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  min-width: max-content;
-  min-height: 36px;
   color: rgba(4, 16, 38, 0.60);
   font-size: clamp(16px, 1.55vw, 24px);
   font-weight: 500;
@@ -1492,8 +1490,8 @@ body[dir="rtl"] .partner-gallery-card p {
 }
 
 .logo-wordmark--image {
-  width: clamp(150px, 10.6vw, 188px);
-  height: clamp(58px, 4.4vw, 72px);
+  width: clamp(168px, 11vw, 206px);
+  height: clamp(70px, 5vw, 88px);
   opacity: 0.9;
 }
 
@@ -1537,39 +1535,6 @@ body[dir="rtl"] .partner-gallery-card p {
   to {
     transform: translate3d(calc(-50% - var(--logo-cloud-half-gap)), 0, 0);
   }
-}
-
-.logo-waldorf-astoria,
-.logo-ritz-carlton,
-.logo-raffles,
-.logo-mandarin-oriental,
-.logo-anantara {
-  transform: none;
-}
-
-.logo-luxury-collection,
-.logo-joali,
-.logo-cabrio,
-.logo-aman {
-  transform: none;
-}
-
-.logo-leading-hotels,
-.logo-bvlgari,
-.logo-dorchester-collection {
-  width: clamp(150px, 10.6vw, 188px);
-}
-
-.logo-rocco-forte,
-.logo-jumeirah,
-.logo-four-seasons,
-.logo-cheval-blanc,
-.logo-maison-de-lamie {
-  width: clamp(150px, 10.6vw, 188px);
-}
-
-.logo-edmiston {
-  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
